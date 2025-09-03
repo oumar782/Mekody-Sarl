@@ -1,0 +1,394 @@
+/* About Variables */
+:root {
+    --about-hero-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --about-text: #0f172a;
+    --about-text-secondary: #64748b;
+    --about-accent: #4361ee;
+    --about-accent-light: #4895ef;
+    --about-bg: #ffffff;
+    --about-bg-alt: #f8fafc;
+    --about-card-bg: #ffffff;
+    --about-card-border: #e2e8f0;
+  }
+  
+  /* About Base Styles */
+  .about {
+    width: 100%;
+  }
+  
+  .about__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  /* Hero Section */
+  .about__hero {
+    background: var(--about-hero-bg);
+    color: white;
+    padding: 6rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about__hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--about-accent-light), transparent);
+  }
+  
+  .about__hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .about__hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  
+  .about__hero-title-accent {
+    background: linear-gradient(135deg, var(--about-accent-light), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+  
+  .about__hero-title-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--about-accent-light), transparent);
+    border-radius: 2px;
+  }
+  
+  .about__hero-description {
+    font-size: 1.25rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Mission Section */
+  .about__mission {
+    padding: 5rem 0;
+    background: var(--about-bg);
+  }
+  
+  .about__mission-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  @media (min-width: 1024px) {
+    .about__mission-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  
+  .about__mission-content {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .about__mission-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--about-text);
+    margin-bottom: 1.5rem;
+  }
+  
+  .about__mission-text {
+    font-size: 1.125rem;
+    color: var(--about-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about__commitments {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+  
+  .about__commitments-card {
+    background: linear-gradient(135deg, var(--about-accent), var(--about-accent-light));
+    color: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(67, 97, 238, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about__commitments-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 0%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 0 20px 0 0;
+  }
+  
+  .about__commitments-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about__commitments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .about__commitments-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about__commitments-bullet {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  /* Values Section */
+  .about__values {
+    padding: 5rem 0;
+    background: var(--about-bg-alt);
+  }
+  
+  .about__values-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .about__values-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--about-text);
+    margin-bottom: 1rem;
+  }
+  
+  .about__values-title-accent {
+    background: linear-gradient(135deg, var(--about-accent), var(--about-accent-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .about__values-subtitle {
+    font-size: 1.125rem;
+    color: var(--about-text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .about__values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .about__values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .about__values-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .about__value-card {
+    background: var(--about-card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid var(--about-card-border);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .about__value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--about-accent-light);
+  }
+  
+  .about__value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--about-accent), var(--about-accent-light));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .about__value-card:hover .about__value-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .about__value-icon-svg {
+    color: white;
+  }
+  
+  .about__value-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--about-text);
+    margin-bottom: 1rem;
+  }
+  
+  .about__value-description {
+    color: var(--about-text-secondary);
+    line-height: 1.6;
+  }
+  
+  /* Stats Section */
+  .about__stats {
+    padding: 5rem 0;
+    background: var(--about-hero-bg);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about__stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--about-accent-light), transparent);
+  }
+  
+  .about__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .about__stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .about__stat {
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .about__stat-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  
+  .about__stat-icon-svg {
+    color: var(--about-accent-light);
+  }
+  
+  .about__stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--about-accent-light);
+    margin-bottom: 0.5rem;
+  }
+  
+  .about__stat-label {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about__hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .about__hero-description {
+      font-size: 1.125rem;
+    }
+    
+    .about__mission-title,
+    .about__values-title {
+      font-size: 2rem;
+    }
+    
+    .about__stat-number {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .about__stats-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .about__hero {
+      padding: 4rem 0 3rem;
+    }
+    
+    .about__mission,
+    .about__values,
+    .about__stats {
+      padding: 3rem 0;
+    }
+  }
+  
+  /* Import Orbitron font */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');

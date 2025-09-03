@@ -1,0 +1,339 @@
+/* Services Overview Variables */
+:root {
+    --services-bg: #f8fafc;
+    --services-text: #0f172a;
+    --services-text-secondary: #64748b;
+    --services-accent: #4361ee;
+    --services-accent-light: #4895ef;
+    --services-card-bg: #ffffff;
+    --services-card-border: #e2e8f0;
+    --services-card-hover: #f1f5f9;
+    --services-gradient-blue: linear-gradient(135deg, #4361ee, #4895ef);
+    --services-gradient-purple: linear-gradient(135deg, #7209b7, #f72585);
+    --services-gradient-green: linear-gradient(135deg, #10b981, #34d399);
+    --services-gradient-orange: linear-gradient(135deg, #f97316, #fbbf24);
+    --services-gradient-indigo: linear-gradient(135deg, #4f46e5, #6366f1);
+  }
+  
+  /* Services Base Styles */
+  .services {
+    padding: 5rem 0;
+    background: var(--services-bg);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .services__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  /* Header */
+  .services__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .services__title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: var(--services-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .services__title-accent {
+    background: var(--services-gradient-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+  
+  .services__title-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--services-gradient-blue);
+    border-radius: 2px;
+  }
+  
+  .services__subtitle {
+    font-size: 1.25rem;
+    color: var(--services-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Services Grid */
+  .services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  @media (min-width: 768px) {
+    .services__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .services__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Service Card */
+  .services__card {
+    background: var(--services-card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--services-card-border);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .services__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--services-accent-light);
+  }
+  
+  .services__card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .services__card-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .services__card:hover .services__card-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .services__card-icon--marketing-digital {
+    background: var(--services-gradient-blue);
+  }
+  
+  .services__card-icon--e-learning {
+    background: var(--services-gradient-purple);
+  }
+  
+  .services__card-icon--tourisme-médical {
+    background: var(--services-gradient-green);
+  }
+  
+  .services__card-icon--colonies-de-vacances {
+    background: var(--services-gradient-orange);
+  }
+  
+  .services__card-icon--développement-web {
+    background: var(--services-gradient-indigo);
+  }
+  
+  .services__card-icon-svg {
+    color: white;
+  }
+  
+  .services__card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--services-text);
+    line-height: 1.2;
+  }
+  
+  .services__card-description {
+    color: var(--services-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Features */
+  .services__card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .services__card-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .services__card-feature-icon {
+    color: var(--services-accent);
+    flex-shrink: 0;
+  }
+  
+  .services__card-feature-text {
+    color: var(--services-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  /* CTA Link */
+  .services__card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--services-accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .services__card-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--services-accent);
+    transition: width 0.3s ease;
+  }
+  
+  .services__card-link:hover {
+    color: var(--services-accent-light);
+  }
+  
+  .services__card-link:hover::after {
+    width: 100%;
+  }
+  
+  .services__card-link:hover .services__card-link-icon {
+    transform: translateX(3px);
+  }
+  
+  .services__card-link-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  /* Card Decoration */
+  .services__card-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 0%, transparent 50%, rgba(67, 97, 238, 0.1) 50%, rgba(67, 97, 238, 0.05) 100%);
+    border-radius: 0 20px 0 0;
+    pointer-events: none;
+  }
+  
+  /* Bottom CTA */
+  .services__cta {
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+  }
+  
+  .services__cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--services-gradient-blue);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .services__cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+  }
+  
+  .services__cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+  }
+  
+  .services__cta-button:hover::before {
+    left: 100%;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .services__title {
+      font-size: 2.5rem;
+    }
+    
+    .services__subtitle {
+      font-size: 1.125rem;
+    }
+    
+    .services__card {
+      padding: 1.5rem;
+    }
+    
+    .services__card-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .services__card-title {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .services__grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .services__title {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Import Orbitron font */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
