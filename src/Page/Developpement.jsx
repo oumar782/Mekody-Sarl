@@ -26,7 +26,7 @@ import {
   Phone,
   MessageCircle
 } from 'lucide-react';
-import './developpement.css'
+import '../style/developpement.css'
 import Header from '../composant/Header';
 import Footer from '../composant/Footer';
 
