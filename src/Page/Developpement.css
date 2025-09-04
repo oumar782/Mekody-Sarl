@@ -1,20 +1,20 @@
 /* Développement Variables */
 :root {
-    --dev-hero-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #8b5cf6 100%);
+    --dev-hero-bg: linear-gradient(135deg, #060337 0%, #043c4f 50%, #030846 100%);
     --dev-text: #0f172a;
     --dev-text-secondary: #64748b;
-    --dev-accent: #4f46e5;
-    --dev-accent-light: #6366f1;
+    --dev-accent: #060343;
+    --dev-accent-light: #03043e;
     --dev-bg: #ffffff;
     --dev-bg-alt: #f8fafc;
     --dev-card-bg: #ffffff;
     --dev-card-border: #e2e8f0;
-    --dev-gradient-blue: linear-gradient(135deg, #3b82f6, #60a5fa);
-    --dev-gradient-purple: linear-gradient(135deg, #8b5cf6, #a855f7);
-    --dev-gradient-green: linear-gradient(135deg, #10b981, #34d399);
-    --dev-gradient-orange: linear-gradient(135deg, #f97316, #fb923c);
-    --dev-gradient-indigo: linear-gradient(135deg, #4f46e5, #6366f1);
-    --dev-gradient-red: linear-gradient(135deg, #ef4444, #f87171);
+    --dev-gradient-blue: linear-gradient(135deg, #03183b, #065f7d);
+    --dev-gradient-purple: linear-gradient(135deg, #020745, #0c4e7a);
+    --dev-gradient-green: linear-gradient(135deg, #040742, #0a6684);
+    --dev-gradient-orange: linear-gradient(135deg, #021c2f, #07465e);
+    --dev-gradient-indigo: linear-gradient(135deg, #071552, #0d568b);
+    --dev-gradient-red: linear-gradient(135deg, #07013e, #126c74);
   }
   
   /* Développement Base Styles */
@@ -467,7 +467,7 @@
   
   .developpement__project-investment {
     font-weight: 600;
-    color: var(--dev-accent);
+    color: red;
     font-size: 0.875rem;
   }
   

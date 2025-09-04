@@ -81,7 +81,7 @@ const Developpement = () => {
       title: 'Plateforme E-commerce',
       category: 'Application Web',
       description: 'Marketplace B2B avec gestion multi-vendeurs, paiements sécurisés et analytics avancés.',
-      image: '🛒',
+      image: '',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
       results: [
         '+300% conversion rate',
@@ -96,7 +96,7 @@ const Developpement = () => {
       title: 'App Mobile Fitness',
       category: 'Application Mobile',
       description: 'Application de coaching sportif avec IA, suivi biométrique et communauté sociale.',
-      image: '💪',
+      image: '',
       technologies: ['React Native', 'TensorFlow', 'Firebase', 'HealthKit'],
       results: [
         '100k+ téléchargements',
@@ -111,7 +111,7 @@ const Developpement = () => {
       title: 'ERP Entreprise',
       category: 'Système Backend',
       description: 'Système de gestion intégré pour optimiser tous les processus métier.',
-      image: '⚙️',
+      image: '',
       technologies: ['Python', 'Django', 'React', 'Docker'],
       results: [
         '-60% temps de traitement',

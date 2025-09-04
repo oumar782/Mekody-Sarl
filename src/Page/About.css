@@ -1,10 +1,10 @@
 /* About Variables */
 :root {
-    --about-hero-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --about-hero-bg: linear-gradient(135deg, #031234 0%, #042861 50%, #02142c 100%);
     --about-text: #0f172a;
     --about-text-secondary: #64748b;
-    --about-accent: #4361ee;
-    --about-accent-light: #4895ef;
+    --about-accent: #030d3b;
+    --about-accent-light: #022751;
     --about-bg: #ffffff;
     --about-bg-alt: #f8fafc;
     --about-card-bg: #ffffff;
@@ -315,7 +315,7 @@
   .about__stat-icon {
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.995);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     display: flex;
@@ -332,7 +332,7 @@
     font-family: 'Orbitron', sans-serif;
     font-weight: 800;
     font-size: 2.5rem;
-    color: var(--about-accent-light);
+    color:white;
     margin-bottom: 0.5rem;
   }
   

@@ -3,22 +3,22 @@
     --services-bg: #f8fafc;
     --services-text: #0f172a;
     --services-text-secondary: #64748b;
-    --services-accent: #4361ee;
-    --services-accent-light: #4895ef;
+    --services-accent: #031359;
+    --services-accent-light: #062b55;
     --services-card-bg: #ffffff;
     --services-card-border: #e2e8f0;
     --services-card-hover: #f1f5f9;
-    --services-gradient-blue: linear-gradient(135deg, #4361ee, #4895ef);
-    --services-gradient-purple: linear-gradient(135deg, #7209b7, #f72585);
-    --services-gradient-green: linear-gradient(135deg, #10b981, #34d399);
-    --services-gradient-orange: linear-gradient(135deg, #f97316, #fbbf24);
-    --services-gradient-indigo: linear-gradient(135deg, #4f46e5, #6366f1);
+    --services-gradient-blue: linear-gradient(135deg, #04124d, #062f5e);
+    --services-gradient-purple: linear-gradient(135deg, #020335, #06318e);
+    --services-gradient-green: linear-gradient(135deg, #021529, #022336);
+    --services-gradient-orange: linear-gradient(135deg, #020741, #051b48);
+    --services-gradient-indigo: linear-gradient(135deg, #021533, #02194b);
   }
   
   /* Services Base Styles */
   .services {
     padding: 5rem 0;
-    background: var(--services-bg);
+    background:white;
     position: relative;
     overflow: hidden;
   }

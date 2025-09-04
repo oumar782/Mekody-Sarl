@@ -1,17 +1,17 @@
 /* Formations Variables */
 :root {
-    --formations-hero-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --formations-hero-bg: linear-gradient(135deg, #03102f 0%, #19345e 50%, #011a3d 100%);
     --formations-text: #0f172a;
     --formations-text-secondary: #64748b;
     --formations-accent: #4361ee;
-    --formations-accent-light: #4895ef;
+    --formations-accent-light: #031932;
     --formations-bg: #ffffff;
     --formations-bg-alt: #f8fafc;
     --formations-card-bg: #ffffff;
     --formations-card-border: #e2e8f0;
-    --formations-gradient-blue: linear-gradient(135deg, #4361ee, #4895ef);
-    --formations-gradient-purple: linear-gradient(135deg, #7209b7, #f72585);
-    --formations-gradient-green: linear-gradient(135deg, #10b981, #34d399);
+    --formations-gradient-blue: linear-gradient(135deg, #020b32, #042f5f);
+    --formations-gradient-purple: linear-gradient(135deg, #640505, #6b0406);
+    --formations-gradient-green: linear-gradient(135deg, #b95310, #a06704);
     --formations-gradient-orange: linear-gradient(135deg, #f97316, #ef4444);
   }
   
@@ -413,7 +413,7 @@
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--formations-accent);
+    color: red;
   }
   
   .formations__program-price-label {

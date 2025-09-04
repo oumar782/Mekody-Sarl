@@ -1,10 +1,10 @@
 /* Contact Variables */
 :root {
-    --contact-hero-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #8b5cf6 100%);
+    --contact-hero-bg: linear-gradient(135deg, #050339 0%, #0d5470 50%, #02033b 100%);
     --contact-text: #0f172a;
     --contact-text-secondary: #64748b;
-    --contact-accent: #4f46e5;
-    --contact-accent-light: #6366f1;
+    --contact-accent: #08045e;
+    --contact-accent-light: #040541;
     --contact-bg: #ffffff;
     --contact-bg-alt: #f8fafc;
     --contact-card-bg: #ffffff;

@@ -1,19 +1,19 @@
 /* Colonie Vacances Variables */
 :root {
-    --cv-hero-bg: linear-gradient(135deg, #ea580c 0%, #d97706 50%, #f59e0b 100%);
+    --cv-hero-bg: linear-gradient(135deg, #03153c 0%, #076584 50%, #030839 100%);
     --cv-text: #0f172a;
     --cv-text-secondary: #64748b;
-    --cv-accent: #ea580c;
-    --cv-accent-light: #f97316;
+    --cv-accent: #021333;
+    --cv-accent-light: #05364c;
     --cv-bg: #ffffff;
     --cv-bg-alt: #f8fafc;
     --cv-card-bg: #ffffff;
     --cv-card-border: #e2e8f0;
-    --cv-gradient-orange: linear-gradient(135deg, #ea580c, #f97316);
-    --cv-gradient-yellow: linear-gradient(135deg, #f59e0b, #fbbf24);
-    --cv-gradient-green: linear-gradient(135deg, #059669, #10b981);
-    --cv-gradient-blue: linear-gradient(135deg, #3b82f6, #60a5fa);
-    --cv-gradient-purple: linear-gradient(135deg, #8b5cf6, #a855f7);
+    --cv-gradient-orange: linear-gradient(135deg, #02072c, #055a65);
+    --cv-gradient-yellow: linear-gradient(135deg, #05033f, #024f75);
+    --cv-gradient-green: linear-gradient(135deg, #052035, #095372);
+    --cv-gradient-blue: linear-gradient(135deg, #04142f, #044759);
+    --cv-gradient-purple: linear-gradient(135deg, #051338, #0a5f84);
   }
   
   /* Colonie Vacances Base Styles */
@@ -57,7 +57,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 149, 149, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
@@ -68,7 +68,7 @@
   .colonie-vacances__badge-icon {
     width: 16px;
     height: 16px;
-    color: #fef08a;
+    color: #c33405;
   }
   
   .colonie-vacances__badge-text {
@@ -85,7 +85,7 @@
   }
   
   .colonie-vacances__hero-title-accent {
-    background: linear-gradient(135deg, #fef08a, white);
+    background: linear-gradient(135deg, #0b6daa, white);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -99,7 +99,7 @@
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #fef08a, transparent);
+    background: linear-gradient(90deg, #02d7f3, transparent);
     border-radius: 2px;
   }
   
@@ -187,7 +187,7 @@
   }
   
   .colonie-vacances__trust-icon {
-    color: #fef08a;
+    color: #ec3b06;
   }
   
   /* Stats Section */
@@ -440,7 +440,7 @@
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--cv-accent);
+    color: red;
   }
   
   .colonie-vacances__program-price-label {

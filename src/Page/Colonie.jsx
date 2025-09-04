@@ -53,7 +53,7 @@ const ColonieVacances = () => {
       age: '6-10 ans',
       duration: '2 semaines',
       location: 'Alpes françaises',
-      image: '🏔️',
+      image: '',
       description: 'Découverte de la faune et flore alpine avec des activités ludiques et éducatives.',
       activities: [
         'Randonnées adaptées',
@@ -70,7 +70,7 @@ const ColonieVacances = () => {
       age: '11-14 ans',
       duration: '3 semaines',
       location: 'Côte Atlantique',
-      image: '🎨',
+      image: '',
       description: 'Fusion parfaite entre activités créatives et sports nautiques.',
       activities: [
         'Surf et bodyboard',
@@ -87,7 +87,7 @@ const ColonieVacances = () => {
       age: '15-17 ans',
       duration: '4 semaines',
       location: 'Provence',
-      image: '🚀',
+      image: '',
       description: 'Programme de leadership et d\'entrepreneuriat avec projets concrets.',
       activities: [
         'Ateliers leadership',
