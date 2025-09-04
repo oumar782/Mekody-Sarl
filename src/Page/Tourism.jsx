@@ -26,78 +26,77 @@ const TourismeMedical = () => {
     {
       icon: Stethoscope,
       title: 'Consultation Médicale',
-      description: 'Sélection rigoureuse des meilleurs établissements et praticiens certifiés'
+      description: 'Accès rapide aux praticiens certifiés et établissements de renommée internationale avec une prise en charge personnalisée selon vos besoins spécifiques.'
     },
     {
       icon: Plane,
       title: 'Organisation Voyage',
-      description: 'Gestion complète des vols, visas et formalités administratives'
+      description: 'Vols, visas et formalités gérés en toute simplicité pour un voyage sans stress. Nous nous occupons de tous les détails logistiques.'
     },
     {
       icon: Home,
-      title: 'Hébergement Premium',
-      description: 'Hôtels et résidences de standing adaptés à votre convalescence'
+      title: 'Hébergement et Transport',
+      description: 'Hôtels adaptés à la convalescence et transferts privés confortables organisés par Mekody avec des options proches des centres médicaux.'
     },
     {
       icon: PhoneCall,
       title: 'Support 24/7',
-      description: 'Assistance permanente de notre équipe dédiée pendant votre séjour'
+      description: 'Une équipe dédiée disponible à tout moment pour répondre à vos besoins et assurer votre tranquillité d\'esprit tout au long du processus.'
     },
     {
       icon: FileText,
-      title: 'Dossier Médical',
-      description: 'Gestion complète de votre dossier médical et traduction des documents'
+      title: 'Gestion de Dossier Médical',
+      description: 'Centralisation, gestion sécurisée et traduction professionnelle de vos documents médicaux pour faciliter les échanges avec les spécialistes.'
     },
     {
       icon: Shield,
       title: 'Garantie Qualité',
-      description: 'Contrôle qualité strict de tous nos partenaires médicaux'
+      description: 'Partenaires médicaux rigoureusement sélectionnés et suivis par Mekody selon des critères d\'excellence internationaux.'
+    },
+    {
+      icon: Heart,
+      title: 'Téléconsultation & Suivi Post-Opératoire',
+      description: 'Suivi médical personnalisé à distance pour une convalescence en toute confiance avec des professionnels dédiés.'
     }
   ];
 
+
   const destinations = [
+
     {
-      country: 'Turquie',
-      city: 'Istanbul',
-      specialties: ['Chirurgie esthétique', 'Greffe capillaire', 'Dentaire'],
-      savings: 'Jusqu\'à 70%',
-      image: '🇹🇷',
-      description: 'Excellence médicale reconnue mondialement avec des infrastructures de pointe.',
-      advantages: [
-        'Chirurgiens certifiés internationalement',
-        'Hôpitaux accrédités JCI',
-        'Proximité géographique',
-        'Récupération dans un cadre magnifique'
-      ]
-    },
-    {
-      country: 'Tunisie',
-      city: 'Tunis',
-      specialties: ['Chirurgie esthétique', 'Thalassothérapie', 'Dentaire'],
+      country: 'Maroc',
+      city: 'Casablanca',
+      specialties: [
+        'Endocrinologie(Diabete)',
+        'Cardiologie',
+        'Gastro enterologie',
+        'ORL',
+        'Dentiste',
+        'Ophtalmologue',
+        'Oncologie',
+        'Rhumatologie',
+        'Urologie',
+        'Traitement de fertilite',
+        'Fecondation in vitro',
+        'Gynecologie obstetrique'
+      ],
       savings: 'Jusqu\'à 60%',
-      image: '🇹🇳',
-      description: 'Tradition médicale française avec des coûts très attractifs.',
+      image: '🇲🇦',
+      description: 'Mekody positionne Casablanca comme un pôle médical d’excellence, où savoir-faire international et accessibilité se rejoignent. Grâce à un réseau de cliniques partenaires certifiées et des spécialistes formés dans les meilleures universités européennes, Mekody garantit aux patients un parcours de soins fluide, sécurisé et humain. Le tout dans un environnement moderne et accueillant qui fait de Casablanca une référence pour les traitements médicaux à coûts maîtrisés.',
       advantages: [
-        'Langue française',
-        'Soins post-opératoires excellents',
-        'Climat méditerranéen',
-        'Culture francophone'
-      ]
-    },
-    {
-      country: 'Thaïlande',
-      city: 'Bangkok',
-      specialties: ['Chirurgie complexe', 'Médecine alternative', 'Wellness'],
-      savings: 'Jusqu\'à 80%',
-      image: '🇹🇭',
-      description: 'Destination phare du tourisme médical avec une qualité exceptionnelle.',
-      advantages: [
-        'Hôpitaux ultra-modernes',
-        'Personnel multilingue',
-        'Technologies de pointe',
-        'Expérience touristique unique'
+        'Expertise médicale de haut niveau avec des praticiens formés en Europe et en Amérique du Nord',
+        'Équipements médicaux à la pointe des standards internationaux',
+        'Gestion complète du parcours patient par Mekody : de la première consultation au suivi post-opératoire',
+        'Économies substantielles allant jusqu’à 60% par rapport aux tarifs européens',
+        'Accompagnement humain et multilingue (français, anglais, arabe)',
+        'Séjour médical alliant soins, confort et découverte culturelle de Casablanca',
+        'Environnement méditerranéen propice à la récupération et au bien-être',
+        'Réseau solide de cliniques partenaires accréditées et conformes aux normes internationales'
       ]
     }
+    
+    
+    
   ];
 
   const process = [

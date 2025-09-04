@@ -1,861 +1,869 @@
 /* Tourisme Medical Variables */
 :root {
-    --tm-hero-bg: linear-gradient(135deg, #021a38 0%, #044c78 50%, #02193c 100%);
-    --tm-text: #0f172a;
-    --tm-text-secondary: #64748b;
-    --tm-accent: #01193b;
-    --tm-accent-light: #012c35;
-    --tm-bg: #ffffff;
-    --tm-bg-alt: #f8fafc;
-    --tm-card-bg: #ffffff;
-    --tm-card-border: #e2e8f0;
-    --tm-gradient-green: linear-gradient(135deg, #041a4a, #053f4f);
-    --tm-gradient-emerald: linear-gradient(135deg, #021936, #104197);
+  --tm-hero-bg: linear-gradient(135deg, #021a38 0%, #044c78 50%, #02193c 100%);
+  --tm-text: #0f172a;
+  --tm-text-secondary: #64748b;
+  --tm-accent: #01193b;
+  --tm-accent-light: #012c35;
+  --tm-bg: #ffffff;
+  --tm-bg-alt: #f8fafc;
+  --tm-card-bg: #ffffff;
+  --tm-card-border: #e2e8f0;
+  --tm-gradient-green: linear-gradient(135deg, #041a4a, #053f4f);
+  --tm-gradient-emerald: linear-gradient(135deg, #021936, #104197);
+}
+
+/* Tourisme Medical Base Styles */
+.tourisme-medical {
+  width: 100%;
+}
+
+.tourisme-medical__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.tourisme-medical__hero {
+  background: var(--tm-hero-bg);
+  color: white;
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tourisme-medical__hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--tm-accent-light), transparent);
+}
+
+.tourisme-medical__hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.tourisme-medical__badge-icon {
+  width: 16px;
+  height: 16px;
+  color: #9a0303;
+}
+
+.tourisme-medical__badge-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tourisme-medical__hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.tourisme-medical__hero-title-accent {
+  background: linear-gradient(135deg, #065e7e, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.tourisme-medical__hero-title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0668a5, transparent);
+  border-radius: 2px;
+}
+
+.tourisme-medical__hero-description {
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.tourisme-medical__hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .tourisme-medical__hero-cta {
+      flex-direction: row;
   }
-  
-  /* Tourisme Medical Base Styles */
-  .tourisme-medical {
-    width: 100%;
+}
+
+.tourisme-medical__cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+
+.tourisme-medical__cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+}
+
+.tourisme-medical__cta-icon {
+  transition: transform 0.3s ease;
+}
+
+.tourisme-medical__cta-primary:hover .tourisme-medical__cta-icon {
+  transform: translateX(3px);
+}
+
+.tourisme-medical__cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tourisme-medical__cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.tourisme-medical__trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.875rem;
+}
+
+.tourisme-medical__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tourisme-medical__trust-icon {
+  color: #e33003;
+}
+
+/* Stats Section */
+.tourisme-medical__stats {
+  padding: 4rem 0;
+  background: var(--tm-bg-alt);
+}
+
+.tourisme-medical__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tourisme-medical__stats-grid {
+      grid-template-columns: repeat(4, 1fr);
   }
-  
-  .tourisme-medical__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+}
+
+.tourisme-medical__stat {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__stat-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.tourisme-medical__stat-icon-svg {
+  color: white;
+}
+
+.tourisme-medical__stat-number {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--tm-text);
+  margin-bottom: 0.5rem;
+}
+
+.tourisme-medical__stat-label {
+  color: var(--tm-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Header Styles */
+.tourisme-medical__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--tm-text);
+  margin-bottom: 1rem;
+}
+
+.tourisme-medical__title-accent {
+  background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tourisme-medical__subtitle {
+  font-size: 1.125rem;
+  color: var(--tm-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.tourisme-medical__services {
+  padding: 5rem 0;
+  background: var(--tm-bg);
+}
+
+.tourisme-medical__services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tourisme-medical__services-grid {
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Hero Section */
-  .tourisme-medical__hero {
-    background: var(--tm-hero-bg);
-    color: white;
-    padding: 6rem 0 4rem;
-    position: relative;
-    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .tourisme-medical__services-grid {
+      grid-template-columns: repeat(3, 1fr);
   }
-  
-  .tourisme-medical__hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--tm-accent-light), transparent);
+}
+
+.tourisme-medical__service {
+  background: var(--tm-card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--tm-card-border);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--tm-accent-light);
+}
+
+.tourisme-medical__service-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.tourisme-medical__service:hover .tourisme-medical__service-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.tourisme-medical__service-icon-svg {
+  color: white;
+}
+
+.tourisme-medical__service-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--tm-text);
+  margin-bottom: 1rem;
+}
+
+.tourisme-medical__service-description {
+  color: var(--tm-text-secondary);
+  line-height: 1.6;
+}
+
+/* Destinations Section - MODIFIÉ POUR LA CARD MAROC EN PLEINE LARGEUR */
+.tourisme-medical__destinations {
+  padding: 5rem 0;
+  background: var(--tm-bg-alt);
+}
+
+.tourisme-medical__destinations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Style spécifique pour la destination Maroc en pleine largeur */
+.tourisme-medical__destination--full-width {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tourisme-medical__destination {
+  background: var(--tm-card-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--tm-card-border);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.tourisme-medical__destination:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--tm-accent-light);
+}
+
+.tourisme-medical__destination::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent 0%, transparent 50%, rgba(5, 150, 105, 0.05) 50%, rgba(5, 150, 105, 0.02) 100%);
+  border-radius: 0 20px 0 0;
+}
+
+.tourisme-medical__destination-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.tourisme-medical__destination-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tourisme-medical__destination-flag {
+  font-size: 2rem;
+}
+
+.tourisme-medical__destination-country {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--tm-text);
+  margin-bottom: 0.25rem;
+}
+
+.tourisme-medical__destination-city {
+  color: var(--tm-text-secondary);
+  font-size: 0.875rem;
+}
+
+.tourisme-medical__destination-savings {
+  text-align: right;
+}
+
+.tourisme-medical__destination-savings-amount {
+  color: var(--tm-accent);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.tourisme-medical__destination-savings-label {
+  font-size: 0.75rem;
+  color: var(--tm-text-secondary);
+}
+
+.tourisme-medical__destination-description {
+  color: var(--tm-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tourisme-medical__destination-specialties {
+  margin-bottom: 1.5rem;
+}
+
+.tourisme-medical__destination-specialties-title {
+  font-weight: 600;
+  color: var(--tm-text);
+  margin-bottom: 0.75rem;
+}
+
+.tourisme-medical__destination-specialties-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tourisme-medical__destination-specialty {
+  padding: 0.25rem 0.75rem;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.tourisme-medical__destination-advantages {
+  margin-bottom: 2rem;
+}
+
+.tourisme-medical__destination-advantages-title {
+  font-weight: 600;
+  color: var(--tm-text);
+  margin-bottom: 0.75rem;
+}
+
+.tourisme-medical__destination-advantages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tourisme-medical__destination-advantage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--tm-text-secondary);
+  font-size: 0.95rem;
+}
+
+.tourisme-medical__destination-advantage-icon {
+  color: var(--tm-accent);
+  flex-shrink: 0;
+}
+
+.tourisme-medical__destination-cta {
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.tourisme-medical__destination-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
+}
+
+/* Process Section */
+.tourisme-medical__process {
+  padding: 5rem 0;
+  background: var(--tm-bg);
+}
+
+.tourisme-medical__process-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tourisme-medical__process-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__process-step {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tourisme-medical__process-step-number {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: white;
+}
+
+.tourisme-medical__process-step-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tourisme-medical__process-step-icon-svg {
+  color: var(--tm-accent);
+  width: 16px;
+  height: 16px;
+}
+
+.tourisme-medical__process-content {
+  flex: 1;
+  background: var(--tm-card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--tm-card-border);
+}
+
+.tourisme-medical__process-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--tm-text);
+  margin-bottom: 0.5rem;
+}
+
+.tourisme-medical__process-description {
+  color: var(--tm-text-secondary);
+  line-height: 1.6;
+}
+
+/* Testimonials Section */
+.tourisme-medical__testimonials {
+  padding: 5rem 0;
+  background: var(--tm-bg-alt);
+}
+
+.tourisme-medical__testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .tourisme-medical__testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  .tourisme-medical__hero-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__testimonial {
+  background: var(--tm-card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--tm-card-border);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tourisme-medical__testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tourisme-medical__testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.tourisme-medical__testimonial-star {
+  color: #fbbf24;
+  fill: currentColor;
+}
+
+.tourisme-medical__testimonial-savings {
+  color: var(--tm-accent);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.tourisme-medical__testimonial-content {
+  color: var(--tm-text-secondary);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  quotes: '"' '"' "'" "'";
+}
+
+.tourisme-medical__testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tourisme-medical__testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tourisme-medical__testimonial-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.tourisme-medical__testimonial-info {
+  flex: 1;
+}
+
+.tourisme-medical__testimonial-name {
+  font-weight: 600;
+  color: var(--tm-text);
+  margin-bottom: 0.25rem;
+}
+
+.tourisme-medical__testimonial-age {
+  font-size: 0.875rem;
+  color: var(--tm-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.tourisme-medical__testimonial-treatment {
+  font-size: 0.875rem;
+  color: var(--tm-accent);
+}
+
+/* CTA Section */
+.tourisme-medical__cta {
+  padding: 5rem 0;
+  background: var(--tm-hero-bg);
+  color: white;
+  text-align: center;
+}
+
+.tourisme-medical__cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tourisme-medical__cta-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tourisme-medical__cta-description {
+  font-size: 1.125rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.tourisme-medical__cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .tourisme-medical__cta-buttons {
+      flex-direction: row;
+      flex-wrap: wrap;
   }
-  
-  .tourisme-medical__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    margin-bottom: 2rem;
+}
+
+.tourisme-medical__cta-button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--tm-accent);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.tourisme-medical__cta-button-primary:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.tourisme-medical__cta-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tourisme-medical__cta-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.tourisme-medical__cta-button-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
   }
-  
-  .tourisme-medical__badge-icon {
-    width: 16px;
-    height: 16px;
-    color: #9a0303;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .tourisme-medical__badge-text {
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-  
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .tourisme-medical__hero-title {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 800;
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-  }
-  
-  .tourisme-medical__hero-title-accent {
-    background: linear-gradient(135deg, #065e7e, white);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    position: relative;
-  }
-  
-  .tourisme-medical__hero-title-accent::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #0668a5, transparent);
-    border-radius: 2px;
+      font-size: 2.5rem;
   }
   
   .tourisme-medical__hero-description {
-    font-size: 1.25rem;
-    color: #e2e8f0;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-  }
-  
-  .tourisme-medical__hero-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  
-  @media (min-width: 640px) {
-    .tourisme-medical__hero-cta {
-      flex-direction: row;
-    }
-  }
-  
-  .tourisme-medical__cta-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
-  }
-  
-  .tourisme-medical__cta-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
-  }
-  
-  .tourisme-medical__cta-icon {
-    transition: transform 0.3s ease;
-  }
-  
-  .tourisme-medical__cta-primary:hover .tourisme-medical__cta-icon {
-    transform: translateX(3px);
-  }
-  
-  .tourisme-medical__cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-  }
-  
-  .tourisme-medical__cta-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-  
-  .tourisme-medical__trust {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    font-size: 0.875rem;
-  }
-  
-  .tourisme-medical__trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .tourisme-medical__trust-icon {
-    color: #e33003;
-  }
-  
-  /* Stats Section */
-  .tourisme-medical__stats {
-    padding: 4rem 0;
-    background: var(--tm-bg-alt);
-  }
-  
-  .tourisme-medical__stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  
-  @media (min-width: 768px) {
-    .tourisme-medical__stats-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-  
-  .tourisme-medical__stat {
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .tourisme-medical__stat-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-  }
-  
-  .tourisme-medical__stat-icon-svg {
-    color: white;
-  }
-  
-  .tourisme-medical__stat-number {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 800;
-    font-size: 2rem;
-    color: var(--tm-text);
-    margin-bottom: 0.5rem;
-  }
-  
-  .tourisme-medical__stat-label {
-    color: var(--tm-text-secondary);
-    font-size: 0.95rem;
-  }
-  
-  /* Header Styles */
-  .tourisme-medical__header {
-    text-align: center;
-    margin-bottom: 4rem;
-    animation: fadeInUp 0.8s ease-out;
+      font-size: 1.125rem;
   }
   
   .tourisme-medical__title {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: var(--tm-text);
-    margin-bottom: 1rem;
-  }
-  
-  .tourisme-medical__title-accent {
-    background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  .tourisme-medical__subtitle {
-    font-size: 1.125rem;
-    color: var(--tm-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  /* Services Section */
-  .tourisme-medical__services {
-    padding: 5rem 0;
-    background: var(--tm-bg);
-  }
-  
-  .tourisme-medical__services-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 768px) {
-    .tourisme-medical__services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .tourisme-medical__services-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .tourisme-medical__service {
-    background: var(--tm-card-bg);
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: center;
-    border: 1px solid var(--tm-card-border);
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .tourisme-medical__service:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-color: var(--tm-accent-light);
-  }
-  
-  .tourisme-medical__service-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    transition: all 0.3s ease;
-  }
-  
-  .tourisme-medical__service:hover .tourisme-medical__service-icon {
-    transform: scale(1.1) rotate(5deg);
-  }
-  
-  .tourisme-medical__service-icon-svg {
-    color: white;
-  }
-  
-  .tourisme-medical__service-title {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: var(--tm-text);
-    margin-bottom: 1rem;
-  }
-  
-  .tourisme-medical__service-description {
-    color: var(--tm-text-secondary);
-    line-height: 1.6;
-  }
-  
-  /* Destinations Section */
-  .tourisme-medical__destinations {
-    padding: 5rem 0;
-    background: var(--tm-bg-alt);
-  }
-  
-  .tourisme-medical__destinations-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 1024px) {
-    .tourisme-medical__destinations-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+      font-size: 2rem;
   }
   
   .tourisme-medical__destination {
-    background: var(--tm-card-bg);
-    padding: 2.5rem;
-    border-radius: 20px;
-    border: 1px solid var(--tm-card-border);
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.8s ease-out;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .tourisme-medical__destination:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--tm-accent-light);
-  }
-  
-  .tourisme-medical__destination::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, transparent 0%, transparent 50%, rgba(5, 150, 105, 0.05) 50%, rgba(5, 150, 105, 0.02) 100%);
-    border-radius: 0 20px 0 0;
+      padding: 2rem;
   }
   
   .tourisme-medical__destination-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-  }
-  
-  .tourisme-medical__destination-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .tourisme-medical__destination-flag {
-    font-size: 2rem;
-  }
-  
-  .tourisme-medical__destination-country {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--tm-text);
-    margin-bottom: 0.25rem;
-  }
-  
-  .tourisme-medical__destination-city {
-    color: var(--tm-text-secondary);
-    font-size: 0.875rem;
-  }
-  
-  .tourisme-medical__destination-savings {
-    text-align: right;
-  }
-  
-  .tourisme-medical__destination-savings-amount {
-    color: var(--tm-accent);
-    font-weight: 700;
-    font-size: 1.125rem;
-  }
-  
-  .tourisme-medical__destination-savings-label {
-    font-size: 0.75rem;
-    color: var(--tm-text-secondary);
-  }
-  
-  .tourisme-medical__destination-description {
-    color: var(--tm-text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  .tourisme-medical__destination-specialties {
-    margin-bottom: 1.5rem;
-  }
-  
-  .tourisme-medical__destination-specialties-title {
-    font-weight: 600;
-    color: var(--tm-text);
-    margin-bottom: 0.75rem;
-  }
-  
-  .tourisme-medical__destination-specialties-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .tourisme-medical__destination-specialty {
-    padding: 0.25rem 0.75rem;
-    background: #dcfce7;
-    color: #166534;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  .tourisme-medical__destination-advantages {
-    margin-bottom: 2rem;
-  }
-  
-  .tourisme-medical__destination-advantages-title {
-    font-weight: 600;
-    color: var(--tm-text);
-    margin-bottom: 0.75rem;
-  }
-  
-  .tourisme-medical__destination-advantages-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .tourisme-medical__destination-advantage {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--tm-text-secondary);
-    font-size: 0.95rem;
-  }
-  
-  .tourisme-medical__destination-advantage-icon {
-    color: var(--tm-accent);
-    flex-shrink: 0;
-  }
-  
-  .tourisme-medical__destination-cta {
-    display: block;
-    text-align: center;
-    background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  .tourisme-medical__destination-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
-  }
-  
-  /* Process Section */
-  .tourisme-medical__process {
-    padding: 5rem 0;
-    background: var(--tm-bg);
-  }
-  
-  .tourisme-medical__process-list {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .tourisme-medical__process-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .tourisme-medical__process-step {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  
-  .tourisme-medical__process-step-number {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: white;
-  }
-  
-  .tourisme-medical__process-step-icon {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    width: 28px;
-    height: 28px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .tourisme-medical__process-step-icon-svg {
-    color: var(--tm-accent);
-    width: 16px;
-    height: 16px;
-  }
-  
-  .tourisme-medical__process-content {
-    flex: 1;
-    background: var(--tm-card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--tm-card-border);
-  }
-  
-  .tourisme-medical__process-title {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 600;
-    font-size: 1.125rem;
-    color: var(--tm-text);
-    margin-bottom: 0.5rem;
-  }
-  
-  .tourisme-medical__process-description {
-    color: var(--tm-text-secondary);
-    line-height: 1.6;
-  }
-  
-  /* Testimonials Section */
-  .tourisme-medical__testimonials {
-    padding: 5rem 0;
-    background: var(--tm-bg-alt);
-  }
-  
-  .tourisme-medical__testimonials-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  @media (min-width: 1024px) {
-    .tourisme-medical__testimonials-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  .tourisme-medical__testimonial {
-    background: var(--tm-card-bg);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid var(--tm-card-border);
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .tourisme-medical__testimonial:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  .tourisme-medical__testimonial-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .tourisme-medical__testimonial-rating {
-    display: flex;
-    gap: 0.25rem;
-  }
-  
-  .tourisme-medical__testimonial-star {
-    color: #fbbf24;
-    fill: currentColor;
-  }
-  
-  .tourisme-medical__testimonial-savings {
-    color: var(--tm-accent);
-    font-weight: 600;
-    font-size: 0.875rem;
-  }
-  
-  .tourisme-medical__testimonial-content {
-    color: var(--tm-text-secondary);
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    quotes: '"' '"' "'" "'";
-  }
-  
-  .tourisme-medical__testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .tourisme-medical__testimonial-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-  
-  .tourisme-medical__testimonial-avatar-fallback {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 1.25rem;
-  }
-  
-  .tourisme-medical__testimonial-info {
-    flex: 1;
-  }
-  
-  .tourisme-medical__testimonial-name {
-    font-weight: 600;
-    color: var(--tm-text);
-    margin-bottom: 0.25rem;
-  }
-  
-  .tourisme-medical__testimonial-age {
-    font-size: 0.875rem;
-    color: var(--tm-text-secondary);
-    margin-bottom: 0.25rem;
-  }
-  
-  .tourisme-medical__testimonial-treatment {
-    font-size: 0.875rem;
-    color: var(--tm-accent);
-  }
-  
-  /* CTA Section */
-  .tourisme-medical__cta {
-    padding: 5rem 0;
-    background: var(--tm-hero-bg);
-    color: white;
-    text-align: center;
-  }
-  
-  .tourisme-medical__cta-content {
-    max-width: 600px;
-    margin: 0 auto;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .tourisme-medical__cta-title {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .tourisme-medical__cta-description {
-    font-size: 1.125rem;
-    color: #e2e8f0;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-  
-  .tourisme-medical__cta-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-  }
-  
-  @media (min-width: 640px) {
-    .tourisme-medical__cta-buttons {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
-  
-  .tourisme-medical__cta-button-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    color: var(--tm-accent);
-    font-weight: 600;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-  }
-  
-  .tourisme-medical__cta-button-primary:hover {
-    background: #f8fafc;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-  }
-  
-  .tourisme-medical__cta-button-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-  }
-  
-  .tourisme-medical__cta-button-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-  
-  .tourisme-medical__cta-button-icon {
-    width: 18px;
-    height: 18px;
-  }
-  
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .tourisme-medical__hero-title {
-      font-size: 2.5rem;
-    }
-    
-    .tourisme-medical__hero-description {
-      font-size: 1.125rem;
-    }
-    
-    .tourisme-medical__title {
-      font-size: 2rem;
-    }
-    
-    .tourisme-medical__destination {
-      padding: 2rem;
-    }
-    
-    .tourisme-medical__destination-header {
       flex-direction: column;
       gap: 1rem;
       align-items: flex-start;
-    }
-    
-    .tourisme-medical__destination-savings {
+  }
+  
+  .tourisme-medical__destination-savings {
       text-align: left;
-    }
-    
-    .tourisme-medical__process-item {
+  }
+  
+  .tourisme-medical__process-item {
       flex-direction: column;
       text-align: center;
       gap: 1rem;
-    }
+  }
+}
+
+@media (max-width: 640px) {
+  .tourisme-medical__hero {
+      padding: 4rem 0 3rem;
   }
   
-  @media (max-width: 640px) {
-    .tourisme-medical__hero {
-      padding: 4rem 0 3rem;
-    }
-    
-    .tourisme-medical__stats-grid {
+  .tourisme-medical__stats-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
-    }
-    
-    .tourisme-medical__services,
-    .tourisme-medical__destinations,
-    .tourisme-medical__process,
-    .tourisme-medical__testimonials,
-    .tourisme-medical__cta {
-      padding: 3rem 0;
-    }
-    
-    .tourisme-medical__trust {
-      gap: 1rem;
-    }
   }
   
-  /* Import Orbitron font */
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+  .tourisme-medical__services,
+  .tourisme-medical__destinations,
+  .tourisme-medical__process,
+  .tourisme-medical__testimonials,
+  .tourisme-medical__cta {
+      padding: 3rem 0;
+  }
+  
+  .tourisme-medical__trust {
+      gap: 1rem;
+  }
+}
+
+/* Import Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+/* Styles pour la destination Maroc en pleine largeur */
+.tourisme-medical__destinations-grid .tourisme-medical__destination:first-child {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 100%;
+}
