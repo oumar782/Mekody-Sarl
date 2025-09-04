@@ -26,12 +26,12 @@ import {
   Phone,
   MessageCircle
 } from 'lucide-react';
-import '../style/developpement.css'
+import './developpement.css'
 import Header from '../composant/Header';
 import Footer from '../composant/Footer';
 
 const Developpement = () => {
-  const services = [
+  const services = [ 
     {
       icon: Globe,
       title: 'Applications Web',
