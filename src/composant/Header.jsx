@@ -23,8 +23,8 @@ const Header = () => {
     { name: 'Services', href: '/Nos-services' },
     { name: 'Formations', href: '/Nos-formations' },
     { name: 'Tourisme médical', href: '/tourisme-medical' },
-    { name: 'Colonies de vacances', href: '/Colonie-de-vacance' },
-    { name: 'Développement', href: '/Developpement-informatique' },
+    { name: 'Voyage organisé', href: '/voyage-organisé' },
+    { name: 'Solutions digitales', href: '/solutions-digitales' },
     { name: 'Contact', href: '/contact' },
   ];
 

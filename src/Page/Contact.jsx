@@ -31,9 +31,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Téléphone',
-      details: '+33 1 23 45 67 89',
+      details: '+212680127215',
       subtitle: 'Lun-Ven: 9h-18h',
-      action: 'tel:+33123456789'
+      action: 'tel:+212680127215'
     },
     {
       icon: Mail,
@@ -45,7 +45,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Adresse',
-      details: '123 Avenue de l\'Innovation',
+      details: 'RUE ATLAS IMM 45,4 EME ETAGE N16 MAARIF CASABLANCA',
       subtitle: '75001 Paris, France',
       action: 'https://maps.google.com'
     },
@@ -296,11 +296,11 @@ const Contact = () => {
               <div className="contact__quick-actions">
                 <h3 className="contact__quick-actions-title">Contact rapide</h3>
                 <div className="contact__quick-actions-buttons">
-                  <a href="tel:+33123456789" className="contact__quick-action">
+                  <a href="tel:+212680127215" className="contact__quick-action">
                     <Phone size={18} className="contact__quick-action-icon" />
                     Appeler maintenant
                   </a>
-                  <a href="https://wa.me/33123456789" className="contact__quick-action">
+                  <a href="https://wa.me/+212680127215" className="contact__quick-action">
                     <MessageCircle size={18} className="contact__quick-action-icon" />
                     WhatsApp
                   </a>
@@ -312,13 +312,7 @@ const Contact = () => {
               </div>
 
               {/* Map Placeholder */}
-              <div className="contact__map">
-                <div className="contact__map-placeholder">
-                  <MapPin size={48} className="contact__map-icon" />
-                  <p className="contact__map-text">Carte interactive</p>
-                  <p className="contact__map-subtext">Visitez-nous à notre bureau parisien</p>
-                </div>
-              </div>
+            
             </div>
           </div>
         </div>

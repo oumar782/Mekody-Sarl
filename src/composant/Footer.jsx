@@ -106,13 +106,12 @@ const Footer = () => {
               <div className="footer__contact-item">
                 <MapPin size={18} className="footer__contact-icon" />
                 <div className="footer__contact-text">
-                  <p>123 Avenue de l'Innovation</p>
-                  <p>75001 Paris, France</p>
+                  <p>RUE ATLAS IMM 45,4 EME ETAGE N16 MAARIF CASABLANCA</p>
                 </div>
               </div>
               <div className="footer__contact-item">
                 <Phone size={18} className="footer__contact-icon" />
-                <span className="footer__contact-text">+33 1 23 45 67 89</span>
+                <span className="footer__contact-text">+212680127215</span>
               </div>
               <div className="footer__contact-item">
                 <Mail size={18} className="footer__contact-icon" />
