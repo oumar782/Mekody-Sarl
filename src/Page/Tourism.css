@@ -1,3 +1,6 @@
+/* Import Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
 /* Tourisme Medical Variables */
 :root {
   --tm-hero-bg: linear-gradient(135deg, #021a38 0%, #044c78 50%, #02193c 100%);
@@ -340,7 +343,7 @@
   line-height: 1.6;
 }
 
-/* Destinations Section - MODIFIÉ POUR LA CARD MAROC EN PLEINE LARGEUR */
+/* Destinations Section */
 .tourisme-medical__destinations {
   padding: 5rem 0;
   background: var(--tm-bg-alt);
@@ -352,7 +355,7 @@
   gap: 2rem;
 }
 
-/* Style spécifique pour la destination Maroc en pleine largeur */
+/* Style pour la destination en pleine largeur */
 .tourisme-medical__destination--full-width {
   grid-column: 1 / -1;
   width: 100%;
@@ -361,7 +364,6 @@
 
 .tourisme-medical__destination {
   background: var(--tm-card-bg);
-  padding: 2.5rem;
   border-radius: 20px;
   border: 1px solid var(--tm-card-border);
   transition: all 0.3s ease;
@@ -385,6 +387,46 @@
   height: 100px;
   background: linear-gradient(135deg, transparent 0%, transparent 50%, rgba(5, 150, 105, 0.05) 50%, rgba(5, 150, 105, 0.02) 100%);
   border-radius: 0 20px 0 0;
+}
+
+/* Styles pour les images de destination */
+.tourisme-medical__destination-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.tourisme-medical__destination-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tourisme-medical__destination:hover .tourisme-medical__destination-image {
+  transform: scale(1.05);
+}
+
+.tourisme-medical__destination-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 2rem 1.5rem 1rem;
+  color: white;
+}
+
+.tourisme-medical__destination-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0;
+}
+
+.tourisme-medical__destination-content {
+  padding: 2rem;
 }
 
 .tourisme-medical__destination-header {
@@ -448,19 +490,53 @@
   margin-bottom: 0.75rem;
 }
 
-.tourisme-medical__destination-specialties-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* Styles pour la grille des spécialités */
+.tourisme-medical__destination-specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-.tourisme-medical__destination-specialty {
-  padding: 0.25rem 0.75rem;
-  background: #dcfce7;
-  color: #166534;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 500;
+.tourisme-medical__specialty-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tourisme-medical__specialty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.tourisme-medical__specialty-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.tourisme-medical__specialty-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tourisme-medical__specialty-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.tourisme-medical__specialty-name {
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .tourisme-medical__destination-advantages {
@@ -493,8 +569,12 @@
   flex-shrink: 0;
 }
 
+.tourisme-medical__destination-cta-container {
+  text-align: center;
+}
+
 .tourisme-medical__destination-cta {
-  display: block;
+  display: inline-block;
   text-align: center;
   background: linear-gradient(135deg, var(--tm-accent), var(--tm-accent-light));
   color: white;
@@ -701,6 +781,63 @@
   color: var(--tm-accent);
 }
 
+/* Gallery Section */
+.tourisme-medical__gallery {
+  padding: 5rem 0;
+  background: var(--tm-bg);
+}
+
+.tourisme-medical__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.tourisme-medical__gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tourisme-medical__gallery-item:hover {
+  transform: translateY(-8px);
+}
+
+.tourisme-medical__gallery-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.tourisme-medical__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tourisme-medical__gallery-item:hover .tourisme-medical__gallery-image {
+  transform: scale(1.1);
+}
+
+.tourisme-medical__gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.tourisme-medical__gallery-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
 /* CTA Section */
 .tourisme-medical__cta {
   padding: 5rem 0;
@@ -747,6 +884,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   background: white;
   color: var(--tm-accent);
   font-weight: 600;
@@ -833,6 +971,18 @@
       text-align: center;
       gap: 1rem;
   }
+  
+  .tourisme-medical__destination-specialties-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .tourisme-medical__gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .tourisme-medical__destination-image-container {
+      height: 200px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -849,6 +999,7 @@
   .tourisme-medical__destinations,
   .tourisme-medical__process,
   .tourisme-medical__testimonials,
+  .tourisme-medical__gallery,
   .tourisme-medical__cta {
       padding: 3rem 0;
   }
@@ -856,14 +1007,16 @@
   .tourisme-medical__trust {
       gap: 1rem;
   }
-}
-
-/* Import Orbitron font */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
-
-/* Styles pour la destination Maroc en pleine largeur */
-.tourisme-medical__destinations-grid .tourisme-medical__destination:first-child {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-width: 100%;
+  
+  .tourisme-medical__destination-specialties-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .tourisme-medical__gallery-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .tourisme-medical__cta-buttons {
+      flex-direction: column;
+  }
 }

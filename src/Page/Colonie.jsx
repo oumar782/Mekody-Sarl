@@ -29,74 +29,74 @@ const ColonieVacances = () => {
   const pillars = [
     {
       icon: Compass,
-      title: 'Aventure',
-      description: 'Découvertes passionnantes et activités outdoor stimulantes',
+      title: 'Authenticité',
+      description: 'Immersion totale dans la culture et les traditions marocaines',
       color: 'from-orange-500 to-red-500'
     },
     {
       icon: BookOpen,
-      title: 'Apprentissage',
-      description: 'Développement de nouvelles compétences et talents',
+      title: 'Découverte',
+      description: 'Exploration des trésors cachés et sites emblématiques du Maroc',
       color: 'from-blue-500 to-purple-500'
     },
     {
       icon: Heart,
-      title: 'Amitié',
-      description: 'Création de liens durables et épanouissement social',
+      title: 'Bienveillance',
+      description: 'Accueil chaleureux et accompagnement personnalisé tout au long du séjour',
       color: 'from-pink-500 to-red-500'
     }
   ];
 
   const programs = [
     {
-      title: 'Explorateurs de la Nature',
-      age: '6-10 ans',
-      duration: '2 semaines',
-      location: 'Alpes françaises',
+      title: 'Aventure Impériale',
+      age: 'Familles & Adultes',
+      duration: '8 jours / 7 nuits',
+      location: 'Marrakech • Atlas • Désert',
       image: '',
-      description: 'Découverte de la faune et flore alpine avec des activités ludiques et éducatives.',
+      description: 'Découverte des villes impériales, des montagnes de l\'Atlas et d\'une nuit en bivouac dans le désert.',
       activities: [
-        'Randonnées adaptées',
-        'Observation des animaux',
-        'Ateliers nature',
-        'Jeux de piste',
-        'Bivouac étoilé'
+        'Visite des médinas historiques',
+        'Randonnée dans l\'Atlas',
+        'Nuit en bivouac saharien',
+        'Spectacle de folklore',
+        'Dégustation culinaire'
       ],
-      price: '890€',
+      price: 'À partir de 890€',
       gradient: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Aventuriers Créatifs',
-      age: '11-14 ans',
-      duration: '3 semaines',
-      location: 'Côte Atlantique',
+      title: 'Trésors Côtiers',
+      age: 'Familles & Couples',
+      duration: '10 jours / 9 nuits',
+      location: 'Casablanca • Essaouira • Agadir',
       image: '',
-      description: 'Fusion parfaite entre activités créatives et sports nautiques.',
+      description: 'Circuit along the Atlantic coast discovering fishing villages, argan cooperatives and golden beaches.',
       activities: [
-        'Surf et bodyboard',
-        'Ateliers artistiques',
-        'Théâtre et musique',
-        'Construction cabanes',
-        'Spectacle final'
+        'Visite de la mosquée Hassan II',
+        'Découverte des criques cachées',
+        'Ateliers de cuisine traditionnelle',
+        'Observation des dauphins',
+        'Dégustation de produits locaux'
       ],
-      price: '1,290€',
+      price: 'À partir de 1,290€',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Leaders de Demain',
-      age: '15-17 ans',
-      duration: '4 semaines',
-      location: 'Provence',
+      title: 'Expérience Berbère',
+      age: 'Aventuriers & Randonneurs',
+      duration: '12 jours / 11 nuits',
+      location: 'Vallées du Draa • Désert • Gorges',
       image: '',
-      description: 'Programme de leadership et d\'entrepreneuriat avec projets concrets.',
+      description: 'Immersion complète dans la culture berbère à travers les paysages les plus spectaculaires du Sud marocain.',
       activities: [
-        'Ateliers leadership',
-        'Création d\'entreprise',
-        'Projets solidaires',
-        'Escalade et via ferrata',
-        'Certification compétences'
+        'Rencontres avec les communautés locales',
+        'Randonnées chamelières',
+        'Nuits chez l\'habitant',
+        'Ateliers artisanaux',
+        'Observation des étoiles'
       ],
-      price: '1,690€',
+      price: 'À partir de 1,690€',
       gradient: 'from-purple-500 to-pink-500'
     }
   ];
@@ -104,79 +104,79 @@ const ColonieVacances = () => {
   const features = [
     {
       icon: Shield,
-      title: 'Sécurité Maximale',
-      description: 'Encadrement qualifié BAFA/BAFD et protocoles de sécurité stricts'
+      title: 'Sécurité Garantie',
+      description: 'Chauffeurs professionnels et guides certifiés, véhicules conformes aux normes'
     },
     {
       icon: Users,
-      title: 'Groupes Réduits',
-      description: 'Maximum 12 enfants par animateur pour un suivi personnalisé'
+      title: 'Petits Groupes',
+      description: 'Maximum 8 personnes pour une expérience personnalisée et authentique'
     },
     {
       icon: Camera,
-      title: 'Suivi Photographique',
-      description: 'Photos et vidéos quotidiennes partagées avec les parents'
+      title: 'Concierge 24/7',
+      description: 'Assistance permanente pendant tout votre séjour au Maroc'
     },
     {
       icon: Smile,
-      title: 'Épanouissement',
-      description: 'Développement de l\'autonomie et de la confiance en soi'
+      title: 'Flexibilité',
+      description: 'Itinéraires modulables selon vos envies et préférences'
     },
     {
       icon: Heart,
-      title: 'Bienveillance',
-      description: 'Environnement positif et inclusif pour tous les enfants'
+      title: 'Authenticité',
+      description: 'Rencontres vraies avec la population locale et expériences uniques'
     },
     {
       icon: TrendingUp,
-      title: 'Progression',
-      description: 'Suivi personnalisé des compétences acquises pendant le séjour'
+      title: 'Exclusivité',
+      description: 'Accès à des sites et expériences normalement inaccessibles aux touristes'
     }
   ];
 
   const testimonials = [
     {
-      parentName: 'Marie Dubois',
-      childName: 'Lucas, 12 ans',
-      program: 'Aventuriers Créatifs',
-      content: 'Lucas est revenu transformé ! Plus confiant, autonome et avec des souvenirs inoubliables. L\'équipe Mekody est exceptionnelle.',
+      parentName: 'Sophie et Marc',
+      childName: 'Circuit Aventure Impériale',
+      program: 'Voyage en couple',
+      content: 'Un service impeccable qui nous a fait découvrir le vrai Maroc. Notre guide Mohamed était incroyablement attentionné et connaissait parfaitement les meilleurs endroits.',
       rating: 5,
-      avatar: '/avatars/marie.jpg'
+      avatar: '/avatars/sophie-marc.jpg'
     },
     {
-      parentName: 'Pierre Martin',
-      childName: 'Emma, 9 ans',
-      program: 'Explorateurs de la Nature',
-      content: 'Emma ne parlait que de sa colonie pendant des mois ! Elle a découvert sa passion pour la nature et s\'est fait de vrais amis.',
+      parentName: 'Famille Dubois',
+      childName: 'Avec enfants 8 et 12 ans',
+      program: 'Trésors Côtiers',
+      content: 'Nos enfants ont adoré ce voyage ! Entre les plages, les marchés colorés et l\'accueil chaleureux des Marocains, nous avons vécu des moments magiques en famille.',
       rating: 5,
-      avatar: '/avatars/pierre.jpg'
+      avatar: '/avatars/dubois.jpg'
     },
     {
-      parentName: 'Sophie Leroux',
-      childName: 'Thomas, 16 ans',
-      program: 'Leaders de Demain',
-      content: 'Programme exceptionnel qui a révélé le potentiel de leadership de Thomas. Il a même lancé son premier projet entrepreneurial !',
+      parentName: 'Thomas Leroux',
+      childName: 'Voyage entre amis',
+      program: 'Expérience Berbère',
+      content: 'Une aventure humaine incroyable. Dormir chez l\'habitant, partager des repas traditionnels, randonner dans des paysages à couper le souffle... Le Maroc authentique existe et Mekody nous l\'a fait découvrir !',
       rating: 5,
-      avatar: '/avatars/sophie.jpg'
+      avatar: '/avatars/thomas.jpg'
     }
   ];
 
   const faqs = [
     {
-      question: 'Quel est l\'encadrement prévu ?',
-      answer: 'Nous respectons un ratio de 1 animateur pour 8 enfants (6-12 ans) et 1 pour 12 adolescents (13-17 ans). Tous nos animateurs sont diplômés BAFA/BAFD.'
+      question: 'Quelle est la meilleure période pour visiter le Maroc ?',
+      answer: 'Le printemps (mars-mai) et l\'automne (septembre-novembre) offrent des températures idéales. L\'hiver est parfait pour le désert, et l\'été pour les régions côtières.'
     },
     {
-      question: 'Comment suivre mon enfant pendant le séjour ?',
-      answer: 'Les parents reçoivent quotidiennement des photos et nouvelles via notre application dédiée. Un blog de colonie est également mis à jour chaque jour.'
+      question: 'Faut-il un visa pour le Maroc ?',
+      answer: 'Pour la plupart des nationalités européennes, canadiennes et américaines, aucun visa n\'est requis pour des séjours de moins de 90 jours. Un passeport valide est suffisant.'
     },
     {
-      question: 'Que faire si mon enfant ne se plaît pas ?',
-      answer: 'Notre équipe est formée pour accompagner chaque enfant. En cas de difficulté persistante, nous vous contactons pour trouver la meilleure solution ensemble.'
+      question: 'Comment se déroulent les transports ?',
+      answer: 'Nous utilisons des véhicules privés climatisés avec chauffeur professionnel. Pour certaines étapes, nous pouvons organiser des trajets en train pour une expérience authentique.'
     },
     {
-      question: 'Quels sont les repas proposés ?',
-      answer: 'Nos menus sont équilibrés, variés et préparés sur place avec des produits frais. Nous adaptons aux régimes spécifiques et allergies.'
+      question: 'Quelle est la monnaie locale ?',
+      answer: 'La monnaie est le Dirham marocain (MAD). Nous vous conseillons sur le change et les moyens de paiement les plus adaptés pendant votre séjour.'
     }
   ];
 
@@ -184,22 +184,22 @@ const ColonieVacances = () => {
     {
       icon: Users,
       value: '2,500+',
-      label: 'Enfants accueillis'
+      label: 'Voyageurs satisfaits'
     },
     {
       icon: Star,
       value: '4.9/5',
-      label: 'Satisfaction parents'
+      label: 'Satisfaction clients'
     },
     {
       icon: Calendar,
-      value: '15 ans',
+      value: '10 ans',
       label: 'D\'expérience'
     },
     {
-      icon: Shield,
+      icon: MapPin,
       value: '100%',
-      label: 'Sécurité garantie'
+      label: 'Couverture du Maroc'
     }
   ];
 
@@ -207,29 +207,28 @@ const ColonieVacances = () => {
     <div className="colonie-vacances">
       <Header />
 
-    
       {/* Hero Section */}
       <section className="colonie-vacances__hero">
         <div className="colonie-vacances__container">
           <div className="colonie-vacances__hero-content">
             <div className="colonie-vacances__badge">
               <Sun className="colonie-vacances__badge-icon" />
-              <span className="colonie-vacances__badge-text">Colonies de Vacances Premium</span>
+              <span className="colonie-vacances__badge-text">Voyages Sur Mesure au Maroc</span>
             </div>
             <h1 className="colonie-vacances__hero-title">
-              Vacances <span className="colonie-vacances__hero-title-accent">Inoubliables</span>
+              Votre Aventure <span className="colonie-vacances__hero-title-accent">Marocaine</span>
             </h1>
             <p className="colonie-vacances__hero-description">
-              Offrez à vos enfants des vacances extraordinaires alliant aventure, apprentissage et amitié 
-              dans un cadre sécurisé et bienveillant.
+              Découvrez le Maroc authentique à travers des expériences uniques et personnalisées, 
+              alliant confort, culture et aventures inoubliables.
             </p>
             <div className="colonie-vacances__hero-cta">
               <Link to="/contact" className="colonie-vacances__cta-primary">
-                Inscrire mon enfant
+                Créer mon voyage
                 <ArrowRight size={18} className="colonie-vacances__cta-icon" />
               </Link>
               <a href="#programmes" className="colonie-vacances__cta-secondary">
-                Découvrir les programmes
+                Découvrir nos circuits
               </a>
             </div>
             
@@ -237,15 +236,15 @@ const ColonieVacances = () => {
             <div className="colonie-vacances__trust">
               <div className="colonie-vacances__trust-item">
                 <Shield size={16} className="colonie-vacances__trust-icon" />
-                <span>Agrément Jeunesse & Sports</span>
+                <span>Agrément Tourisme Maroc</span>
               </div>
               <div className="colonie-vacances__trust-item">
                 <Star size={16} className="colonie-vacances__trust-icon" />
-                <span>4.9/5 - 500+ avis parents</span>
+                <span>4.9/5 - 500+ avis voyageurs</span>
               </div>
               <div className="colonie-vacances__trust-item">
                 <Users size={16} className="colonie-vacances__trust-icon" />
-                <span>15 ans d'expérience</span>
+                <span>10 ans d'expérience</span>
               </div>
             </div>
           </div>
@@ -281,10 +280,10 @@ const ColonieVacances = () => {
         <div className="colonie-vacances__container">
           <div className="colonie-vacances__header">
             <h2 className="colonie-vacances__title">
-              Nos 3 <span className="colonie-vacances__title-accent">Piliers</span>
+              Nos 3 <span className="colonie-vacances__title-accent">Engagements</span>
             </h2>
             <p className="colonie-vacances__subtitle">
-              Une philosophie unique basée sur trois valeurs fondamentales pour l'épanouissement de votre enfant.
+              Une approche unique pour vous faire vivre une expérience marocaine authentique et personnalisée.
             </p>
           </div>
 
@@ -318,10 +317,10 @@ const ColonieVacances = () => {
         <div className="colonie-vacances__container">
           <div className="colonie-vacances__header">
             <h2 className="colonie-vacances__title">
-              Nos <span className="colonie-vacances__title-accent">Programmes</span>
+              Nos <span className="colonie-vacances__title-accent">Circuits</span>
             </h2>
             <p className="colonie-vacances__subtitle">
-              Des séjours adaptés à chaque tranche d'âge pour une expérience sur mesure.
+              Des itinéraires conçus pour révéler la diversité et la beauté du Maroc.
             </p>
           </div>
 
@@ -341,7 +340,7 @@ const ColonieVacances = () => {
                   </div>
                   <div className="colonie-vacances__program-price">
                     <div className="colonie-vacances__program-price-amount">{program.price}</div>
-                    <div className="colonie-vacances__program-price-label">Tout inclus</div>
+                    <div className="colonie-vacances__program-price-label">par personne</div>
                   </div>
                 </div>
 
@@ -364,7 +363,7 @@ const ColonieVacances = () => {
                 </div>
 
                 <div className="colonie-vacances__program-activities">
-                  <h4 className="colonie-vacances__program-activities-title">Activités incluses :</h4>
+                  <h4 className="colonie-vacances__program-activities-title">Expériences incluses :</h4>
                   <ul className="colonie-vacances__program-activities-list">
                     {program.activities.map((activity, idx) => (
                       <li key={idx} className="colonie-vacances__program-activities-item">
@@ -379,7 +378,7 @@ const ColonieVacances = () => {
                   to="/contact"
                   className="colonie-vacances__program-cta"
                 >
-                  Réserver maintenant
+                  Personnaliser ce circuit
                 </Link>
               </div>
             ))}
@@ -395,7 +394,7 @@ const ColonieVacances = () => {
               Pourquoi nous <span className="colonie-vacances__title-accent">choisir</span> ?
             </h2>
             <p className="colonie-vacances__subtitle">
-              La sécurité et l'épanouissement de votre enfant sont nos priorités absolues.
+              L'expertise locale et l'accompagnement personnalisé font toute la différence.
             </p>
           </div>
 
@@ -429,10 +428,10 @@ const ColonieVacances = () => {
         <div className="colonie-vacances__container">
           <div className="colonie-vacances__header">
             <h2 className="colonie-vacances__title">
-              Témoignages des <span className="colonie-vacances__title-accent">parents</span>
+              Témoignages des <span className="colonie-vacances__title-accent">voyageurs</span>
             </h2>
             <p className="colonie-vacances__subtitle">
-              Découvrez ce que pensent les familles qui nous font confiance.
+              Découvrez ce que pensent ceux qui ont déjà vécu l'expérience Mekody.
             </p>
           </div>
 
@@ -463,7 +462,7 @@ const ColonieVacances = () => {
                   </div>
                   <div className="colonie-vacances__testimonial-info">
                     <div className="colonie-vacances__testimonial-name">{testimonial.parentName}</div>
-                    <div className="colonie-vacances__testimonial-child">Parent de {testimonial.childName}</div>
+                    <div className="colonie-vacances__testimonial-child">{testimonial.childName}</div>
                     <div className="colonie-vacances__testimonial-program">{testimonial.program}</div>
                   </div>
                 </div>
@@ -481,7 +480,7 @@ const ColonieVacances = () => {
               Questions fréquentes
             </h2>
             <p className="colonie-vacances__subtitle">
-              Tout ce que vous devez savoir avant d'inscrire votre enfant.
+              Tout ce que vous devez savoir avant de planifier votre voyage au Maroc.
             </p>
           </div>
 
@@ -509,24 +508,24 @@ const ColonieVacances = () => {
         <div className="colonie-vacances__container">
           <div className="colonie-vacances__cta-content">
             <h2 className="colonie-vacances__cta-title">
-              Prêt à offrir des souvenirs inoubliables ?
+              Prêt à vivre votre aventure marocaine ?
             </h2>
             <p className="colonie-vacances__cta-description">
-              Inscrivez votre enfant dès maintenant et bénéficiez de nos tarifs préférentiels.
+              Contactez-nous dès maintenant pour créer le voyage sur mesure de vos rêves.
             </p>
             <div className="colonie-vacances__cta-buttons">
               <Link to="/contact" className="colonie-vacances__cta-button-primary">
-                Inscription immédiate
+                Demander un devis
               </Link>
               <a
-                href="tel:+33123456789"
+                href="tel:+212524439600"
                 className="colonie-vacances__cta-button-secondary"
               >
                 <Phone size={18} className="colonie-vacances__cta-button-icon" />
-                Conseils par téléphone
+                +212 524 439 600
               </a>
               <a
-                href="https://wa.me/33123456789"
+                href="https://wa.me/212624567890"
                 className="colonie-vacances__cta-button-secondary"
               >
                 <MessageCircle size={18} className="colonie-vacances__cta-button-icon" />

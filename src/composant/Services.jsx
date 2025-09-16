@@ -16,15 +16,29 @@ const ServicesOverview = () => {
       icon: TrendingUp,
       title: 'Marketing Digital',
       description: 'Stratégies digitales innovantes pour maximiser votre visibilité et ROI.',
-      features: ['SEO/SEA', 'Réseaux sociaux', 'Content marketing', 'Analytics'],
+      features: ['Stratégie Digitale Complète', 'Référencement Naturel (SEO)', 'Publicités Gérées (SEA & Social Ads)', 'Gestion des Réseaux Sociaux ','Email Marketing Automatisé ','Analytics & Reporting'],
       href: '/Nos-services',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
       icon: GraduationCap,
-      title: 'E-learning',
-      description: 'Plateformes de formation sur mesure pour professionnels et particuliers.',
-      features: ['LMS personnalisé', 'Contenus interactifs', 'Certifications', 'Suivi avancé'],
+      title: 'Formation',
+      description: 'Des parcours de formation innovants et modulables, adaptés aux professionnels et aux particuliers. Nous combinons expertise académique et pratique pour accompagner le développement des compétences clés du marché.',
+      features: [
+        'Andrologie & embryologie',
+        'Digitalisation & RH Data-Driven',
+        'Talent Acquisition & Marque Employeur',
+        'Stratégie & Business Partnering',
+        'Modules stratégiques & leadership',
+        'Ingénierie de formation par l’approche compétence',
+        'Certification Gouvernance (5 modules) – IMA – 11 jours (modulaire sur plusieurs semaines)',
+        'Parcours RSE (4 modules sur 4 à 5 mois) – IMA – 4 jours – modulaire échelonné',
+        'Capacités d’adaptation & contrôle de gestion',
+        'Formation continue (gestion publique)',
+        'Management public & gouvernance',
+        'Développement web',
+        'Analyse de données'
+      ],
       href: '/Nos-formations',
       gradient: 'from-purple-500 to-pink-500'
     },
@@ -39,7 +53,7 @@ const ServicesOverview = () => {
     {
       icon: Sun,
       title: 'voyage organisé au Maroc',
-      description: 'Aventures éducatives inoubliables basées sur l\'apprentissage et l\'amitié.',
+      description: 'Confiez-nous vos projets d\'évasion : des circuits organisés passionnants pour les adultes et des colonies de vacances éducatives et fun pour les enfants. Notre expertise au service de votre tranquillité d\'esprit. ',
       features: ['Activités ludiques', 'Encadrement expert', 'Sécurité maximale', 'Développement personnel'],
       href: '/voyage-organisé',
       gradient: 'from-orange-500 to-yellow-500'
@@ -47,7 +61,7 @@ const ServicesOverview = () => {
     {
       icon: Code,
       title: 'Solutions digitales',
-      description: 'Solutions techniques sur mesure pour digitaliser votre entreprise.',
+      description: 'Du développement web full-stack à la data visualisation, nous concevons l\'écosystème digital qui fait parler vos chiffres ',
       features: ['Applications web', 'Mobile apps', 'E-commerce', 'Maintenance', 'Data science'],
       href: '/solutions-digitales',
       gradient: 'from-indigo-500 to-blue-500'

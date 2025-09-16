@@ -21,6 +21,21 @@ import {
 import './Tourism.css';
 import Header from '../composant/Header';
 import Footer from '../composant/Footer';
+
+// Import des images pour les spécialités
+import cardiologieImg from '../assets/cardiologie.webp';
+import dentisteImg from '../assets/dentiste.webp';
+import ophtalmologieImg from '../assets/ophtalmologie.webp';
+import oncologieImg from '../assets/oncologie.webp';
+import gynecologieImg from '../assets/gynecologie.webp';
+import fertilitéImg from '../assets/fertilite.webp';
+import orlImg from '../assets/orl.webp';
+import urologieImg from '../assets/urologie.webp';
+import rhumatologieImg from '../assets/rhumatologie.webp';
+import gastroImg from '../assets/gastro.webp';
+import endocrinologieImg from '../assets/endocrinologie.webp';
+import casablancaImg from '../assets/casablanca.webp';
+
 const TourismeMedical = () => {
   const services = [
     {
@@ -60,9 +75,7 @@ const TourismeMedical = () => {
     }
   ];
 
-
   const destinations = [
-
     {
       country: 'Maroc',
       city: 'Casablanca',
@@ -82,21 +95,35 @@ const TourismeMedical = () => {
       ],
       savings: 'Jusqu\'à 60%',
       image: '🇲🇦',
-      description: 'Mekody positionne Casablanca comme un pôle médical d’excellence, où savoir-faire international et accessibilité se rejoignent. Grâce à un réseau de cliniques partenaires certifiées et des spécialistes formés dans les meilleures universités européennes, Mekody garantit aux patients un parcours de soins fluide, sécurisé et humain. Le tout dans un environnement moderne et accueillant qui fait de Casablanca une référence pour les traitements médicaux à coûts maîtrisés.',
+      mainImage: casablancaImg,
+      description: 'Mekody positionne Casablanca comme un pôle médical d\'excellence, où savoir-faire international et accessibilité se rejoignent. Grâce à un réseau de cliniques partenaires certifiées et des spécialistes formés dans les meilleures universités européennes, Mekody garantit aux patients un parcours de soins fluide, sécurisé et humain. Le tout dans un environnement moderne et accueillant qui fait de Casablanca une référence pour les traitements médicaux à coûts maîtrisés.',
       advantages: [
         'Expertise médicale de haut niveau avec des praticiens formés en Europe et en Amérique du Nord',
         'Équipements médicaux à la pointe des standards internationaux',
         'Gestion complète du parcours patient par Mekody : de la première consultation au suivi post-opératoire',
-        'Économies substantielles allant jusqu’à 60% par rapport aux tarifs européens',
+        'Économies substantielles allant jusqu\'à 60% par rapport aux tarifs européens',
         'Accompagnement humain et multilingue (français, anglais, arabe)',
         'Séjour médical alliant soins, confort et découverte culturelle de Casablanca',
         'Environnement méditerranéen propice à la récupération et au bien-être',
         'Réseau solide de cliniques partenaires accréditées et conformes aux normes internationales'
       ]
     }
-    
-    
-    
+  ];
+
+  // Images pour les spécialités
+  const specialityImages = [
+    { name: 'Cardiologie', image: cardiologieImg },
+    { name: 'Dentiste', image: dentisteImg },
+    { name: 'Ophtalmologue', image: ophtalmologieImg },
+    { name: 'Oncologie', image: oncologieImg },
+    { name: 'Gynecologie obstetrique', image: gynecologieImg },
+    { name: 'Traitement de fertilite', image: fertilitéImg },
+    { name: 'Fecondation in vitro', image: fertilitéImg },
+    { name: 'ORL', image: orlImg },
+    { name: 'Urologie', image: urologieImg },
+    { name: 'Rhumatologie', image: rhumatologieImg },
+    { name: 'Gastro enterologie', image: gastroImg },
+    { name: 'Endocrinologie(Diabete)', image: endocrinologieImg }
   ];
 
   const process = [
@@ -300,63 +327,89 @@ const TourismeMedical = () => {
             {destinations.map((destination, index) => (
               <div
                 key={destination.country}
-                className="tourisme-medical__destination"
+                className="tourisme-medical__destination tourisme-medical__destination--full-width"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="tourisme-medical__destination-header">
-                  <div className="tourisme-medical__destination-info">
+                <div className="tourisme-medical__destination-image-container">
+                  <img 
+                    src={destination.mainImage} 
+                    alt={`${destination.city}, ${destination.country}`}
+                    className="tourisme-medical__destination-image"
+                  />
+                  <div className="tourisme-medical__destination-overlay">
                     <span className="tourisme-medical__destination-flag">{destination.image}</span>
-                    <div>
-                      <h3 className="tourisme-medical__destination-country">
-                        {destination.country}
-                      </h3>
-                      <p className="tourisme-medical__destination-city">{destination.city}</p>
+                    <h3 className="tourisme-medical__destination-title">
+                      {destination.city}, {destination.country}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="tourisme-medical__destination-content">
+                  <div className="tourisme-medical__destination-header">
+                    <div className="tourisme-medical__destination-info">
+                      <div>
+                        <h3 className="tourisme-medical__destination-country">
+                          {destination.country}
+                        </h3>
+                        <p className="tourisme-medical__destination-city">{destination.city}</p>
+                      </div>
+                    </div>
+                    <div className="tourisme-medical__destination-savings">
+                      <div className="tourisme-medical__destination-savings-amount">
+                        {destination.savings}
+                      </div>
+                      <div className="tourisme-medical__destination-savings-label">d'économies</div>
                     </div>
                   </div>
-                  <div className="tourisme-medical__destination-savings">
-                    <div className="tourisme-medical__destination-savings-amount">
-                      {destination.savings}
+
+                  <p className="tourisme-medical__destination-description">
+                    {destination.description}
+                  </p>
+
+                  <div className="tourisme-medical__destination-specialties">
+                    <h4 className="tourisme-medical__destination-specialties-title">Spécialités disponibles :</h4>
+                    <div className="tourisme-medical__destination-specialties-grid">
+                      {destination.specialties.map((specialty, idx) => {
+                        const specialityImage = specialityImages.find(img => img.name === specialty) || specialityImages[0];
+                        return (
+                          <div key={idx} className="tourisme-medical__specialty-card">
+                            <div className="tourisme-medical__specialty-image-container">
+                              <img 
+                                src={specialityImage.image} 
+                                alt={specialty}
+                                className="tourisme-medical__specialty-image"
+                              />
+                              <div className="tourisme-medical__specialty-overlay">
+                                <span className="tourisme-medical__specialty-name">{specialty}</span>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
-                    <div className="tourisme-medical__destination-savings-label">d'économies</div>
+                  </div>
+
+                  <div className="tourisme-medical__destination-advantages">
+                    <h4 className="tourisme-medical__destination-advantages-title">Avantages :</h4>
+                    <ul className="tourisme-medical__destination-advantages-list">
+                      {destination.advantages.map((advantage, idx) => (
+                        <li key={idx} className="tourisme-medical__destination-advantage">
+                          <CheckCircle size={16} className="tourisme-medical__destination-advantage-icon" />
+                          <span>{advantage}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="tourisme-medical__destination-cta-container">
+                    <Link
+                      to="/contact"
+                      className="tourisme-medical__destination-cta"
+                    >
+                      Demander un devis personnalisé
+                    </Link>
                   </div>
                 </div>
-
-                <p className="tourisme-medical__destination-description">
-                  {destination.description}
-                </p>
-
-                <div className="tourisme-medical__destination-specialties">
-                  <h4 className="tourisme-medical__destination-specialties-title">Spécialités :</h4>
-                  <div className="tourisme-medical__destination-specialties-list">
-                    {destination.specialties.map((specialty, idx) => (
-                      <span
-                        key={idx}
-                        className="tourisme-medical__destination-specialty"
-                      >
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="tourisme-medical__destination-advantages">
-                  <h4 className="tourisme-medical__destination-advantages-title">Avantages :</h4>
-                  <ul className="tourisme-medical__destination-advantages-list">
-                    {destination.advantages.map((advantage, idx) => (
-                      <li key={idx} className="tourisme-medical__destination-advantage">
-                        <CheckCircle size={16} className="tourisme-medical__destination-advantage-icon" />
-                        <span>{advantage}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Link
-                  to="/contact"
-                  className="tourisme-medical__destination-cta"
-                >
-                  Demander un devis
-                </Link>
               </div>
             ))}
           </div>
@@ -459,19 +512,51 @@ const TourismeMedical = () => {
         </div>
       </section>
 
+      {/* Specialties Gallery Section */}
+      <section className="tourisme-medical__gallery">
+        <div className="tourisme-medical__container">
+          <div className="tourisme-medical__header">
+            <h2 className="tourisme-medical__title">
+              Nos <span className="tourisme-medical__title-accent">Spécialités Médicales</span>
+            </h2>
+            <p className="tourisme-medical__subtitle">
+              Découvrez l'étendue de nos domaines d'expertise médicale
+            </p>
+          </div>
+
+          <div className="tourisme-medical__gallery-grid">
+            {specialityImages.map((specialty, index) => (
+              <div key={index} className="tourisme-medical__gallery-item">
+                <div className="tourisme-medical__gallery-image-container">
+                  <img 
+                    src={specialty.image} 
+                    alt={specialty.name}
+                    className="tourisme-medical__gallery-image"
+                  />
+                  <div className="tourisme-medical__gallery-overlay">
+                    <span className="tourisme-medical__gallery-title">{specialty.name}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="tourisme-medical__cta">
         <div className="tourisme-medical__container">
           <div className="tourisme-medical__cta-content">
             <h2 className="tourisme-medical__cta-title">
-              Prêt à franchir le pas ?
+              Prêt à prendre soin de votre santé ?
             </h2>
             <p className="tourisme-medical__cta-description">
-              Bénéficiez d'une consultation gratuite avec nos experts en tourisme médical.
+              Réservez dès maintenant votre consultation gratuite avec nos experts en tourisme médical.
             </p>
             <div className="tourisme-medical__cta-buttons">
               <Link to="/contact" className="tourisme-medical__cta-button-primary">
-                Consultation gratuite
+                <Calendar size={18} className="tourisme-medical__cta-button-icon" />
+                Prendre rendez-vous
               </Link>
               <a
                 href="tel:+33123456789"
@@ -492,7 +577,6 @@ const TourismeMedical = () => {
         </div>
       </section>
       <Footer/>
-
     </div>
   );
 };

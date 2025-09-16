@@ -24,12 +24,12 @@ const Services = () => {
       title: 'Marketing Digital',
       description: 'Maximisez votre présence en ligne avec nos stratégies digitales innovantes et personnalisées.',
       features: [
-        'Référencement SEO/SEA',
-        'Gestion des réseaux sociaux',
-        'Marketing de contenu',
-        'Publicité en ligne (Google Ads, Facebook Ads)',
-        'Analytics et reporting',
-        'Email marketing automation'
+        'Stratégie Digitale Complète,',
+        'Référencement Naturel (SEO), ',
+        'Publicités Gérées (SEA & Social Ads),',
+        'Gestion des Réseaux Sociaux , ',
+        'Email Marketing Automatisé ,',
+        'Analytics & Reporting ,'
       ],
       benefits: [
         'Augmentation du trafic qualifié',
@@ -42,10 +42,10 @@ const Services = () => {
     },
     {
       icon: GraduationCap,
-      title: 'E-learning',
+      title: 'Formations',
       description: 'Plateformes de formation sur mesure pour développer les compétences de vos équipes.',
       features: [
-        'LMS personnalisé',
+        'Accompagnement Personnel',
         'Contenus interactifs et multimédia',
         'Modules adaptatifs',
         'Certifications et badges',
@@ -53,7 +53,7 @@ const Services = () => {
         'Mobile learning'
       ],
       benefits: [
-        'Formation flexible 24/7',
+        'Accompagnement Personnel',
         'Réduction des coûts',
         'Suivi personnalisé',
         'Montée en compétences rapide'

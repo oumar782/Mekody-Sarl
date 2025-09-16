@@ -33,7 +33,6 @@ const Formations = () => {
       title: 'Mobile Learning',
       description: 'Accès complet depuis tous vos appareils, partout et à tout moment'
     },
-   
     {
       icon: Users,
       title: 'Accompagnement Personnel',
@@ -53,97 +52,138 @@ const Formations = () => {
 
   const programs = [
     {
-      title: 'Marketing Digital Professionnel',
-      duration: '6 semaines',
-      level: 'Intermédiaire',
-      students: '2,500+',
-      description: 'Maîtrisez les stratégies digitales modernes : SEO, SEA, réseaux sociaux, analytics.',
+      title: 'Andrologie & Embryologie',
+      duration: 'Variable selon module',
+      level: 'Expert',
+      students: '500+',
+      description: 'Formation spécialisée en biologie de la reproduction et techniques de procréation médicalement assistée.',
       modules: [
-        'Fondamentaux du marketing digital',
-        'SEO et référencement naturel',
-        'Publicité Google Ads & Facebook',
-        'Social Media Management',
-        'Analytics et ROI'
+        'Fondamentaux de l\'andrologie',
+        'Techniques d\'exploration du spermogramme',
+        'Embryologie clinique',
+        'Cryoconservation des gamètes',
+        'Législation et éthique'
       ],
-      price: '599€',
+      price: 'Sur devis',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Développement Web Full-Stack',
-      duration: '12 semaines',
+      title: 'Digitalisation & RH Data-Driven',
+      duration: '4-6 semaines',
       level: 'Avancé',
-      students: '1,800+',
-      description: 'Formation complète pour devenir développeur web : HTML, CSS, JavaScript, React, Node.js.',
+      students: '1,200+',
+      description: 'Maîtrisez la transformation digitale des RH et l\'utilisation des données pour la prise de décision stratégique.',
       modules: [
-        'HTML5 et CSS3 avancés',
-        'JavaScript ES6+',
-        'React et composants modernes',
-        'Node.js et API REST',
-        'Bases de données et déploiement'
+        'Fondamentaux de la digitalisation RH',
+        'Outils et plateformes RH digitales',
+        'Analytics et métriques RH',
+        'Data visualisation pour les RH',
+        'Implémentation d\'une stratégie data-driven'
       ],
-      price: '1,299€',
+      price: '1,499€',
       gradient: 'from-purple-500 to-pink-500'
     },
     {
-      title: 'Management et Leadership',
-      duration: '8 semaines',
-      level: 'Professionnel',
-      students: '3,200+',
-      description: 'Développez vos compétences managériales et votre leadership pour exceller.',
+      title: 'Talent Acquisition & Marque Employeur',
+      duration: '5 semaines',
+      level: 'Intermédiaire',
+      students: '2,800+',
+      description: 'Développez des stratégies efficaces d\'acquisition de talents et construisez une marque employeur attractive.',
       modules: [
-        'Psychologie du leadership',
-        'Communication et persuasion',
-        'Gestion d\'équipe',
-        'Prise de décision stratégique',
-        'Innovation et changement'
+        'Stratégies de sourcing innovantes',
+        'Construction de la marque employeur',
+        'Processus de recrutement optimisé',
+        'Onboarding et intégration',
+        'Mesure de l\'expérience candidat'
       ],
-      price: '799€',
+      price: '899€',
       gradient: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Data Science et IA',
-      duration: '10 semaines',
-      level: 'Expert',
-      students: '1,200+',
-      description: 'Exploitez le pouvoir des données : Python, Machine Learning, analyse prédictive.',
+      title: 'Stratégie & Business Partnering RH',
+      duration: '8 semaines',
+      level: 'Professionnel',
+      students: '1,500+',
+      description: 'Devenez partenaire stratégique des business units et contribuez directement à la performance organisationnelle.',
       modules: [
-        'Python pour la data science',
-        'Analyse et visualisation',
-        'Machine Learning',
-        'Deep Learning basics',
-        'Projets pratiques'
+        'Fondements du business partnering',
+        'Alignement stratégique RH',
+        'Consulting interne et influence',
+        'Gestion du changement',
+        'Tableaux de bord et reporting stratégique'
       ],
-      price: '1,599€',
+      price: '1,299€',
       gradient: 'from-orange-500 to-red-500'
     }
   ];
 
-  const testimonials = [
+  const additionalPrograms = [
     {
-      name: 'Sarah Martinez',
-      role: 'Digital Marketing Manager',
-      company: 'TechCorp',
-      content: 'La formation marketing digital de Mekody m\'a permis d\'obtenir une promotion en 3 mois. Le contenu est exceptionnellement bien structuré.',
-      rating: 5,
-      avatar: '/avatars/sarah.jpg'
+      title: 'Modules Stratégiques & Leadership',
+      duration: 'Variable',
+      level: 'Direction',
+      students: '800+',
+      description: 'Programmes sur mesure pour dirigeants et cadres supérieurs visant le développement du leadership stratégique.',
+      modules: [
+        'Leadership transformationnel',
+        'Prise de décision stratégique',
+        'Gestion de crise',
+        'Négociation complexe',
+        'Communication executive'
+      ],
+      price: 'Sur mesure',
+      gradient: 'from-indigo-500 to-blue-500'
     },
     {
-      name: 'Thomas Dubois',
-      role: 'Développeur Full-Stack',
-      company: 'StartupLab',
-      content: 'Formation complète et pratique. Les projets concrets m\'ont donné l\'expérience nécessaire pour décrocher mon poste de rêve.',
-      rating: 5,
-      avatar: '/avatars/thomas.jpg'
+      title: 'Certification Gouvernance',
+      duration: '11 jours (modulaire)',
+      level: 'Expert',
+      students: '400+',
+      description: 'Certification IMA en 5 modules couvrant tous les aspects de la gouvernance d\'entreprise moderne.',
+      modules: [
+        'Module 1: Principes fondamentaux de gouvernance',
+        'Module 2: Comités et conseils d\'administration',
+        'Module 3: Conformité et gestion des risques',
+        'Module 4: Rémunération des dirigeants',
+        'Module 5: Gouvernance et développement durable'
+      ],
+      price: '4,999€',
+      gradient: 'from-purple-600 to-indigo-600'
     },
     {
-      name: 'Marie Leclerc',
-      role: 'Chef d\'équipe',
-      company: 'InnovCorp',
-      content: 'Les modules de leadership ont transformé ma façon de manager. Mon équipe est plus motivée et performante.',
-      rating: 5,
-      avatar: '/avatars/marie.jpg'
+      title: 'Parcours RSE',
+      duration: '4 jours (échelonnés)',
+      level: 'Professionnel',
+      students: '950+',
+      description: 'Parcours certifiant IMA sur 4 à 5 mois pour maîtriser la responsabilité sociétale des entreprises.',
+      modules: [
+        'Fondements et enjeux de la RSE',
+        'Stratégie RSE et parties prenantes',
+        'Reporting et indicateurs RSE',
+        'Implémentation et mesure d\'impact'
+      ],
+      price: '2,499€',
+      gradient: 'from-teal-500 to-green-500'
+    },
+    {
+      title: 'Management Public & Gouvernance',
+      duration: '6 semaines',
+      level: 'Avancé',
+      students: '1,100+',
+      description: 'Formation spécialisée pour les professionnels du secteur public sur le management et la gouvernance publique.',
+      modules: [
+        'Enjeux du management public moderne',
+        'Gouvernance et politiques publiques',
+        'Gestion des ressources humaines publiques',
+        'Contrôle de gestion et performance publique',
+        'Innovation et transformation digitale dans le public'
+      ],
+      price: '1,799€',
+      gradient: 'from-blue-600 to-cyan-600'
     }
   ];
+
+
 
   const stats = [
     { icon: Users, value: '10,000+', label: 'Étudiants formés' },
@@ -154,7 +194,8 @@ const Formations = () => {
 
   return (
     <div className="formations">
-        <Header />
+      <Header />
+      
       {/* Hero Section */}
       <section className="formations__hero">
         <div className="formations__container">
@@ -167,8 +208,8 @@ const Formations = () => {
               Formations <span className="formations__hero-title-accent">Professionnelles</span>
             </h1>
             <p className="formations__hero-description">
-              Développez vos compétences avec nos formations en ligne de haute qualité,
-              conçues par des experts pour accélérer votre carrière.
+              Des parcours de formation innovants et modulables, adaptés aux professionnels et aux particuliers. 
+              Nous combinons expertise académique et pratique pour accompagner le développement des compétences clés du marché.
             </p>
             <div className="formations__hero-cta">
               <Link to="/contact" className="formations__cta-primary">
@@ -314,52 +355,75 @@ const Formations = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="formations__testimonials">
+      {/* Additional Programs Section */}
+      <section className="formations__programs formations__programs--additional">
         <div className="formations__container">
           <div className="formations__header">
             <h2 className="formations__title">
-              Témoignages de nos <span className="formations__title-accent">diplômés</span>
+              Autres <span className="formations__title-accent">Parcours Spécialisés</span>
             </h2>
             <p className="formations__subtitle">
-              Découvrez comment nos formations ont transformé leur carrière.
+              Des formations sur mesure pour répondre à des besoins spécifiques et développer des compétences pointues.
             </p>
           </div>
 
-          <div className="formations__testimonials-grid">
-            {testimonials.map((testimonial, index) => (
+          <div className="formations__programs-grid">
+            {additionalPrograms.map((program, index) => (
               <div
-                key={testimonial.name}
-                className="formations__testimonial"
+                key={program.title}
+                className="formations__program"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="formations__testimonial-rating">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="formations__testimonial-star" fill="currentColor" />
-                  ))}
-                </div>
-                <p className="formations__testimonial-content">"{testimonial.content}"</p>
-                <div className="formations__testimonial-author">
-                  <div className="formations__testimonial-avatar">
-                    {testimonial.avatar ? (
-                      <img src={testimonial.avatar} alt={`Photo de ${testimonial.name}`} />
-                    ) : (
-                      <div className="formations__testimonial-avatar-fallback">
-                        {testimonial.name.charAt(0)}
-                      </div>
-                    )}
+                <div className="formations__program-header">
+                  <div className={`formations__program-level formations__program-level--${program.level.toLowerCase()}`}>
+                    {program.level}
                   </div>
-                  <div className="formations__testimonial-info">
-                    <div className="formations__testimonial-name">{testimonial.name}</div>
-                    <div className="formations__testimonial-role">{testimonial.role}</div>
-                    <div className="formations__testimonial-company">{testimonial.company}</div>
+                  <div
+                    className="formations__program-price"
+                    style={{
+                      background: `linear-gradient(90deg, var(--${program.gradient.split(' ')[1]}), var(--${program.gradient.split(' ')[3]}))`
+                    }}
+                  >
+                    <div className="formations__program-price-amount">{program.price}</div>
+                    <div className="formations__program-price-label">Paiement unique</div>
                   </div>
                 </div>
+
+                <h3 className="formations__program-title">{program.title}</h3>
+                <p className="formations__program-description">{program.description}</p>
+
+                <div className="formations__program-meta">
+                  <div className="formations__program-meta-item">
+                    <Clock size={16} className="formations__program-meta-icon" />
+                    <span>{program.duration}</span>
+                  </div>
+                  <div className="formations__program-meta-item">
+                    <Users size={16} className="formations__program-meta-icon" />
+                    <span>{program.students} étudiants</span>
+                  </div>
+                </div>
+
+                <div className="formations__program-modules">
+                  <h4 className="formations__program-modules-title">Modules inclus :</h4>
+                  <ul className="formations__program-modules-list">
+                    {program.modules.map((module, idx) => (
+                      <li key={idx} className="formations__program-modules-item">
+                        <CheckCircle size={16} className="formations__program-modules-icon" />
+                        <span>{module}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link to="/contact" className="formations__program-cta">
+                  S'inscrire maintenant
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="formations__cta">
@@ -373,15 +437,15 @@ const Formations = () => {
               <Link to="/contact" className="formations__cta-button-primary">
                 Commencer gratuitement
               </Link>
-              <Link to="/services" className="formations__cta-button-secondary">
+              <Link to="/Nos-services" className="formations__cta-button-secondary">
                 Explorer tous nos services
               </Link>
             </div>
           </div>
         </div>
       </section>
+      
       <Footer />
-
     </div>
   );
 };

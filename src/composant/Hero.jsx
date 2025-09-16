@@ -36,8 +36,7 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <p className="hero__description">
-              Transformez votre présence digitale avec nos solutions innovantes : 
-              marketing, e-learning, tourisme médical et développement sur mesure.
+            Stratégie digitale & Formation pour conquérir le web. Evacuation sanitaire & Voyages pour conquérir le monde. Chez Mekody Chaque projet devient une aventure inoubliable
             </p>
 
             {/* Stats */}
