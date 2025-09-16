@@ -22,7 +22,7 @@ const Header = () => {
     { name: 'À propos', href: '/A-propos' },
     { name: 'Services', href: '/Nos-services' },
     { name: 'Formations', href: '/Nos-formations' },
-    { name: 'Tourisme médical', href: '/tourisme-medical' },
+    { name: 'Evacuation sanitaire', href: '/tourisme-medical' },
     { name: 'Voyage organisé', href: '/voyage-organisé' },
     { name: 'Solutions digitales', href: '/solutions-digitales' },
     { name: 'Contact', href: '/contact' },

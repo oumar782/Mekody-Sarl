@@ -9,6 +9,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import '../style/Services.css';
+
 const ServicesOverview = () => {
   const services = [
     {
@@ -16,7 +17,7 @@ const ServicesOverview = () => {
       title: 'Marketing Digital',
       description: 'Stratégies digitales innovantes pour maximiser votre visibilité et ROI.',
       features: ['SEO/SEA', 'Réseaux sociaux', 'Content marketing', 'Analytics'],
-      href: '/services',
+      href: '/Nos-services',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
@@ -24,31 +25,31 @@ const ServicesOverview = () => {
       title: 'E-learning',
       description: 'Plateformes de formation sur mesure pour professionnels et particuliers.',
       features: ['LMS personnalisé', 'Contenus interactifs', 'Certifications', 'Suivi avancé'],
-      href: '/formations',
+      href: '/Nos-formations',
       gradient: 'from-purple-500 to-pink-500'
     },
     {
       icon: Heart,
-      title: 'Tourisme Médical',
-      description: 'Accompagnement complet pour vos soins médicaux à l\'étranger.',
+      title: 'Evacuation sanitaire',
+      description: 'Accompagnement complet pour vos soins médicaux au Maroc',
       features: ['Coordination médicale', 'Hébergement', 'Transport', 'Suivi post-op'],
       href: '/tourisme-medical',
       gradient: 'from-green-500 to-emerald-500'
     },
     {
       icon: Sun,
-      title: 'Colonies de Vacances',
+      title: 'voyage organisé au Maroc',
       description: 'Aventures éducatives inoubliables basées sur l\'apprentissage et l\'amitié.',
       features: ['Activités ludiques', 'Encadrement expert', 'Sécurité maximale', 'Développement personnel'],
-      href: '/colonies-vacances',
+      href: '/voyage-organisé',
       gradient: 'from-orange-500 to-yellow-500'
     },
     {
       icon: Code,
-      title: 'Développement Web',
+      title: 'Solutions digitales',
       description: 'Solutions techniques sur mesure pour digitaliser votre entreprise.',
-      features: ['Applications web', 'Mobile apps', 'E-commerce', 'Maintenance'],
-      href: '/developpement',
+      features: ['Applications web', 'Mobile apps', 'E-commerce', 'Maintenance', 'Data science'],
+      href: '/solutions-digitales',
       gradient: 'from-indigo-500 to-blue-500'
     }
   ];
@@ -120,7 +121,7 @@ const ServicesOverview = () => {
 
         {/* Bottom CTA */}
         <div className="services__cta">
-          <Link to="/services" className="services__cta-button">
+          <Link to="/Nos-services" className="services__cta-button">
             Découvrir tous nos services
           </Link>
         </div>

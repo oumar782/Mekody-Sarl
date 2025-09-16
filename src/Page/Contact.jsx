@@ -1,23 +1,63 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageCircle, Calendar, Users, Zap } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageCircle, Calendar, Users, Zap, XCircle } from 'lucide-react';
 import './Contact.css';
 import Header from '../composant/Header';
 import Footer from '../composant/Footer';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    service: '',
+    nom_complet: '',
+    courriel: '',
+    entreprise: '',
+    service_interesse: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [toast, setToast] = useState({ show: false, message: '', type: '' });
 
-  const handleSubmit = (e) => {
+  // Afficher un toast
+  const showToast = (message, type = 'success') => {
+    setToast({ show: true, message, type });
+    setTimeout(() => setToast({ show: false, message: '', type: '' }), 3000);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simuler l'envoi du formulaire
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('https://bacmekody.vercel.app/api/contact/contact_mekody', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Contact créé:', result);
+        setIsSubmitted(true);
+        showToast('Votre message a été envoyé avec succès!', 'success');
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          nom_complet: '',
+          courriel: '',
+          entreprise: '',
+          service_interesse: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Erreur lors de l\'envoi du message');
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      showToast('Une erreur s\'est produite. Veuillez réessayer.', 'error');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -110,6 +150,26 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      {/* Toast Notification */}
+      {toast.show && (
+        <div className={`toast toast--${toast.type}`}>
+          <div className="toast__content">
+            {toast.type === 'success' ? (
+              <CheckCircle size={24} className="toast__icon" />
+            ) : (
+              <XCircle size={24} className="toast__icon" />
+            )}
+            <span className="toast__message">{toast.message}</span>
+          </div>
+          <button 
+            className="toast__close"
+            onClick={() => setToast({ show: false, message: '', type: '' })}
+          >
+            ×
+          </button>
+        </div>
+      )}
+
       {/* Hero Section */}
       <Header/>
       <section className="contact__hero">
@@ -170,30 +230,30 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="contact__form">
                   <div className="contact__form-row">
                     <div className="contact__form-group">
-                      <label htmlFor="name" className="contact__form-label">
+                      <label htmlFor="nom_complet" className="contact__form-label">
                         Nom complet *
                       </label>
                       <input
                         type="text"
-                        id="name"
-                        name="name"
+                        id="nom_complet"
+                        name="nom_complet"
                         required
-                        value={formData.name}
+                        value={formData.nom_complet}
                         onChange={handleChange}
                         className="contact__form-input"
                         placeholder="Votre nom"
                       />
                     </div>
                     <div className="contact__form-group">
-                      <label htmlFor="email" className="contact__form-label">
+                      <label htmlFor="courriel" className="contact__form-label">
                         Email *
                       </label>
                       <input
                         type="email"
-                        id="email"
-                        name="email"
+                        id="courriel"
+                        name="courriel"
                         required
-                        value={formData.email}
+                        value={formData.courriel}
                         onChange={handleChange}
                         className="contact__form-input"
                         placeholder="votre@email.com"
@@ -202,14 +262,14 @@ const Contact = () => {
                   </div>
 
                   <div className="contact__form-group">
-                    <label htmlFor="company" className="contact__form-label">
+                    <label htmlFor="entreprise" className="contact__form-label">
                       Entreprise
                     </label>
                     <input
                       type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
+                      id="entreprise"
+                      name="entreprise"
+                      value={formData.entreprise}
                       onChange={handleChange}
                       className="contact__form-input"
                       placeholder="Nom de votre entreprise"
@@ -217,14 +277,14 @@ const Contact = () => {
                   </div>
 
                   <div className="contact__form-group">
-                    <label htmlFor="service" className="contact__form-label">
+                    <label htmlFor="service_interesse" className="contact__form-label">
                       Service d'intérêt *
                     </label>
                     <select
-                      id="service"
-                      name="service"
+                      id="service_interesse"
+                      name="service_interesse"
                       required
-                      value={formData.service}
+                      value={formData.service_interesse}
                       onChange={handleChange}
                       className="contact__form-select"
                     >
@@ -256,9 +316,10 @@ const Contact = () => {
                   <button
                     type="submit"
                     className="contact__form-submit"
+                    disabled={isLoading}
                   >
-                    Envoyer le message
-                    <Send size={18} className="contact__form-submit-icon" />
+                    {isLoading ? 'Envoi en cours...' : 'Envoyer le message'}
+                    {!isLoading && <Send size={18} className="contact__form-submit-icon" />}
                   </button>
                 </form>
               )}
@@ -310,9 +371,6 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-
-              {/* Map Placeholder */}
-            
             </div>
           </div>
         </div>
@@ -352,9 +410,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>;
+      </section>
       <Footer/>
-
     </div>
   );
 };

@@ -145,9 +145,7 @@ const Footer = () => {
           <div className="footer__bottom-content">
             <p className="footer__copyright">
               © {currentYear} Mekody Sarl. Tous droits réservés.
-              <span className="footer__made-with">
-                Fait avec <Heart size={14} /> en France
-              </span>
+            
             </p>
             <div className="footer__legal">
               <Link to="#" className="footer__legal-link">
