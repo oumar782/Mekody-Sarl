@@ -1,56 +1,85 @@
 /* Colonie Vacances Variables */
 :root {
-  --cv-hero-bg:  linear-gradient(135deg, #03153c 0%, #076584 50%, #030839 100%);
-
+  --cv-hero-bg: linear-gradient(135deg, #0c2d4d 0%, #1a5276 50%, #0c3c5c 100%);
   --cv-text: #0f172a;
   --cv-text-secondary: #64748b;
-  --cv-accent: #030627;
-  --cv-accent-light: #020c2f;
+  --cv-accent: #8d230f;
+  --cv-accent-light: #a82b14;
   --cv-bg: #ffffff;
   --cv-bg-alt: #f8fafc;
   --cv-card-bg: #ffffff;
   --cv-card-border: #e2e8f0;
-  --cv-gradient-orange: linear-gradient(135deg, #03033e, #03192a);
-  --cv-gradient-blue: linear-gradient(135deg, #032035, #01221f);
-  --cv-gradient-green: linear-gradient(135deg, #022d28, #041f32);
-  --cv-gradient-purple: linear-gradient(135deg, #6b2c06, #8d230f);
+  --cv-gold: #d4af37;
+  --cv-orange: #e67e22;
+  --cv-blue: #3498db;
+  --cv-purple: #9b59b6;
 }
 
 /* Colonie Vacances Base Styles */
 .colonie-vacances {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .colonie-vacances__container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 /* Hero Section */
 .colonie-vacances__hero {
   background: var(--cv-hero-bg);
   color: white;
-  padding: 6rem 0 4rem;
+  padding: 8rem 0 6rem;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.colonie-vacances__hero::before {
-  content: '';
+.colonie-vacances__hero-pattern {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--cv-accent-light), transparent);
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+  animation: rotate 20s linear infinite;
 }
+
+.colonie-vacances__hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.colonie-vacances__hero-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+  animation: floatParticle 15s infinite linear;
+}
+
+.colonie-vacances__hero-particle:nth-child(odd) {
+  background: rgba(230, 126, 34, 0.6);
+}
+
+.colonie-vacances__hero-particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 20s; }
+.colonie-vacances__hero-particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 25s; }
+.colonie-vacances__hero-particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 18s; }
 
 .colonie-vacances__hero-content {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  z-index: 2;
 }
 
 .colonie-vacances__badge {
@@ -61,53 +90,73 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__badge-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: badgeShine 3s infinite;
 }
 
 .colonie-vacances__badge-icon {
   width: 16px;
   height: 16px;
-  color: #bfbfbf;
+  color: var(--cv-gold);
+  animation: spin 4s linear infinite;
 }
 
 .colonie-vacances__badge-text {
   font-size: 0.875rem;
   font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 
 .colonie-vacances__hero-title {
   font-family: 'Orbitron', sans-serif;
   font-weight: 800;
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   line-height: 1.1;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .colonie-vacances__hero-title-accent {
-  background: linear-gradient(135deg, #ffd700, #ffffff);
+  background: linear-gradient(135deg, var(--cv-gold), #ffffff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   position: relative;
+  display: inline-block;
 }
 
 .colonie-vacances__hero-title-accent::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -10px;
   left: 0;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #ffd700, transparent);
+  height: 4px;
+  background: linear-gradient(90deg, var(--cv-gold), transparent);
   border-radius: 2px;
+  animation: widthGrow 2s ease-out 1s both;
 }
 
 .colonie-vacances__hero-description {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   color: #e2e8f0;
   line-height: 1.6;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .colonie-vacances__hero-cta {
@@ -115,7 +164,8 @@
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
 }
 
 @media (min-width: 640px) {
@@ -137,764 +187,10 @@
   border-radius: 50px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(141, 35, 15, 0.3);
-}
-
-.colonie-vacances__cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(141, 35, 15, 0.4);
-}
-
-.colonie-vacances__cta-icon {
-  transition: transform 0.3s ease;
-}
-
-.colonie-vacances__cta-primary:hover .colonie-vacances__cta-icon {
-  transform: translateX(3px);
-}
-
-.colonie-vacances__cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.colonie-vacances__cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.colonie-vacances__trust {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  font-size: 0.875rem;
-}
-
-.colonie-vacances__trust-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.colonie-vacances__trust-icon {
-  color: #ffd700;
-}
-
-/* Stats Section */
-.colonie-vacances__stats {
-  padding: 4rem 0;
-  background: var(--cv-bg-alt);
-}
-
-.colonie-vacances__stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .colonie-vacances__stats-grid {
-      grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.colonie-vacances__stat {
-  text-align: center;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.colonie-vacances__stat-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-}
-
-.colonie-vacances__stat-icon-svg {
-  color: white;
-}
-
-.colonie-vacances__stat-number {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 800;
-  font-size: 2rem;
-  color: var(--cv-text);
-  margin-bottom: 0.5rem;
-}
-
-.colonie-vacances__stat-label {
-  color: var(--cv-text-secondary);
-  font-size: 0.95rem;
-}
-
-/* Header Styles */
-.colonie-vacances__header {
-  text-align: center;
-  margin-bottom: 4rem;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.colonie-vacances__title {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  color: var(--cv-text);
-  margin-bottom: 1rem;
-}
-
-.colonie-vacances__title-accent {
-  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.colonie-vacances__subtitle {
-  font-size: 1.125rem;
-  color: var(--cv-text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Pillars Section */
-.colonie-vacances__pillars {
-  padding: 5rem 0;
-  background: var(--cv-bg);
-}
-
-.colonie-vacances__pillars-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .colonie-vacances__pillars-grid {
-      grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.colonie-vacances__pillar {
-  background: var(--cv-card-bg);
-  padding: 2.5rem;
-  border-radius: 20px;
-  text-align: center;
-  border: 1px solid var(--cv-card-border);
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.colonie-vacances__pillar:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border-color: var(--cv-accent-light);
-}
-
-.colonie-vacances__pillar-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.colonie-vacances__pillar-icon--authenticité {
-  background: var(--cv-gradient-orange);
-}
-
-.colonie-vacances__pillar-icon--découverte {
-  background: var(--cv-gradient-blue);
-}
-
-.colonie-vacances__pillar-icon--bienveillance {
-  background: var(--cv-gradient-purple);
-}
-
-.colonie-vacances__pillar:hover .colonie-vacances__pillar-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.colonie-vacances__pillar-icon-svg {
-  color: white;
-}
-
-.colonie-vacances__pillar-title {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--cv-text);
-  margin-bottom: 1rem;
-}
-
-.colonie-vacances__pillar-description {
-  color: var(--cv-text-secondary);
-  line-height: 1.6;
-  font-size: 1.125rem;
-}
-
-/* Programs Section */
-.colonie-vacances__programs {
-  padding: 5rem 0;
-  background: var(--cv-bg-alt);
-}
-
-.colonie-vacances__programs-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .colonie-vacances__programs-grid {
-      grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.colonie-vacances__program {
-  background: var(--cv-card-bg);
-  padding: 2.5rem;
-  border-radius: 20px;
-  border: 1px solid var(--cv-card-border);
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease-out;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
-.colonie-vacances__program:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border-color: var(--cv-accent-light);
-}
-
-.colonie-vacances__program::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, transparent 0%, transparent 50%, rgba(141, 35, 15, 0.05) 50%, rgba(141, 35, 15, 0.02) 100%);
-  border-radius: 0 20px 0 0;
-}
-
-.colonie-vacances__program-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-.colonie-vacances__program-info {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.colonie-vacances__program-emoji {
-  font-size: 2.5rem;
-}
-
-.colonie-vacances__program-age {
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: white;
-}
-
-.colonie-vacances__program-age--aventure-impériale {
-  background: var(--cv-gradient-orange);
-}
-
-.colonie-vacances__program-age--trésors-côtiers {
-  background: var(--cv-gradient-blue);
-}
-
-.colonie-vacances__program-age--expérience-berbère {
-  background: var(--cv-gradient-purple);
-}
-
-.colonie-vacances__program-price {
-  text-align: right;
-}
-
-.colonie-vacances__program-price-amount {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--cv-accent);
-}
-
-.colonie-vacances__program-price-label {
-  font-size: 0.75rem;
-  color: var(--cv-text-secondary);
-}
-
-.colonie-vacances__program-title {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--cv-text);
-  margin-bottom: 1rem;
-}
-
-.colonie-vacances__program-description {
-  color: var(--cv-text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.colonie-vacances__program-meta {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.colonie-vacances__program-meta-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--cv-text-secondary);
-}
-
-.colonie-vacances__program-meta-icon {
-  color: var(--cv-accent);
-}
-
-.colonie-vacances__program-activities {
-  margin-bottom: 2rem;
-}
-
-.colonie-vacances__program-activities-title {
-  font-weight: 600;
-  color: var(--cv-text);
-  margin-bottom: 1rem;
-}
-
-.colonie-vacances__program-activities-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.colonie-vacances__program-activities-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  color: var(--cv-text-secondary);
-  font-size: 0.95rem;
-}
-
-.colonie-vacances__program-activities-icon {
-  color: var(--cv-accent);
-  flex-shrink: 0;
-}
-
-.colonie-vacances__program-cta {
-  display: block;
-  text-align: center;
-  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.colonie-vacances__program-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(141, 35, 15, 0.3);
-}
-
-/* Features Section */
-.colonie-vacances__features {
-  padding: 5rem 0;
-  background: var(--cv-bg);
-}
-
-.colonie-vacances__features-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .colonie-vacances__features-grid {
-      grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .colonie-vacances__features-grid {
-      grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.colonie-vacances__feature {
-  background: var(--cv-card-bg);
-  padding: 2rem;
-  border-radius: 16px;
-  text-align: center;
-  border: 1px solid var(--cv-card-border);
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.colonie-vacances__feature:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--cv-accent-light);
-}
-
-.colonie-vacances__feature-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.colonie-vacances__feature:hover .colonie-vacances__feature-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.colonie-vacances__feature-icon-svg {
-  color: white;
-}
-
-.colonie-vacances__feature-title {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: var(--cv-text);
-  margin-bottom: 1rem;
-}
-
-.colonie-vacances__feature-description {
-  color: var(--cv-text-secondary);
-  line-height: 1.6;
-}
-
-/* Testimonials Section */
-.colonie-vacances__testimonials {
-  padding: 5rem 0;
-  background: var(--cv-bg-alt);
-}
-
-.colonie-vacances__testimonials-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .colonie-vacances__testimonials-grid {
-      grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.colonie-vacances__testimonial {
-  background: var(--cv-card-bg);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid var(--cv-card-border);
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.colonie-vacances__testimonial:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.colonie-vacances__testimonial-rating {
-  display: flex;
-  gap: 0.25rem;
-  margin-bottom: 1.5rem;
-}
-
-.colonie-vacances__testimonial-star {
-  color: #fbbf24;
-  fill: currentColor;
-}
-
-.colonie-vacances__testimonial-content {
-  color: var(--cv-text-secondary);
-  font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  quotes: '"' '"' "'" "'";
-}
-
-.colonie-vacances__testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.colonie-vacances__testimonial-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.colonie-vacances__testimonial-avatar-fallback {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-  font-size: 1.25rem;
-}
-
-.colonie-vacances__testimonial-info {
-  flex: 1;
-}
-
-.colonie-vacances__testimonial-name {
-  font-weight: 600;
-  color: var(--cv-text);
-  margin-bottom: 0.25rem;
-}
-
-.colonie-vacances__testimonial-child {
-  font-size: 0.875rem;
-  color: var(--cv-text-secondary);
-  margin-bottom: 0.25rem;
-}
-
-.colonie-vacances__testimonial-program {
-  font-size: 0.875rem;
-  color: var(--cv-accent);
-}
-
-/* FAQ Section */
-.colonie-vacances__faq {
-  padding: 5rem 0;
-  background: var(--cv-bg);
-}
-
-.colonie-vacances__faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.colonie-vacances__faq-item {
-  background: var(--cv-card-bg);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid var(--cv-card-border);
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.colonie-vacances__faq-question {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
-  font-size: 1.125rem;
-  color: var(--cv-text);
-  margin-bottom: 1rem;
-}
-
-.colonie-vacances__faq-answer {
-  color: var(--cv-text-secondary);
-  line-height: 1.6;
-}
-
-/* CTA Section */
-.colonie-vacances__cta {
-  padding: 5rem 0;
-  background: var(--cv-hero-bg);
-  color: white;
-  text-align: center;
-}
-
-.colonie-vacances__cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.colonie-vacances__cta-title {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.colonie-vacances__cta-description {
-  font-size: 1.125rem;
-  color: #e2e8f0;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.colonie-vacances__cta-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-}
-
-@media (min-width: 640px) {
-  .colonie-vacances__cta-buttons {
-      flex-direction: row;
-      flex-wrap: wrap;
-  }
-}
-
-.colonie-vacances__cta-button-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  color: var(--cv-accent);
-  font-weight: 600;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.colonie-vacances__cta-button-primary:hover {
-  background: #f8fafc;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-.colonie-vacances__cta-button-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.colonie-vacances__cta-button-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.colonie-vacances__cta-button-icon {
-  width: 18px;
-  height: 18px;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .colonie-vacances__hero-title {
-      font-size: 2.5rem;
-  }
-  
-  .colonie-vacances__hero-description {
-      font-size: 1.125rem;
-  }
-  
-  .colonie-vacances__title {
-      font-size: 2rem;
-  }
-  
-  .colonie-vacances__program {
-      padding: 2rem;
-  }
-  
-  .colonie-vacances__program-header {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: flex-start;
-  }
-  
-  .colonie-vacances__program-price {
-      text-align: left;
-  }
-  
-  .colonie-vacances__features-grid {
-      grid-template-columns: 1fr;
-  }
-  
-  .colonie-vacances__program-age {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.5rem;
-  }
-  
-  .colonie-vacances__program-price-amount {
-      font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .colonie-vacances__hero {
-      padding: 4rem 0 3rem;
-  }
-  
-  .colonie-vacances__stats-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-  }
-  
-  .colonie-vacances__pillars,
-  .colonie-vacances__programs,
-  .colonie-vacances__features,
-  .colonie-vacances__testimonials,
-  .colonie-vacances__faq,
-  .colonie-vacances__cta {
-      padding: 3rem 0;
-  }
-  
-  .colonie-vacances__trust {
-      gap: 1rem;
-  }
-}
-
-/* Import Orbitron font */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+.colonie-vacances__cta-shine {
+  position
