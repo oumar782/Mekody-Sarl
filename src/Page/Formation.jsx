@@ -80,7 +80,7 @@ const Formations = () => {
         'Data visualisation pour les RH',
         'Implémentation d\'une stratégie data-driven'
       ],
-      price: '1,499€',
+      price: '€',
       gradient: 'from-purple-500 to-pink-500'
     },
     {
