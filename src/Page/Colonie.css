@@ -3,13 +3,13 @@
   --cv-hero-bg: linear-gradient(135deg, #0c2d4d 0%, #1a5276 50%, #0c3c5c 100%);
   --cv-text: #0f172a;
   --cv-text-secondary: #64748b;
-  --cv-accent: #8d230f;
-  --cv-accent-light: #a82b14;
+  --cv-accent: #03293d;
+  --cv-accent-light: #03455f;
   --cv-bg: #ffffff;
   --cv-bg-alt: #f8fafc;
   --cv-card-bg: #ffffff;
   --cv-card-border: #e2e8f0;
-  --cv-gold: #d4af37;
+  --cv-gold: #8d8a8a;
   --cv-orange: #e67e22;
   --cv-blue: #3498db;
   --cv-purple: #9b59b6;
@@ -193,4 +193,1231 @@
 }
 
 .colonie-vacances__cta-shine {
-  position
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.colonie-vacances__cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(141, 35, 15, 0.4);
+}
+
+.colonie-vacances__cta-primary:hover .colonie-vacances__cta-shine {
+  left: 100%;
+}
+
+.colonie-vacances__cta-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.colonie-vacances__cta-primary:hover .colonie-vacances__cta-icon-wrapper {
+  transform: translateX(3px);
+}
+
+.colonie-vacances__cta-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.colonie-vacances__cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__cta-arrow {
+  width: 16px;
+  height: 2px;
+  background: white;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.colonie-vacances__cta-arrow::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.colonie-vacances__cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.colonie-vacances__cta-secondary:hover .colonie-vacances__cta-arrow {
+  transform: translateX(3px);
+}
+
+.colonie-vacances__trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.875rem;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.colonie-vacances__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.colonie-vacances__trust-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.colonie-vacances__trust-icon {
+  color: var(--cv-gold);
+}
+
+.colonie-vacances__hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeInUp 0.8s ease-out 1.2s both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.colonie-vacances__hero-scroll-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.colonie-vacances__hero-scroll-arrow {
+  width: 2px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  position: relative;
+  animation: bounce 2s infinite;
+}
+
+.colonie-vacances__hero-scroll-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  transform: rotate(45deg);
+}
+
+/* Stats Section */
+.colonie-vacances__stats {
+  padding: 5rem 0;
+  background: var(--cv-bg-alt);
+  position: relative;
+}
+
+.colonie-vacances__stats-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(230, 126, 34, 0.05) 0%, transparent 50%);
+}
+
+.colonie-vacances__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .colonie-vacances__stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.colonie-vacances__stat {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.colonie-vacances__stat-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  position: relative;
+}
+
+.colonie-vacances__stat-icon-glow {
+  position: absolute;
+  inset: -2px;
+  border: 2px solid rgba(141, 35, 15, 0.3);
+  border-radius: 22px;
+  animation: pulse 2s infinite;
+}
+
+.colonie-vacances__stat-icon-svg {
+  color: white;
+}
+
+.colonie-vacances__stat-number {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: var(--cv-text);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.colonie-vacances__stat-label {
+  color: var(--cv-text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.colonie-vacances__stat-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(141, 35, 15, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.colonie-vacances__stat-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cv-accent), var(--cv-accent-light));
+  border-radius: 2px;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Header Styles */
+.colonie-vacances__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.colonie-vacances__header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(141, 35, 15, 0.1);
+  color: var(--cv-accent);
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.colonie-vacances__header-badge-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.colonie-vacances__title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--cv-text);
+  margin-bottom: 1rem;
+}
+
+.colonie-vacances__title-accent {
+  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.colonie-vacances__subtitle {
+  font-size: 1.25rem;
+  color: var(--cv-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Pillars Section */
+.colonie-vacances__pillars {
+  padding: 6rem 0;
+  background: var(--cv-bg);
+  position: relative;
+}
+
+.colonie-vacances__pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .colonie-vacances__pillars-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.colonie-vacances__pillar {
+  background: var(--cv-card-bg);
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid var(--cv-card-border);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__pillar-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.05), transparent);
+  transition: 0.6s;
+}
+
+.colonie-vacances__pillar:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--cv-accent-light);
+}
+
+.colonie-vacances__pillar:hover .colonie-vacances__pillar-glow {
+  left: 100%;
+}
+
+.colonie-vacances__pillar-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__pillar-icon--0 {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.colonie-vacances__pillar-icon--1 {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.colonie-vacances__pillar-icon--2 {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.colonie-vacances__pillar-icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.colonie-vacances__pillar:hover .colonie-vacances__pillar-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.colonie-vacances__pillar:hover .colonie-vacances__pillar-icon-bg {
+  opacity: 1;
+}
+
+.colonie-vacances__pillar-icon-svg {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.colonie-vacances__pillar-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--cv-text);
+  margin-bottom: 1rem;
+}
+
+.colonie-vacances__pillar-description {
+  color: var(--cv-text-secondary);
+  line-height: 1.6;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.colonie-vacances__pillar-decoration {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.colonie-vacances__pillar-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--cv-accent-light);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.colonie-vacances__pillar:hover .colonie-vacances__pillar-dot {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Programs Section */
+.colonie-vacances__programs {
+  padding: 6rem 0;
+  background: var(--cv-bg-alt);
+  position: relative;
+}
+
+.colonie-vacances__programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .colonie-vacances__programs-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.colonie-vacances__program {
+  background: var(--cv-card-bg);
+  padding: 2.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--cv-card-border);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__program-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.05), transparent);
+  transition: 0.6s;
+}
+
+.colonie-vacances__program:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--cv-accent-light);
+}
+
+.colonie-vacances__program:hover .colonie-vacances__program-glow {
+  left: 100%;
+}
+
+.colonie-vacances__program-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.colonie-vacances__program-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.colonie-vacances__program-emoji {
+  font-size: 3rem;
+}
+
+.colonie-vacances__program-age {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.colonie-vacances__program-age--0 {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.colonie-vacances__program-age--1 {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.colonie-vacances__program-age--2 {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.colonie-vacances__program-price {
+  text-align: right;
+}
+
+.colonie-vacances__program-price-amount {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--cv-accent);
+}
+
+.colonie-vacances__program-price-label {
+  font-size: 0.8rem;
+  color: var(--cv-text-secondary);
+}
+
+.colonie-vacances__program-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--cv-text);
+  margin-bottom: 1rem;
+}
+
+.colonie-vacances__program-description {
+  color: var(--cv-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.colonie-vacances__program-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.colonie-vacances__program-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--cv-text-secondary);
+}
+
+.colonie-vacances__program-meta-icon {
+  color: var(--cv-accent);
+}
+
+.colonie-vacances__program-activities {
+  margin-bottom: 2rem;
+}
+
+.colonie-vacances__program-activities-title {
+  font-weight: 600;
+  color: var(--cv-text);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.colonie-vacances__program-activities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.colonie-vacances__program-activities-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--cv-text-secondary);
+  font-size: 0.95rem;
+}
+
+.colonie-vacances__program-activities-icon {
+  color: var(--cv-accent);
+  flex-shrink: 0;
+}
+
+.colonie-vacances__program-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__program-cta-arrow {
+  width: 16px;
+  height: 2px;
+  background: white;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.colonie-vacances__program-cta-arrow::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.colonie-vacances__program-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(141, 35, 15, 0.3);
+}
+
+.colonie-vacances__program-cta:hover .colonie-vacances__program-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Features Section */
+.colonie-vacances__features {
+  padding: 6rem 0;
+  background: var(--cv-bg);
+  position: relative;
+}
+
+.colonie-vacances__features-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(230, 126, 34, 0.03) 0%, transparent 50%);
+}
+
+.colonie-vacances__features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .colonie-vacances__features-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .colonie-vacances__features-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.colonie-vacances__feature {
+  background: var(--cv-card-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid var(--cv-card-border);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__feature-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.05), transparent);
+  transition: 0.6s;
+}
+
+.colonie-vacances__feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: var(--cv-accent-light);
+}
+
+.colonie-vacances__feature:hover .colonie-vacances__feature-glow {
+  left: 100%;
+}
+
+.colonie-vacances__feature-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__feature-icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.colonie-vacances__feature:hover .colonie-vacances__feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.colonie-vacances__feature:hover .colonie-vacances__feature-icon-bg {
+  opacity: 1;
+}
+
+.colonie-vacances__feature-icon-svg {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.colonie-vacances__feature-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--cv-text);
+  margin-bottom: 1rem;
+}
+
+.colonie-vacances__feature-description {
+  color: var(--cv-text-secondary);
+  line-height: 1.6;
+}
+
+/* Testimonials Section */
+.colonie-vacances__testimonials {
+  padding: 6rem 0;
+  background: var(--cv-bg-alt);
+  position: relative;
+}
+
+.colonie-vacances__testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .colonie-vacances__testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.colonie-vacances__testimonial {
+  background: var(--cv-card-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--cv-card-border);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__testimonial-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.05), transparent);
+  transition: 0.6s;
+}
+
+.colonie-vacances__testimonial:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.colonie-vacances__testimonial:hover .colonie-vacances__testimonial-glow {
+  left: 100%;
+}
+
+.colonie-vacances__testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.colonie-vacances__testimonial-star {
+  color: #fbbf24;
+  fill: currentColor;
+}
+
+.colonie-vacances__testimonial-content {
+  color: var(--cv-text-secondary);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  quotes: '"' '"' "'" "'";
+  font-size: 1.05rem;
+}
+
+.colonie-vacances__testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.colonie-vacances__testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid var(--cv-accent-light);
+}
+
+.colonie-vacances__testimonial-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--cv-accent), var(--cv-accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.colonie-vacances__testimonial-info {
+  flex: 1;
+}
+
+.colonie-vacances__testimonial-name {
+  font-weight: 600;
+  color: var(--cv-text);
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.colonie-vacances__testimonial-child {
+  font-size: 0.9rem;
+  color: var(--cv-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.colonie-vacances__testimonial-program {
+  font-size: 0.9rem;
+  color: var(--cv-accent);
+  font-weight: 500;
+}
+
+/* FAQ Section */
+.colonie-vacances__faq {
+  padding: 6rem 0;
+  background: var(--cv-bg);
+  position: relative;
+}
+
+.colonie-vacances__faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.colonie-vacances__faq-item {
+  background: var(--cv-card-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--cv-card-border);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.colonie-vacances__faq-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.05), transparent);
+  transition: 0.6s;
+}
+
+.colonie-vacances__faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.colonie-vacances__faq-item:hover .colonie-vacances__faq-glow {
+  left: 100%;
+}
+
+.colonie-vacances__faq-question {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--cv-text);
+  margin-bottom: 1rem;
+}
+
+.colonie-vacances__faq-answer {
+  color: var(--cv-text-secondary);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* CTA Section */
+.colonie-vacances__cta {
+  padding: 6rem 0;
+  background: var(--cv-hero-bg);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.colonie-vacances__cta-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(230, 126, 34, 0.1) 0%, transparent 50%);
+}
+
+.colonie-vacances__cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.colonie-vacances__cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.colonie-vacances__cta-badge-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--cv-gold);
+}
+
+.colonie-vacances__cta-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.colonie-vacances__cta-description {
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.colonie-vacances__cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .colonie-vacances__cta-buttons {
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+}
+
+.colonie-vacances__cta-button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--cv-accent);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.colonie-vacances__cta-button-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.1), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.colonie-vacances__cta-button-primary:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.colonie-vacances__cta-button-primary:hover .colonie-vacances__cta-button-shine {
+  left: 100%;
+}
+
+.colonie-vacances__cta-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.colonie-vacances__cta-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.colonie-vacances__cta-button-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+  }
+  10% {
+      opacity: 1;
+  }
+  90% {
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100px) rotate(360deg);
+      opacity: 0;
+  }
+}
+
+@keyframes widthGrow {
+  from {
+      width: 0%;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+@keyframes badgeShine {
+  0% {
+      left: -100%;
+  }
+  50% {
+      left: 100%;
+  }
+  100% {
+      left: 100%;
+  }
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .colonie-vacances__hero-title {
+      font-size: 2.5rem;
+  }
+  
+  .colonie-vacances__hero-description {
+      font-size: 1.125rem;
+  }
+  
+  .colonie-vacances__title {
+      font-size: 2rem;
+  }
+  
+  .colonie-vacances__program {
+      padding: 2rem;
+  }
+  
+  .colonie-vacances__program-header {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+  }
+  
+  .colonie-vacances__program-price {
+      text-align: left;
+  }
+  
+  .colonie-vacances__features-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .colonie-vacances__program-age {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+  }
+  
+  .colonie-vacances__program-price-amount {
+      font-size: 1.2rem;
+  }
+  
+  .colonie-vacances__stat-number {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .colonie-vacances__hero {
+      padding: 6rem 0 4rem;
+  }
+  
+  .colonie-vacances__stats-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+  }
+  
+  .colonie-vacances__pillars,
+  .colonie-vacances__programs,
+  .colonie-vacances__features,
+  .colonie-vacances__testimonials,
+  .colonie-vacances__faq,
+  .colonie-vacances__cta {
+      padding: 4rem 0;
+  }
+  
+  .colonie-vacances__trust {
+      gap: 1rem;
+      flex-direction: column;
+  }
+}
+
+/* Import Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');

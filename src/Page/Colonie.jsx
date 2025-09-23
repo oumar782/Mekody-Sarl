@@ -63,7 +63,7 @@ const ColonieVacances = () => {
       age: 'Familles & Adultes',
       duration: '8 jours / 7 nuits',
       location: 'Marrakech • Atlas • Désert',
-      image: '🏰',
+      image: '',
       description: 'Découverte des villes impériales, des montagnes de l\'Atlas et d\'une nuit en bivouac dans le désert.',
       activities: [
         'Visite des médinas historiques',
@@ -80,7 +80,7 @@ const ColonieVacances = () => {
       age: 'Familles & Couples',
       duration: '10 jours / 9 nuits',
       location: 'Casablanca • Essaouira • Agadir',
-      image: '🌊',
+      image: '',
       description: 'Circuit along the Atlantic coast discovering fishing villages, argan cooperatives and golden beaches.',
       activities: [
         'Visite de la mosquée Hassan II',
@@ -97,7 +97,7 @@ const ColonieVacances = () => {
       age: 'Aventuriers & Randonneurs',
       duration: '12 jours / 11 nuits',
       location: 'Vallées du Draa • Désert • Gorges',
-      image: '🏜️',
+      image: '',
       description: 'Immersion complète dans la culture berbère à travers les paysages les plus spectaculaires du Sud marocain.',
       activities: [
         'Rencontres avec les communautés locales',
