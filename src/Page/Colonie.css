@@ -9,10 +9,10 @@
   --cv-bg-alt: #f8fafc;
   --cv-card-bg: #ffffff;
   --cv-card-border: #e2e8f0;
-  --cv-gold: #8d8a8a;
-  --cv-orange: #e67e22;
+  --cv-gold: #47afd8;
+  --cv-orange: #03263a;
   --cv-blue: #3498db;
-  --cv-purple: #9b59b6;
+  --cv-purple: #021c36;
 }
 
 /* Colonie Vacances Base Styles */
@@ -60,13 +60,13 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(212, 175, 55, 0.6);
+  background: rgba(55, 58, 212, 0.6);
   border-radius: 50%;
   animation: floatParticle 15s infinite linear;
 }
 
 .colonie-vacances__hero-particle:nth-child(odd) {
-  background: rgba(230, 126, 34, 0.6);
+  background: rgba(2, 46, 66, 0.6);
 }
 
 .colonie-vacances__hero-particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 20s; }
@@ -186,7 +186,7 @@
   padding: 1rem 2rem;
   border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(141, 35, 15, 0.3);
+  box-shadow: 0 4px 15px rgba(246, 245, 245, 0.3);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -354,8 +354,8 @@
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 90% 80%, rgba(230, 126, 34, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, rgba(1, 41, 55, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(1, 35, 49, 0.05) 0%, transparent 50%);
 }
 
 .colonie-vacances__stats-grid {
@@ -445,7 +445,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(141, 35, 15, 0.1);
+  background: rgba(1, 41, 61, 0.1);
   color: var(--cv-accent);
   border-radius: 50px;
   padding: 0.5rem 1.5rem;
@@ -472,6 +472,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: #313e46 0px 0px 3px;
 }
 
 .colonie-vacances__subtitle {
@@ -519,7 +520,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(1, 40, 50, 0.05), transparent);
   transition: 0.6s;
 }
 
@@ -547,22 +548,22 @@
 }
 
 .colonie-vacances__pillar-icon--0 {
-  background: linear-gradient(135deg, #e67e22, #d35400);
+  background: linear-gradient(135deg, #012431, #013342);
 }
 
 .colonie-vacances__pillar-icon--1 {
-  background: linear-gradient(135deg, #3498db, #2980b9);
+  background: linear-gradient(135deg, #03273f, #02273f);
 }
 
 .colonie-vacances__pillar-icon--2 {
-  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  background: linear-gradient(135deg, #011d2c, #011d31);
 }
 
 .colonie-vacances__pillar-icon-bg {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(3, 64, 92, 0.2) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -820,7 +821,7 @@
 
 .colonie-vacances__program-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(141, 35, 15, 0.3);
+  box-shadow: 0 8px 20px rgba(15, 80, 141, 0.3);
 }
 
 .colonie-vacances__program-cta:hover .colonie-vacances__program-cta-arrow {
@@ -839,7 +840,7 @@
   inset: 0;
   background-image: 
     radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 70% 30%, rgba(230, 126, 34, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 70% 30%, rgba(4, 101, 123, 0.03) 0%, transparent 50%);
 }
 
 .colonie-vacances__features-grid {
@@ -998,7 +999,7 @@
 }
 
 .colonie-vacances__testimonial-star {
-  color: #fbbf24;
+  color: #0a7577;
   fill: currentColor;
 }
 
@@ -1132,8 +1133,8 @@
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(230, 126, 34, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(3, 46, 71, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(6, 70, 92, 0.1) 0%, transparent 50%);
 }
 
 .colonie-vacances__cta-content {
@@ -1212,7 +1213,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(141, 35, 15, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(15, 93, 141, 0.1), transparent);
   transition: 0.5s;
   z-index: -1;
 }

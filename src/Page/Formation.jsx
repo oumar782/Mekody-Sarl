@@ -15,13 +15,27 @@ import {
   Globe,
   Calendar,
   UserCheck,
-  BarChart3
+  BarChart3,
+  Zap,
+  Shield,
+  Heart,
+  TrendingUp
 } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import './for.css';
 import Header from '../composant/Header';
 import Footer from '../composant/Footer';
 
 const Formations = () => {
+  const [animatedStats, setAnimatedStats] = useState({
+    students: 0,
+    success: 0,
+    access: 0,
+    teachers: 0
+  });
+  const [isVisible, setIsVisible] = useState(false);
+  const statsRef = useRef(null);
+
   const features = [
     {
       icon: Laptop,
@@ -47,6 +61,11 @@ const Formations = () => {
       icon: Globe,
       title: 'Communauté Internationale',
       description: 'Échangez avec des apprenants du monde entier'
+    },
+    {
+      icon: Zap,
+      title: 'Apprentissage Adaptatif',
+      description: 'Contenu qui s\'adapte à votre rythme et niveau de compréhension'
     }
   ];
 
@@ -65,7 +84,8 @@ const Formations = () => {
         'Législation et éthique'
       ],
       price: 'Sur devis',
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 to-cyan-500',
+      icon: ''
     },
     {
       title: 'Digitalisation & RH Data-Driven',
@@ -80,8 +100,9 @@ const Formations = () => {
         'Data visualisation pour les RH',
         'Implémentation d\'une stratégie data-driven'
       ],
-      price: '€',
-      gradient: 'from-purple-500 to-pink-500'
+      price: '1,499€',
+      gradient: 'from-purple-500 to-pink-500',
+      icon: ''
     },
     {
       title: 'Talent Acquisition & Marque Employeur',
@@ -97,7 +118,8 @@ const Formations = () => {
         'Mesure de l\'expérience candidat'
       ],
       price: '899€',
-      gradient: 'from-green-500 to-emerald-500'
+      gradient: 'from-green-500 to-emerald-500',
+      icon: ''
     },
     {
       title: 'Stratégie & Business Partnering RH',
@@ -113,7 +135,8 @@ const Formations = () => {
         'Tableaux de bord et reporting stratégique'
       ],
       price: '1,299€',
-      gradient: 'from-orange-500 to-red-500'
+      gradient: 'from-orange-500 to-red-500',
+      icon: ''
     }
   ];
 
@@ -132,7 +155,8 @@ const Formations = () => {
         'Communication executive'
       ],
       price: 'Sur mesure',
-      gradient: 'from-indigo-500 to-blue-500'
+      gradient: 'from-indigo-500 to-blue-500',
+      icon: ''
     },
     {
       title: 'Certification Gouvernance',
@@ -148,7 +172,8 @@ const Formations = () => {
         'Module 5: Gouvernance et développement durable'
       ],
       price: '4,999€',
-      gradient: 'from-purple-600 to-indigo-600'
+      gradient: 'from-purple-600 to-indigo-600',
+      icon: ''
     },
     {
       title: 'Parcours RSE',
@@ -163,7 +188,8 @@ const Formations = () => {
         'Implémentation et mesure d\'impact'
       ],
       price: '2,499€',
-      gradient: 'from-teal-500 to-green-500'
+      gradient: 'from-teal-500 to-green-500',
+      icon: ''
     },
     {
       title: 'Management Public & Gouvernance',
@@ -179,30 +205,110 @@ const Formations = () => {
         'Innovation et transformation digitale dans le public'
       ],
       price: '1,799€',
-      gradient: 'from-blue-600 to-cyan-600'
+      gradient: 'from-blue-600 to-cyan-600',
+      icon: ''
     }
   ];
 
-
-
   const stats = [
-    { icon: Users, value: '10,000+', label: 'Étudiants formés' },
-    { icon: Award, value: '98%', label: 'Taux de réussite' },
-    { icon: Calendar, value: '24/7', label: 'Accès permanent' },
-    { icon: UserCheck, value: '50+', label: 'Formateurs experts' }
+    { icon: Users, value: '10,000+', label: 'Étudiants formés', target: 10000 },
+    { icon: Award, value: '98%', label: 'Taux de réussite', target: 98 },
+    { icon: Calendar, value: '24/7', label: 'Accès permanent', target: 100 },
+    { icon: UserCheck, value: '50+', label: 'Formateurs experts', target: 50 }
   ];
+
+  const testimonials = [
+    {
+      name: 'Marie Dubois',
+      role: 'Responsable RH',
+      company: 'TechCorp International',
+      content: 'La formation en digitalisation RH a transformé notre département. Les outils pratiques et l\'accompagnement personnalisé ont fait toute la différence.',
+      rating: 5,
+      avatar: 'MD'
+    },
+    {
+      name: 'Ahmed El Mansouri',
+      role: 'Directeur des Ressources Humaines',
+      company: 'Groupe Santé Plus',
+      content: 'Excellente plateforme avec un contenu très actuel. Le suivi individualisé m\'a permis d\'appliquer directement les concepts dans mon entreprise.',
+      rating: 5,
+      avatar: 'AE'
+    },
+    {
+      name: 'Sophie Martin',
+      role: 'Consultante en Gouvernance',
+      company: 'Cabinet Conseil Stratégique',
+      content: 'La certification IMA en gouvernance est d\'une qualité exceptionnelle. Les études de cas réelles et l\'expertise des formateurs sont remarquables.',
+      rating: 5,
+      avatar: 'SM'
+    }
+  ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          
+          // Animation des statistiques
+          const animateValue = (start, end, duration, key) => {
+            const startTime = performance.now();
+            const updateValue = (currentTime) => {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              if (key === 'success') {
+                setAnimatedStats(prev => ({
+                  ...prev,
+                  [key]: Math.floor(progress * (end - start) + start)
+                }));
+              } else {
+                setAnimatedStats(prev => ({
+                  ...prev,
+                  [key]: Math.floor(progress * (end - start) + start)
+                }));
+              }
+
+              if (progress < 1) {
+                requestAnimationFrame(updateValue);
+              }
+            };
+            requestAnimationFrame(updateValue);
+          };
+
+          animateValue(0, 10000, 2500, 'students');
+          animateValue(0, 98, 1800, 'success');
+          animateValue(0, 100, 1200, 'access');
+          animateValue(0, 50, 1500, 'teachers');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="formations">
       <Header />
       
-      {/* Hero Section */}
+      {/* Hero Section avec particules */}
       <section className="formations__hero">
+        <div className="formations__hero-particles">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="formations__hero-particle"></div>
+          ))}
+        </div>
         <div className="formations__container">
           <div className="formations__hero-content">
             <div className="formations__badge">
               <GraduationCap size={20} className="formations__badge-icon" />
               <span className="formations__badge-text">Plateforme E-learning Premium</span>
+              <div className="formations__badge-glow"></div>
             </div>
             <h1 className="formations__hero-title">
               Formations <span className="formations__hero-title-accent">Professionnelles</span>
@@ -213,39 +319,90 @@ const Formations = () => {
             </p>
             <div className="formations__hero-cta">
               <Link to="/contact" className="formations__cta-primary">
-                Commencer maintenant
-                <ArrowRight size={18} className="formations__cta-icon" />
+                <span>Commencer maintenant</span>
+                <div className="formations__cta-icon-wrapper">
+                  <ArrowRight size={18} className="formations__cta-icon" />
+                </div>
+                <div className="formations__cta-shine"></div>
               </Link>
               <button
                 type="button"
                 className="formations__cta-secondary"
                 aria-label="Voir la démo vidéo"
               >
-                <Play size={18} className="formations__cta-play" />
-                Voir la démo
+                <div className="formations__cta-play-wrapper">
+                  <Play size={18} className="formations__cta-play" />
+                </div>
+                <span>Voir la démo</span>
               </button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="formations__trust">
+              <div className="formations__trust-item">
+                <div className="formations__trust-icon-wrapper">
+                  <Shield size={16} className="formations__trust-icon" />
+                </div>
+                <span>Certifications reconnues</span>
+              </div>
+              <div className="formations__trust-item">
+                <div className="formations__trust-icon-wrapper">
+                  <Heart size={16} className="formations__trust-icon" />
+                </div>
+                <span>98% de satisfaction</span>
+              </div>
+              <div className="formations__trust-item">
+                <div className="formations__trust-icon-wrapper">
+                  <TrendingUp size={16} className="formations__trust-icon" />
+                </div>
+                <span>Carrière boostée</span>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <div className="formations__hero-scroll">
+          <div className="formations__hero-scroll-text">Découvrir</div>
+          <div className="formations__hero-scroll-arrow"></div>
+        </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="formations__stats">
+      {/* Stats Section avec animations */}
+      <section className="formations__stats" ref={statsRef}>
+        <div className="formations__stats-bg"></div>
         <div className="formations__container">
           <div className="formations__stats-grid">
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
+              const displayValue = isVisible ? 
+                (stat.label === 'Taux de réussite' ? animatedStats.success + '%' :
+                 stat.label === 'Accès permanent' ? '24/7' :
+                 stat.label === 'Formateurs experts' ? animatedStats.teachers + '+' :
+                 animatedStats.students + '+') : 
+                '0' + (stat.label === 'Taux de réussite' ? '%' : '+');
+              
               return (
                 <div
                   key={stat.label}
                   className="formations__stat"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="formations__stat-icon">
                     <IconComponent size={24} className="formations__stat-icon-svg" />
+                    <div className="formations__stat-icon-ring"></div>
                   </div>
-                  <div className="formations__stat-number">{stat.value}</div>
+                  <div className="formations__stat-number">{displayValue}</div>
                   <div className="formations__stat-label">{stat.label}</div>
+                  <div className="formations__stat-bar">
+                    <div 
+                      className="formations__stat-progress" 
+                      style={{ 
+                        width: isVisible ? '100%' : '0%',
+                        transitionDelay: `${index * 0.1}s`
+                      }}
+                    ></div>
+                  </div>
                 </div>
               );
             })}
@@ -257,6 +414,10 @@ const Formations = () => {
       <section className="formations__features">
         <div className="formations__container">
           <div className="formations__header">
+            <div className="formations__header-badge">
+              <Zap className="formations__header-badge-icon" />
+              <span>Notre différence</span>
+            </div>
             <h2 className="formations__title">
               Pourquoi choisir notre <span className="formations__title-accent">plateforme</span> ?
             </h2>
@@ -272,13 +433,20 @@ const Formations = () => {
                 <div
                   key={feature.title}
                   className="formations__feature"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ animationDelay: `${index * 0.15}s` }}
                 >
+                  <div className="formations__feature-glow"></div>
                   <div className="formations__feature-icon">
                     <IconComponent size={28} className="formations__feature-icon-svg" />
+                    <div className="formations__feature-icon-bg"></div>
                   </div>
                   <h3 className="formations__feature-title">{feature.title}</h3>
                   <p className="formations__feature-description">{feature.description}</p>
+                  <div className="formations__feature-decoration">
+                    <div className="formations__feature-dot"></div>
+                    <div className="formations__feature-dot"></div>
+                    <div className="formations__feature-dot"></div>
+                  </div>
                 </div>
               );
             })}
@@ -290,6 +458,10 @@ const Formations = () => {
       <section className="formations__programs">
         <div className="formations__container">
           <div className="formations__header">
+            <div className="formations__header-badge">
+              <BookOpen className="formations__header-badge-icon" />
+              <span>Programmes certifiants</span>
+            </div>
             <h2 className="formations__title">
               Nos <span className="formations__title-accent">Formations</span>
             </h2>
@@ -303,18 +475,15 @@ const Formations = () => {
               <div
                 key={program.title}
                 className="formations__program"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
+                <div className="formations__program-glow"></div>
                 <div className="formations__program-header">
+                  <div className="formations__program-icon">{program.icon}</div>
                   <div className={`formations__program-level formations__program-level--${program.level.toLowerCase()}`}>
                     {program.level}
                   </div>
-                  <div
-                    className="formations__program-price"
-                    style={{
-                      background: `linear-gradient(90deg, var(--${program.gradient.split(' ')[1]}), var(--${program.gradient.split(' ')[3]}))`
-                    }}
-                  >
+                  <div className="formations__program-price">
                     <div className="formations__program-price-amount">{program.price}</div>
                     <div className="formations__program-price-label">Paiement unique</div>
                   </div>
@@ -347,7 +516,8 @@ const Formations = () => {
                 </div>
 
                 <Link to="/contact" className="formations__program-cta">
-                  S'inscrire maintenant
+                  <span>S'inscrire maintenant</span>
+                  <div className="formations__program-cta-arrow"></div>
                 </Link>
               </div>
             ))}
@@ -359,6 +529,10 @@ const Formations = () => {
       <section className="formations__programs formations__programs--additional">
         <div className="formations__container">
           <div className="formations__header">
+            <div className="formations__header-badge">
+              <Target className="formations__header-badge-icon" />
+              <span>Spécialisations avancées</span>
+            </div>
             <h2 className="formations__title">
               Autres <span className="formations__title-accent">Parcours Spécialisés</span>
             </h2>
@@ -372,18 +546,15 @@ const Formations = () => {
               <div
                 key={program.title}
                 className="formations__program"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
+                <div className="formations__program-glow"></div>
                 <div className="formations__program-header">
+                  <div className="formations__program-icon">{program.icon}</div>
                   <div className={`formations__program-level formations__program-level--${program.level.toLowerCase()}`}>
                     {program.level}
                   </div>
-                  <div
-                    className="formations__program-price"
-                    style={{
-                      background: `linear-gradient(90deg, var(--${program.gradient.split(' ')[1]}), var(--${program.gradient.split(' ')[3]}))`
-                    }}
-                  >
+                  <div className="formations__program-price">
                     <div className="formations__program-price-amount">{program.price}</div>
                     <div className="formations__program-price-label">Paiement unique</div>
                   </div>
@@ -416,7 +587,8 @@ const Formations = () => {
                 </div>
 
                 <Link to="/contact" className="formations__program-cta">
-                  S'inscrire maintenant
+                  <span>S'inscrire maintenant</span>
+                  <div className="formations__program-cta-arrow"></div>
                 </Link>
               </div>
             ))}
@@ -424,21 +596,76 @@ const Formations = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="formations__testimonials">
+        <div className="formations__container">
+          <div className="formations__header">
+            <div className="formations__header-badge">
+              <Star className="formations__header-badge-icon" />
+              <span>Témoignages</span>
+            </div>
+            <h2 className="formations__title">
+              Ils nous <span className="formations__title-accent">font confiance</span>
+            </h2>
+            <p className="formations__subtitle">
+              Découvrez ce que pensent nos anciens étudiants de leur expérience de formation.
+            </p>
+          </div>
+
+          <div className="formations__testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={testimonial.name}
+                className="formations__testimonial"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="formations__testimonial-glow"></div>
+                <div className="formations__testimonial-rating">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={16} className="formations__testimonial-star" />
+                  ))}
+                </div>
+                <p className="formations__testimonial-content">
+                  "{testimonial.content}"
+                </p>
+                <div className="formations__testimonial-author">
+                  <div className="formations__testimonial-avatar">
+                    <div className="formations__testimonial-avatar-fallback">
+                      {testimonial.avatar}
+                    </div>
+                  </div>
+                  <div className="formations__testimonial-info">
+                    <div className="formations__testimonial-name">{testimonial.name}</div>
+                    <div className="formations__testimonial-role">{testimonial.role}</div>
+                    <div className="formations__testimonial-company">{testimonial.company}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="formations__cta">
+        <div className="formations__cta-pattern"></div>
         <div className="formations__container">
           <div className="formations__cta-content">
+            <div className="formations__cta-badge">
+              <GraduationCap className="formations__cta-badge-icon" />
+              <span>Votre avenir commence ici</span>
+            </div>
             <h2 className="formations__cta-title">Prêt à transformer votre carrière ?</h2>
             <p className="formations__cta-description">
               Rejoignez plus de 10,000 professionnels qui ont fait confiance à nos formations.
             </p>
             <div className="formations__cta-buttons">
               <Link to="/contact" className="formations__cta-button-primary">
-                Commencer gratuitement
+                <span>Commencer gratuitement</span>
+                <div className="formations__cta-button-shine"></div>
               </Link>
               <Link to="/Nos-services" className="formations__cta-button-secondary">
-                Explorer tous nos services
+                <span>Explorer tous nos services</span>
               </Link>
             </div>
           </div>
