@@ -97,14 +97,14 @@ const HeroSection = () => {
                 <div className="hero__stat-icon-wrapper">
                   <Users className="hero__stat-icon" />
                 </div>
-                <div className="hero__stat-number" data-target="500">0</div>
+                <div className="hero__stat-number" data-target="500">50</div>
                 <div className="hero__stat-label">Clients Satisfaits</div>
               </div>
               <div className="hero__stat">
                 <div className="hero__stat-icon-wrapper">
                   <Target className="hero__stat-icon" />
                 </div>
-                <div className="hero__stat-number" data-target="98">0</div>
+                <div className="hero__stat-number" data-target="98">98%</div>
                 <div className="hero__stat-label">Taux de Réussite</div>
               </div>
               <div className="hero__stat">
@@ -129,7 +129,7 @@ const HeroSection = () => {
                 <div className="hero__cta-play-wrapper">
                   <Play className="hero__cta-play" />
                 </div>
-                <span>Voir nos réalisations</span>
+                <span>Voir nos catalogues</span>
               </button>
             </div>
 

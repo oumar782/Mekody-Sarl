@@ -14,17 +14,18 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { name: 'Marketing Digital', href: '/services' },
-    { name: 'E-learning', href: '/formations' },
-    { name: 'Tourisme Médical', href: '/tourisme-medical' },
-    { name: 'Colonies de Vacances', href: '/colonies-vacances' },
-    { name: 'Développement Web', href: '/developpement' },
+    { name: 'Formations', href: '/Nos-formations' },
+    { name: 'Solutions digitales', href: '/solutions-digitales' },
+    
+    { name: 'Evacuation sanitaire', href: '/tourisme-medical' },
+    { name: 'Voyage organisé', href: '/voyage-organisé' },
   ];
 
   const company = [
-    { name: 'À propos', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'À propos', href: '/A-propos' },
+    { name: 'Services', href: '/Nos-services' },
+    { name: 'Contact', href: '/contact' }
+
   ];
 
   const socialLinks = [
@@ -41,9 +42,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="footer__section">
             <div className="footer__logo">
-              <div className="footer__logo-icon">
-                <span className="footer__logo-letter">M</span>
-              </div>
+    
               <div className="footer__logo-text">
                 <div className="footer__logo-title">Mekody</div>
                 <div className="footer__logo-subtitle">Sarl</div>
@@ -121,24 +120,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Subscription */}
-        <div className="footer__newsletter">
-          <h3 className="footer__newsletter-title">Restez informé</h3>
-          <p className="footer__newsletter-text">
-            Inscrivez-vous à notre newsletter pour recevoir nos actualités et offres exclusives.
-          </p>
-          <form className="footer__newsletter-form">
-            <input 
-              type="email" 
-              placeholder="Votre email" 
-              className="footer__newsletter-input"
-              required 
-            />
-            <button type="submit" className="footer__newsletter-button">
-              S'inscrire
-            </button>
-          </form>
-        </div>
+       
 
         {/* Bottom Bar */}
         <div className="footer__bottom">
