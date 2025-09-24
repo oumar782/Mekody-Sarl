@@ -17,6 +17,7 @@ import {
 import './service.css';
 import Header from '../composant/Header';
 import Footer from '../composant/Footer';
+
 const Services = () => {
   const services = [
     {
@@ -24,12 +25,12 @@ const Services = () => {
       title: 'Marketing Digital',
       description: 'Maximisez votre présence en ligne avec nos stratégies digitales innovantes et personnalisées.',
       features: [
-        'Stratégie Digitale Complète,',
-        'Référencement Naturel (SEO), ',
-        'Publicités Gérées (SEA & Social Ads),',
-        'Gestion des Réseaux Sociaux , ',
-        'Email Marketing Automatisé ,',
-        'Analytics & Reporting ,'
+        'Stratégie Digitale Complète',
+        'Référencement Naturel (SEO)',
+        'Publicités Gérées (SEA & Social Ads)',
+        'Gestion des Réseaux Sociaux',
+        'Email Marketing Automatisé',
+        'Analytics & Reporting'
       ],
       benefits: [
         'Augmentation du trafic qualifié',
@@ -162,7 +163,8 @@ const Services = () => {
 
   return (
     <div className="services-page">
-        <Header/>
+      <Header/>
+      
       {/* Hero Section */}
       <section className="services-page__hero">
         <div className="services-page__container">
@@ -324,8 +326,8 @@ const Services = () => {
           </div>
         </div>
       </section>
+      
       <Footer/>
-
     </div>
   );
 };
