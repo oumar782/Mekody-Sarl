@@ -25,23 +25,28 @@ const ServicesOverview = () => {
       title: 'Formation',
       description: 'Des parcours de formation innovants et modulables, adaptés aux professionnels et aux particuliers. Nous combinons expertise académique et pratique pour accompagner le développement des compétences clés du marché.',
       features: [
-        'Andrologie & embryologie',
-        'Digitalisation & RH Data-Driven',
-        'Talent Acquisition & Marque Employeur',
-        'Stratégie & Business Partnering',
-        'Modules stratégiques & leadership',
-        'Ingénierie de formation par l’approche compétence',
-        'Certification Gouvernance (5 modules) – IMA – 11 jours (modulaire sur plusieurs semaines)',
-        'Parcours RSE (4 modules sur 4 à 5 mois) – IMA – 4 jours – modulaire échelonné',
-        'Capacités d’adaptation & contrôle de gestion',
-        'Formation continue (gestion publique)',
-        'Management public & gouvernance',
-        'Développement web',
-        'Analyse de données'
+        'Santé',
+        'Gestion des Ressources Humaines', 
+        'Finance publique & gestion budgétaire',
+        'Gestion Financière et Comptable', 
+        'Décentralisation et développement durable',
+        'Base de données et statistiques', 
+        'Environnement',
+        'Assistant de direction', 
+        'Marchés publics' ,
+        
+        
+        
+        
+       
+        
+          
       ],
       href: '/Nos-formations',
       gradient: 'from-purple-500 to-pink-500'
     },
+
+
     {
       icon: Heart,
       title: 'Evacuation sanitaire',
