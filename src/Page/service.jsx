@@ -58,12 +58,12 @@ const Services = () => {
         'Suivi personnalisé',
         'Montée en compétences rapide'
       ],
-      href: '/formations',
+      href: '/Nos-formations',
       gradient: 'from-purple-500 to-pink-500'
     },
     {
       icon: Heart,
-      title: 'Tourisme Médical',
+      title: 'Evacuation sanitaire',
       description: 'Accompagnement complet pour vos soins médicaux à l\'étranger en toute sérénité.',
       features: [
         'Coordination médicale',
@@ -84,7 +84,7 @@ const Services = () => {
     },
     {
       icon: Sun,
-      title: 'Colonies de Vacances',
+      title: 'voyage organisé',
       description: 'Vacances éducatives inoubliables basées sur l\'aventure, l\'apprentissage et l\'amitié.',
       features: [
         'Programmes thématiques variés',
@@ -100,12 +100,12 @@ const Services = () => {
         'Apprentissages pratiques',
         'Confiance renforcée'
       ],
-      href: '/colonies-vacances',
+      href: '/voyage-organisé',
       gradient: 'from-orange-500 to-yellow-500'
     },
     {
       icon: Code,
-      title: 'Développement Web & Logiciels',
+      title: 'Solutions digitales',
       description: 'Solutions techniques sur mesure pour digitaliser et optimiser votre entreprise.',
       features: [
         'Applications web responsive',
@@ -113,7 +113,8 @@ const Services = () => {
         'E-commerce avancé',
         'Solutions cloud',
         'Intégrations API',
-        'Maintenance et support'
+        'Maintenance et support',
+        'Data science'
       ],
       benefits: [
         'Automatisation des processus',
@@ -121,7 +122,7 @@ const Services = () => {
         'Expérience utilisateur optimale',
         'Évolutivité garantie'
       ],
-      href: '/developpement',
+      href: '/solutions-digitales',
       gradient: 'from-indigo-500 to-blue-500'
     }
   ];
