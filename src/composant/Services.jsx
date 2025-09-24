@@ -45,8 +45,17 @@ const ServicesOverview = () => {
       href: '/Nos-formations',
       gradient: 'from-purple-500 to-pink-500'
     },
+    {
+      icon: Code,
+      title: 'Solutions digitales',
+      description: 'Du développement web full-stack à la data visualisation, nous concevons l\'écosystème digital qui fait parler vos chiffres ',
+      features: ['Applications web', 'Mobile apps', 'E-commerce', 'Maintenance', 'Data science'],
+      href: '/solutions-digitales',
+      gradient: 'from-indigo-500 to-blue-500'
+    },
 
-
+    
+    
     {
       icon: Heart,
       title: 'Evacuation sanitaire',
@@ -55,6 +64,7 @@ const ServicesOverview = () => {
       href: '/tourisme-medical',
       gradient: 'from-green-500 to-emerald-500'
     },
+     
     {
       icon: Sun,
       title: 'voyage organisé au Maroc',
@@ -63,14 +73,6 @@ const ServicesOverview = () => {
       href: '/voyage-organisé',
       gradient: 'from-orange-500 to-yellow-500'
     },
-    {
-      icon: Code,
-      title: 'Solutions digitales',
-      description: 'Du développement web full-stack à la data visualisation, nous concevons l\'écosystème digital qui fait parler vos chiffres ',
-      features: ['Applications web', 'Mobile apps', 'E-commerce', 'Maintenance', 'Data science'],
-      href: '/solutions-digitales',
-      gradient: 'from-indigo-500 to-blue-500'
-    }
   ];
 
   return (
