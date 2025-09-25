@@ -204,10 +204,7 @@ const Formations = () => {
             </div>
           </div>
         </div>
-        <div className="formations__hero-scroll">
-          <div className="formations__hero-scroll-text">Découvrir</div>
-          <div className="formations__hero-scroll-arrow"></div>
-        </div>
+      
       </section>
 
       {/* Stats Section */}
