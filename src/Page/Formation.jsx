@@ -6,20 +6,15 @@ import {
   Award,
   BookOpen,
   Target,
-  CheckCircle,
   Play,
   Star,
   ArrowRight,
-  Laptop,
-  Smartphone,
-  Globe,
-  Calendar,
-  UserCheck,
-  BarChart3,
-  Zap,
   Shield,
   Heart,
-  TrendingUp
+  TrendingUp,
+  Calendar,
+  UserCheck,
+  Code,
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import './for.css';
@@ -36,124 +31,83 @@ const Formations = () => {
   const [isVisible, setIsVisible] = useState(false);
   const statsRef = useRef(null);
 
-  const features = [
+  // Statistiques inchangées (valeurs génériques)
+  const stats = [
+    { icon: Users, value: '10,000+', label: 'Professionnels formés', target: 10000 },
+    { icon: Award, value: '98%', label: 'Taux de réussite', target: 98 },
+    { icon: Calendar, value: '24/7', label: 'Accompagnement', target: 100 },
+    { icon: UserCheck, value: '50+', label: 'Experts formateurs', target: 50 }
+  ];
+
+  // Témoignages génériques mais neutres
+  const testimonials = [
     {
-      icon: Laptop,
-      title: 'Plateforme LMS Avancée',
-      description: 'Interface intuitive et moderne pour une expérience d\'apprentissage optimale'
+      name: 'Dr. Leila Benali',
+      role: 'Médecin spécialiste',
+      company: 'Hôpital Régional',
+      content: 'La formation en santé m’a permis d’actualiser mes connaissances avec des contenus rigoureux et pratiques.',
+      rating: 5,
+      avatar: 'LB'
     },
     {
-      icon: Smartphone,
-      title: 'Mobile Learning',
-      description: 'Accès complet depuis tous vos appareils, partout et à tout moment'
+      name: 'Karim Touati',
+      role: 'Responsable Financier',
+      company: 'Collectivité Territoriale',
+      content: 'Les modules sur la gestion budgétaire publique sont d’une grande clarté et directement applicables.',
+      rating: 5,
+      avatar: 'KT'
     },
     {
-      icon: Users,
-      title: 'Accompagnement Personnel',
-      description: 'Formateurs experts disponibles pour un suivi individualisé'
-    },
-    {
-      icon: BookOpen,
-      title: 'Contenus Interactifs',
-      description: 'Modules multimédias avec exercices pratiques et études de cas'
-    },
-    {
-      icon: Globe,
-      title: 'Communauté Internationale',
-      description: 'Échangez avec des apprenants du monde entier'
-    },
-    {
-      icon: Zap,
-      title: 'Apprentissage Adaptatif',
-      description: 'Contenu qui s\'adapte à votre rythme et niveau de compréhension'
+      name: 'Fatima Zahra Naji',
+      role: 'Chef de Projet Développement Durable',
+      company: 'Agence Nationale de l’Environnement',
+      content: 'Une expertise solide sur la décentralisation et le développement durable. Très enrichissant professionnellement.',
+      rating: 5,
+      avatar: 'FZ'
     }
   ];
 
-  // Nouvelles formations strictement limitées aux thèmes demandés
+  // Nouvelles formations — uniquement celles demandées
   const programs = [
     {
-      title: 'Formation Santé',
-      description: 'Renforcement des compétences dans les domaines de la santé publique, la gestion hospitalière et les politiques sanitaires.',
-      gradient: 'from-red-500 to-rose-500'
+      title: 'Santé',
+      description: 'Formations spécialisées couvrant les bonnes pratiques, la réglementation sanitaire, et les enjeux contemporains du secteur de la santé.'
     },
     {
       title: 'Environnement',
-      description: 'Approfondissement des enjeux environnementaux, politiques de durabilité et gestion des ressources naturelles.',
-      gradient: 'from-green-500 to-emerald-500'
+      description: 'Programmes axés sur la gestion des ressources naturelles, les politiques environnementales, et la transition écologique.'
     },
     {
-      title: 'Base de Données et Statistique',
-      description: 'Maîtrise des outils de collecte, traitement et analyse des données au service de la décision publique et managériale.',
-      gradient: 'from-blue-500 to-cyan-500'
+      title: 'Base de données et statistique',
+      description: 'Maîtrise des outils d’analyse de données, modélisation statistique, et gestion de bases de données pour la prise de décision.'
     },
     {
-      title: 'Gestion des Ressources Humaines (GRH)',
-      description: 'Formation aux pratiques modernes de gestion du personnel dans les administrations et organisations publiques.',
-      gradient: 'from-purple-500 to-pink-500'
+      title: 'GRH (Gestion des Ressources Humaines)',
+      description: 'Stratégies de gestion du personnel, droit du travail, pilotage RH et accompagnement du changement organisationnel.'
     },
     {
-      title: 'Finance Publique & Gestion Budgétaire',
-      description: 'Compréhension des mécanismes de la finance publique, de l’élaboration, l’exécution et le suivi des budgets.',
-      gradient: 'from-amber-500 to-orange-500'
+      title: 'Finance publique & gestion budgétaire',
+      description: 'Compréhension des mécanismes de la finance publique, élaboration, exécution et contrôle du budget public.'
     },
     {
-      title: 'Marchés Publics',
-      description: 'Maîtrise du cadre juridique, des procédures et bonnes pratiques en matière de passation des marchés publics.',
-      gradient: 'from-indigo-500 to-blue-600'
+      title: 'Marchés publics',
+      description: 'Formation complète sur les procédures, la réglementation, et la gestion des marchés publics conformément au cadre légal.'
     },
     {
-      title: 'Décentralisation et Développement Durable',
-      description: 'Appui aux acteurs locaux dans la mise en œuvre de politiques de développement territorial durable.',
-      gradient: 'from-teal-500 to-green-600'
+      title: 'Décentralisation et développement durable',
+      description: 'Approfondissement des politiques de décentralisation, gouvernance locale, et intégration du développement durable dans les territoires.'
     },
     {
-      title: 'Assistance de Direction',
-      description: 'Renforcement des compétences des assistants de direction dans la gestion administrative, organisationnelle et relationnelle.',
-      gradient: 'from-gray-500 to-slate-600'
+      title: 'Assistance de direction',
+      description: 'Compétences en organisation, communication, gestion administrative et support stratégique aux cadres dirigeants.'
     },
     {
-      title: 'Gestion des Projets et Programmes',
-      description: 'Méthodologies et outils pour la conception, la mise en œuvre et l’évaluation de projets et programmes publics.',
-      gradient: 'from-cyan-500 to-blue-500'
+      title: 'Gestion des projets et programmes',
+      description: 'Méthodologies de pilotage de projets, planification, suivi-évaluation, et gestion des parties prenantes.'
     },
     {
-      title: 'Gestion Financière et Comptable',
-      description: 'Formation aux normes comptables publiques, à la gestion financière et au contrôle interne dans les institutions.',
-      gradient: 'from-emerald-500 to-teal-600'
-    }
-  ];
-
-  const stats = [
-    { icon: Users, value: '10,000+', label: 'Étudiants formés', target: 10000 },
-    { icon: Award, value: '98%', label: 'Taux de réussite', target: 98 },
-    { icon: Calendar, value: '24/7', label: 'Accès permanent', target: 100 },
-    { icon: UserCheck, value: '50+', label: 'Formateurs experts', target: 50 }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Marie Dubois',
-      role: 'Responsable RH',
-      company: 'TechCorp International',
-      content: 'La formation en digitalisation RH a transformé notre département. Les outils pratiques et l\'accompagnement personnalisé ont fait toute la différence.',
-      rating: 5,
-      avatar: 'MD'
-    },
-    {
-      name: 'Ahmed El Mansouri',
-      role: 'Directeur des Ressources Humaines',
-      company: 'Groupe Santé Plus',
-      content: 'Excellente plateforme avec un contenu très actuel. Le suivi individualisé m\'a permis d\'appliquer directement les concepts dans mon entreprise.',
-      rating: 5,
-      avatar: 'AE'
-    },
-    {
-      name: 'Sophie Martin',
-      role: 'Consultante en Gouvernance',
-      company: 'Cabinet Conseil Stratégique',
-      content: 'La certification IMA en gouvernance est d\'une qualité exceptionnelle. Les études de cas réelles et l\'expertise des formateurs sont remarquables.',
-      rating: 5,
-      avatar: 'SM'
+      title: 'Gestion financière et comptable',
+      description: 'Maîtrise des principes comptables, analyse financière, contrôle de gestion et conformité fiscale.'
     }
   ];
 
@@ -167,17 +121,12 @@ const Formations = () => {
             const updateValue = (currentTime) => {
               const elapsed = currentTime - startTime;
               const progress = Math.min(elapsed / duration, 1);
-              if (key === 'success') {
-                setAnimatedStats(prev => ({
-                  ...prev,
-                  [key]: Math.floor(progress * (end - start) + start)
-                }));
-              } else {
-                setAnimatedStats(prev => ({
-                  ...prev,
-                  [key]: Math.floor(progress * (end - start) + start)
-                }));
-              }
+              setAnimatedStats(prev => ({
+                ...prev,
+                [key]: key === 'success'
+                  ? Math.floor(progress * (end - start) + start)
+                  : Math.floor(progress * (end - start) + start)
+              }));
               if (progress < 1) {
                 requestAnimationFrame(updateValue);
               }
@@ -201,7 +150,7 @@ const Formations = () => {
   return (
     <div className="formations">
       <Header />
-      {/* Hero Section avec particules */}
+      {/* Hero Section */}
       <section className="formations__hero">
         <div className="formations__hero-particles">
           {[...Array(20)].map((_, i) => (
@@ -219,27 +168,26 @@ const Formations = () => {
               Formations <span className="formations__hero-title-accent">Spécialisées</span>
             </h1>
             <p className="formations__hero-description">
-              Des parcours de formation conçus pour renforcer les compétences clés dans les domaines publics, sociaux et techniques.
+              Des programmes conçus pour les professionnels des secteurs publics et privés, centrés sur l’excellence opérationnelle et la conformité réglementaire.
             </p>
             <div className="formations__hero-cta">
-              <Link to="/contact" className="formations__cta-primary">
-                <span>Demander le programme</span>
+              <Link to="/catalogue" className="formations__cta-primary">
+                <span>Voir nos catalogues</span>
                 <div className="formations__cta-icon-wrapper">
                   <ArrowRight size={18} className="formations__cta-icon" />
                 </div>
                 <div className="formations__cta-shine"></div>
               </Link>
-              <Link to="/catalogue" className="formations__cta-secondary">
-                <span>Voir nos catalogues</span>
+              <Link to="/contact" className="formations__cta-secondary">
+                <span>Demander le programme</span>
               </Link>
             </div>
-            {/* Trust indicators */}
             <div className="formations__trust">
               <div className="formations__trust-item">
                 <div className="formations__trust-icon-wrapper">
                   <Shield size={16} className="formations__trust-icon" />
                 </div>
-                <span>Contenus certifiés</span>
+                <span>Certifications reconnues</span>
               </div>
               <div className="formations__trust-item">
                 <div className="formations__trust-icon-wrapper">
@@ -251,7 +199,7 @@ const Formations = () => {
                 <div className="formations__trust-icon-wrapper">
                   <TrendingUp size={16} className="formations__trust-icon" />
                 </div>
-                <span>Impact professionnel</span>
+                <span>Carrière boostée</span>
               </div>
             </div>
           </div>
@@ -271,8 +219,8 @@ const Formations = () => {
               const IconComponent = stat.icon;
               const displayValue = isVisible ? 
                 (stat.label === 'Taux de réussite' ? animatedStats.success + '%' :
-                 stat.label === 'Accès permanent' ? '24/7' :
-                 stat.label === 'Formateurs experts' ? animatedStats.teachers + '+' :
+                 stat.label === 'Accompagnement' ? '24/7' :
+                 stat.label === 'Experts formateurs' ? animatedStats.teachers + '+' :
                  animatedStats.students + '+') : 
                 '0' + (stat.label === 'Taux de réussite' ? '%' : '+');
               return (
@@ -303,62 +251,19 @@ const Formations = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="formations__features">
-        <div className="formations__container">
-          <div className="formations__header">
-            <div className="formations__header-badge">
-              <Zap className="formations__header-badge-icon" />
-              <span>Notre approche</span>
-            </div>
-            <h2 className="formations__title">
-              Pourquoi choisir nos <span className="formations__title-accent">formations</span> ?
-            </h2>
-            <p className="formations__subtitle">
-              Une expérience d'apprentissage moderne et personnalisée pour maximiser vos résultats.
-            </p>
-          </div>
-          <div className="formations__features-grid">
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <div
-                  key={feature.title}
-                  className="formations__feature"
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                >
-                  <div className="formations__feature-glow"></div>
-                  <div className="formations__feature-icon">
-                    <IconComponent size={28} className="formations__feature-icon-svg" />
-                    <div className="formations__feature-icon-bg"></div>
-                  </div>
-                  <h3 className="formations__feature-title">{feature.title}</h3>
-                  <p className="formations__feature-description">{feature.description}</p>
-                  <div className="formations__feature-decoration">
-                    <div className="formations__feature-dot"></div>
-                    <div className="formations__feature-dot"></div>
-                    <div className="formations__feature-dot"></div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Programs Section */}
+      {/* Programs Section — une seule section */}
       <section className="formations__programs">
         <div className="formations__container">
           <div className="formations__header">
             <div className="formations__header-badge">
               <BookOpen className="formations__header-badge-icon" />
-              <span>Nos domaines de formation</span>
+              <span>Nos domaines d’expertise</span>
             </div>
             <h2 className="formations__title">
-              Nos <span className="formations__title-accent">Formations</span>
+              Formations <span className="formations__title-accent">Professionnelles</span>
             </h2>
             <p className="formations__subtitle">
-              Découvrez nos parcours spécialisés dans les domaines prioritaires du secteur public et social.
+              Découvrez nos programmes conçus pour répondre aux exigences des secteurs publics, privés et de la santé.
             </p>
           </div>
           <div className="formations__programs-grid">
@@ -369,18 +274,14 @@ const Formations = () => {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="formations__program-glow"></div>
-                <div className="formations__program-header">
-                  <div className="formations__program-icon"></div>
-                  <div className="formations__program-price"></div>
-                </div>
                 <h3 className="formations__program-title">{program.title}</h3>
                 <p className="formations__program-description">{program.description}</p>
                 <div className="formations__program-buttons">
-                  <Link to="/catalogue" className="formations__program-cta formations__program-cta--catalog">
-                    <span>Voir nos catalogues</span>
+                  <Link to="/catalogue" className="formations__program-btn">
+                    Voir nos catalogues
                   </Link>
-                  <Link to="/contact" className="formations__program-cta formations__program-cta--request">
-                    <span>Demander le programme</span>
+                  <Link to="/contact" className="formations__program-btn formations__program-btn-outline">
+                    Demander le programme
                   </Link>
                 </div>
               </div>
@@ -401,7 +302,7 @@ const Formations = () => {
               Ils nous <span className="formations__title-accent">font confiance</span>
             </h2>
             <p className="formations__subtitle">
-              Découvrez ce que pensent nos anciens étudiants de leur expérience de formation.
+              Retours d’expérience de professionnels ayant suivi nos formations.
             </p>
           </div>
           <div className="formations__testimonials-grid">
@@ -438,7 +339,7 @@ const Formations = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Final CTA */}
       <section className="formations__cta">
         <div className="formations__cta-pattern"></div>
         <div className="formations__container">
@@ -449,7 +350,7 @@ const Formations = () => {
             </div>
             <h2 className="formations__cta-title">Prêt à transformer votre carrière ?</h2>
             <p className="formations__cta-description">
-              Rejoignez plus de 10,000 professionnels qui ont fait confiance à nos formations.
+              Rejoignez des milliers de professionnels formés dans des domaines stratégiques.
             </p>
             <div className="formations__cta-buttons">
               <Link to="/catalogue" className="formations__cta-button-primary">
@@ -463,6 +364,7 @@ const Formations = () => {
           </div>
         </div>
       </section>
+
       <Footer />
     </div>
   );
