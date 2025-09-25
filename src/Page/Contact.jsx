@@ -86,7 +86,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Adresse',
       details: 'RUE ATLAS IMM 45,4 EME ETAGE N16 MAARIF CASABLANCA',
-      subtitle: '75001 Paris, France',
+      subtitle: '20000 Casablanca, Maroc',
       action: 'https://maps.google.com'
     },
     {
