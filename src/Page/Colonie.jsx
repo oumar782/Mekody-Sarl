@@ -146,28 +146,25 @@ const ColonieVacances = () => {
 
   const testimonials = [
     {
-      parentName: 'Sophie et Marc',
+      parentName: 'Bintou Koita',
       childName: 'Circuit Aventure Impériale',
       program: 'Voyage en couple',
       content: 'Un service impeccable qui nous a fait découvrir le vrai Maroc. Notre guide était incroyablement attentionné et connaissait parfaitement les meilleurs endroits.',
       rating: 5,
-      avatar: '/avatars/sophie-marc.jpg'
     },
     {
-      parentName: 'Groupe Universitaire',
-      childName: 'Voyage d\'étude économique',
-      program: 'Université Paris',
+      parentName: 'Groupe Universitaire ',
+      childName: 'Voyage d\'étude médicale',
+      program: 'Université De Bamako',
       content: 'Une expérience académique exceptionnelle ! L\'approche pédagogique innovante nous a permis de comprendre les enjeux économiques du Maroc de façon concrète.',
       rating: 5,
-      avatar: '/avatars/universite.jpg'
     },
     {
-      parentName: 'Famille Lambert',
+      parentName: 'Famille Konaté',
       childName: 'Colonie de vacances enfants',
-      program: 'Séjour été 2024',
+      program: 'Séjour été 2025',
       content: 'Nos enfants sont revenus enchantés de leur colonie ! Entre les activités éducatives et les découvertes culturelles, ils ont vécu des moments magiques.',
       rating: 5,
-      avatar: '/avatars/lambert.jpg'
     }
   ];
 
