@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 import { 
   Sun, 
   Heart, 
@@ -39,163 +39,163 @@ const ColonieVacances = () => {
   const pillars = [
     {
       icon: Compass,
-      title: 'Authenticité',
-      description: 'Immersion totale dans la culture et les traditions marocaines',
+      title: 'Expertise',
+      description: 'Équipe de professionnels expérimentés et passionnés par le Maroc',
       color: 'from-orange-500 to-red-500'
     },
     {
-      icon: BookOpen,
-      title: 'Découverte',
-      description: 'Exploration des trésors cachés et sites emblématiques du Maroc',
+      icon: Shield,
+      title: 'Sécurité',
+      description: 'Votre sécurité et votre bien-être sont notre priorité absolue',
       color: 'from-blue-500 to-purple-500'
     },
     {
       icon: Heart,
-      title: 'Bienveillance',
-      description: 'Accueil chaleureux et accompagnement personnalisé tout au long du séjour',
+      title: 'Personnalisation',
+      description: 'Nous créons avec vous le voyage de vos rêves, authentique et sur mesure',
       color: 'from-pink-500 to-red-500'
     }
   ];
 
   const programs = [
     {
-      title: 'Aventure Impériale',
-      age: 'Familles & Adultes',
-      duration: '8 jours / 7 nuits',
-      location: 'Marrakech • Atlas • Désert',
+      title: 'Voyages Organisés – L\'Émotion',
+      age: 'Tous publics',
+      duration: 'Sur mesure',
+      location: 'Tout le Maroc',
       image: '',
-      description: 'Découverte des villes impériales, des montagnes de l\'Atlas et d\'une nuit en bivouac dans le désert.',
+      description: 'Un voyage au Maroc est une immersion dans un monde de couleurs, de saveurs et de traditions.',
       activities: [
-        'Visite des médinas historiques',
-        'Randonnée dans l\'Atlas',
-        'Nuit en bivouac saharien',
-        'Spectacle de folklore',
-        'Dégustation culinaire'
+        'Paysages époustouflants',
+        'Rencontres inoubliables',
+        'Expériences authentiques',
+        'Culture riche et diverse',
+        'Traditions préservées'
       ],
-      price: 'À partir de 890€',
+      price: 'Sur devis',
       gradient: 'from-amber-500 to-orange-500'
     },
     {
-      title: 'Trésors Côtiers',
-      age: 'Familles & Couples',
-      duration: '10 jours / 9 nuits',
-      location: 'Casablanca • Essaouira • Agadir',
+      title: 'Voyages d\'Étude',
+      age: 'Groupes éducatifs',
+      duration: 'Programmes adaptés',
+      location: 'Régions ciblées',
       image: '',
-      description: 'Circuit along the Atlantic coast discovering fishing villages, argan cooperatives and golden beaches.',
+      description: 'Approche pédagogique innovante pour comprendre les enjeux économiques, sociaux et culturels.',
       activities: [
-        'Visite de la mosquée Hassan II',
-        'Découverte des criques cachées',
-        'Ateliers de cuisine traditionnelle',
-        'Observation des dauphins',
-        'Dégustation de produits locaux'
+        'Immersion culturelle',
+        'Rencontres professionnelles',
+        'Études de terrain',
+        'Ateliers pédagogiques',
+        'Découvertes interactives'
       ],
-      price: 'À partir de 1,290€',
+      price: 'Sur devis',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Expérience Berbère',
-      age: 'Aventuriers & Randonneurs',
-      duration: '12 jours / 11 nuits',
-      location: 'Vallées du Draa • Désert • Gorges',
+      title: 'Assistance Médicale',
+      age: 'Particuliers & Groupes',
+      duration: '24/7',
+      location: 'Tout le Maroc',
       image: '',
-      description: 'Immersion complète dans la culture berbère à travers les paysages les plus spectaculaires du Sud marocain.',
+      description: 'Service médical fiable, rapide et personnalisé pour que vous voyagiez en toute sérénité.',
       activities: [
-        'Rencontres avec les communautés locales',
-        'Randonnées chamelières',
-        'Nuits chez l\'habitant',
-        'Ateliers artisanaux',
-        'Observation des étoiles'
+        'Assistance médicale 24/7',
+        'Transport médicalisé',
+        'Coordination hospitalière',
+        'Suivi personnalisé',
+        'Évacuation sanitaire'
       ],
-      price: 'À partir de 1,690€',
+      price: 'Sur devis',
       gradient: 'from-purple-500 to-pink-500'
     }
   ];
 
   const features = [
     {
-      icon: Shield,
-      title: 'Sécurité Garantie',
-      description: 'Chauffeurs professionnels et guides certifiés, véhicules conformes aux normes'
-    },
-    {
       icon: Users,
-      title: 'Petits Groupes',
-      description: 'Maximum 8 personnes pour une expérience personnalisée et authentique'
+      title: 'Équipe Expérimentée',
+      description: 'Professionnels passionnés par le Maroc, à votre écoute pour vous conseiller'
     },
     {
-      icon: Camera,
-      title: 'Concierge 24/7',
-      description: 'Assistance permanente pendant tout votre séjour au Maroc'
-    },
-    {
-      icon: Smile,
-      title: 'Flexibilité',
-      description: 'Itinéraires modulables selon vos envies et préférences'
+      icon: Shield,
+      title: 'Sécurité Prioritaire',
+      description: 'Assistance rapide et efficace en toute circonstance pour votre bien-être'
     },
     {
       icon: Heart,
-      title: 'Authenticité',
-      description: 'Rencontres vraies avec la population locale et expériences uniques'
+      title: 'Expérience Personnalisée',
+      description: 'Nous créons avec vous le voyage de vos rêves, authentique et adapté'
+    },
+    {
+      icon: BookOpen,
+      title: 'Voyages d\'Étude Immersifs',
+      description: 'Conçus pour être immersifs et répondre aux besoins spécifiques de chaque groupe'
+    },
+    {
+      icon: Smile,
+      title: 'Service Médical Complet',
+      description: 'Santé et sécurité prioritaires avec service médical fiable et personnalisé'
     },
     {
       icon: TrendingUp,
-      title: 'Exclusivité',
-      description: 'Accès à des sites et expériences normalement inaccessibles aux touristes'
+      title: 'Expertise & Sérénité',
+      description: 'Expertise, sécurité et accompagnement personnalisé pour tous vos besoins'
     }
   ];
 
   const testimonials = [
     {
-      parentName: 'Sophie et Marc',
-      childName: 'Circuit Aventure Impériale',
-      program: 'Voyage en couple',
-      content: 'Un service impeccable qui nous a fait découvrir le vrai Maroc. Notre guide Mohamed était incroyablement attentionné et connaissait parfaitement les meilleurs endroits.',
+      parentName: 'Client Satisfait',
+      childName: 'Voyage Culturel',
+      program: 'Circuit Découverte',
+      content: 'Une équipe professionnelle qui a su nous faire découvrir le vrai Maroc avec passion et expertise. Notre sécurité et notre bien-être étaient leur priorité.',
       rating: 5,
-      avatar: '/avatars/sophie-marc.jpg'
+      avatar: '/avatars/client1.jpg'
     },
     {
-      parentName: 'Famille Dubois',
-      childName: 'Avec enfants 8 et 12 ans',
-      program: 'Trésors Côtiers',
-      content: 'Nos enfants ont adoré ce voyage ! Entre les plages, les marchés colorés et l\'accueil chaleureux des Marocains, nous avons vécu des moments magiques en famille.',
+      parentName: 'Groupe d\'Étude',
+      childName: 'Université Paris',
+      program: 'Voyage d\'Étude',
+      content: 'Un voyage d\'étude parfaitement organisé, immersif et adapté à nos besoins pédagogiques. Approche innovante et rencontres enrichissantes.',
       rating: 5,
-      avatar: '/avatars/dubois.jpg'
+      avatar: '/avatars/etude.jpg'
     },
     {
-      parentName: 'Thomas Leroux',
-      childName: 'Voyage entre amis',
-      program: 'Expérience Berbère',
-      content: 'Une aventure humaine incroyable. Dormir chez l\'habitant, partager des repas traditionnels, randonner dans des paysages à couper le souffle... Le Maroc authentique existe et Mekody nous l\'a fait découvrir !',
+      parentName: 'Patient Médical',
+      childName: 'Assistance 24/7',
+      program: 'Service Santé',
+      content: 'Service médical exceptionnel lors de notre séjour. Assistance rapide, professionnelle et rassurante. La tranquillité d\'esprit garantie !',
       rating: 5,
-      avatar: '/avatars/thomas.jpg'
+      avatar: '/avatars/medical.jpg'
     }
   ];
 
   const faqs = [
     {
-      question: 'Quelle est la meilleure période pour visiter le Maroc ?',
-      answer: 'Le printemps (mars-mai) et l\'automne (septembre-novembre) offrent des températures idéales. L\'hiver est parfait pour le désert, et l\'été pour les régions côtières.'
+      question: 'Quels types de voyages proposez-vous ?',
+      answer: 'Nous proposons des voyages organisés pour découvrir le Maroc, des voyages d\'étude immersifs, et des services d\'assistance médicale complète.'
     },
     {
-      question: 'Faut-il un visa pour le Maroc ?',
-      answer: 'Pour la plupart des nationalités européennes, canadiennes et américaines, aucun visa n\'est requis pour des séjours de moins de 90 jours. Un passeport valide est suffisant.'
+      question: 'Comment assurez-vous la sécurité des voyageurs ?',
+      answer: 'Votre sécurité est notre priorité. Nous assurons une assistance rapide et efficace en toute circonstance avec un service médical 24/7 disponible.'
     },
     {
-      question: 'Comment se déroulent les transports ?',
-      answer: 'Nous utilisons des véhicules privés climatisés avec chauffeur professionnel. Pour certaines étapes, nous pouvons organiser des trajets en train pour une expérience authentique.'
+      question: 'Proposez-vous des voyages personnalisés ?',
+      answer: 'Absolument ! Nous créons avec vous le voyage de vos rêves, en vous offrant une expérience authentique et personnalisée selon vos envies.'
     },
     {
-      question: 'Quelle est la monnaie locale ?',
-      answer: 'La monnaie est le Dirham marocain (MAD). Nous vous conseillons sur le change et les moyens de paiement les plus adaptés pendant votre séjour.'
+      question: 'Quelle est votre expérience ?',
+      answer: 'Notre équipe est composée de professionnels expérimentés et passionnés par le Maroc, avec des années d\'expérience dans l\'organisation de voyages.'
     }
   ];
 
   const stats = [
     {
       icon: Users,
-      value: '2,500+',
-      label: 'Voyageurs satisfaits',
-      target: 2500
+      value: '500+',
+      label: 'Clients satisfaits',
+      target: 500
     },
     {
       icon: Star,
@@ -249,7 +249,7 @@ const ColonieVacances = () => {
             requestAnimationFrame(updateValue);
           };
 
-          animateValue(0, 2500, 2000, 'travelers');
+          animateValue(0, 500, 2000, 'travelers');
           animateValue(0, 4.9, 1800, 'satisfaction');
           animateValue(0, 10, 1500, 'experience');
           animateValue(0, 100, 1200, 'coverage');
@@ -281,26 +281,25 @@ const ColonieVacances = () => {
           <div className="colonie-vacances__hero-content">
             <div className="colonie-vacances__badge">
               <Sun className="colonie-vacances__badge-icon" />
-              <span className="colonie-vacances__badge-text">Voyages Sur Mesure au Maroc</span>
+              <span className="colonie-vacances__badge-text">Mekody Service Santé</span>
               <div className="colonie-vacances__badge-glow"></div>
             </div>
             <h1 className="colonie-vacances__hero-title">
-              Votre Aventure <span className="colonie-vacances__hero-title-accent">Marocaine</span>
+              Votre Partenaire de <span className="colonie-vacances__hero-title-accent">Confiance</span> au Maroc
             </h1>
             <p className="colonie-vacances__hero-description">
-              Découvrez le Maroc authentique à travers des expériences uniques et personnalisées, 
-              alliant confort, culture et aventures inoubliables.
+              Choisir Mekody, c'est faire le choix de la sérénité. Expertise, sécurité et accompagnement personnalisé pour répondre à tous vos besoins.
             </p>
             <div className="colonie-vacances__hero-cta">
               <Link to="/contact" className="colonie-vacances__cta-primary">
-                <span>Créer mon voyage</span>
+                <span>Contactez-nous</span>
                 <div className="colonie-vacances__cta-icon-wrapper">
                   <ArrowRight size={18} className="colonie-vacances__cta-icon" />
                 </div>
                 <div className="colonie-vacances__cta-shine"></div>
               </Link>
               <a href="#programmes" className="colonie-vacances__cta-secondary">
-                <span>Découvrir nos circuits</span>
+                <span>Nos services</span>
                 <div className="colonie-vacances__cta-arrow"></div>
               </a>
             </div>
@@ -311,19 +310,19 @@ const ColonieVacances = () => {
                 <div className="colonie-vacances__trust-icon-wrapper">
                   <Shield size={16} className="colonie-vacances__trust-icon" />
                 </div>
-                <span>Agrément Tourisme Maroc</span>
+                <span>Sécurité et bien-être prioritaires</span>
               </div>
               <div className="colonie-vacances__trust-item">
                 <div className="colonie-vacances__trust-icon-wrapper">
                   <Star size={16} className="colonie-vacances__trust-icon" />
                 </div>
-                <span>4.9/5 - 500+ avis voyageurs</span>
+                <span>Équipe expérimentée et passionnée</span>
               </div>
               <div className="colonie-vacances__trust-item">
                 <div className="colonie-vacances__trust-icon-wrapper">
                   <Users size={16} className="colonie-vacances__trust-icon" />
                 </div>
-                <span>10 ans d'expérience</span>
+                <span>Assistance 24/7</span>
               </div>
             </div>
           </div>
@@ -331,7 +330,7 @@ const ColonieVacances = () => {
         
         {/* Scroll indicator */}
         <div className="colonie-vacances__hero-scroll">
-          <div className="colonie-vacances__hero-scroll-text">Explorer</div>
+          <div className="colonie-vacances__hero-scroll-text">Découvrir</div>
           <div className="colonie-vacances__hero-scroll-arrow"></div>
         </div>
       </section>
@@ -386,13 +385,13 @@ const ColonieVacances = () => {
           <div className="colonie-vacances__header">
             <div className="colonie-vacances__header-badge">
               <Compass className="colonie-vacances__header-badge-icon" />
-              <span>Notre philosophie</span>
+              <span>Notre approche</span>
             </div>
             <h2 className="colonie-vacances__title">
-              Nos 3 <span className="colonie-vacances__title-accent">Engagements</span>
+              Pourquoi nous <span className="colonie-vacances__title-accent">choisir</span> ?
             </h2>
             <p className="colonie-vacances__subtitle">
-              Une approche unique pour vous faire vivre une expérience marocaine authentique et personnalisée.
+              Choisir Mekody, c'est opter pour la tranquillité, l'authenticité et un accompagnement de qualité.
             </p>
           </div>
 
@@ -434,13 +433,13 @@ const ColonieVacances = () => {
           <div className="colonie-vacances__header">
             <div className="colonie-vacances__header-badge">
               <MapPin className="colonie-vacances__header-badge-icon" />
-              <span>Itinéraires exclusifs</span>
+              <span>Nos services</span>
             </div>
             <h2 className="colonie-vacances__title">
-              Nos <span className="colonie-vacances__title-accent">Circuits</span>
+              Ce que nous <span className="colonie-vacances__title-accent">offrons</span>
             </h2>
             <p className="colonie-vacances__subtitle">
-              Des itinéraires conçus pour révéler la diversité et la beauté du Maroc.
+              Une gamme complète de services pour garantir une expérience inoubliable et sécurisée au Maroc.
             </p>
           </div>
 
@@ -461,7 +460,7 @@ const ColonieVacances = () => {
                   </div>
                   <div className="colonie-vacances__program-price">
                     <div className="colonie-vacances__program-price-amount">{program.price}</div>
-                    <div className="colonie-vacances__program-price-label">par personne</div>
+                    <div className="colonie-vacances__program-price-label">sur mesure</div>
                   </div>
                 </div>
 
@@ -484,7 +483,7 @@ const ColonieVacances = () => {
                 </div>
 
                 <div className="colonie-vacances__program-activities">
-                  <h4 className="colonie-vacances__program-activities-title">Expériences incluses :</h4>
+                  <h4 className="colonie-vacances__program-activities-title">Services inclus :</h4>
                   <ul className="colonie-vacances__program-activities-list">
                     {program.activities.map((activity, idx) => (
                       <li key={idx} className="colonie-vacances__program-activities-item">
@@ -499,7 +498,7 @@ const ColonieVacances = () => {
                   to="/contact"
                   className="colonie-vacances__program-cta"
                 >
-                  Personnaliser ce circuit
+                  En savoir plus
                   <div className="colonie-vacances__program-cta-arrow"></div>
                 </Link>
               </div>
@@ -515,13 +514,13 @@ const ColonieVacances = () => {
           <div className="colonie-vacances__header">
             <div className="colonie-vacances__header-badge">
               <Trophy className="colonie-vacances__header-badge-icon" />
-              <span>Notre différence</span>
+              <span>Nos avantages</span>
             </div>
             <h2 className="colonie-vacances__title">
-              Pourquoi nous <span className="colonie-vacances__title-accent">choisir</span> ?
+              Notre <span className="colonie-vacances__title-accent">expertise</span>
             </h2>
             <p className="colonie-vacances__subtitle">
-              L'expertise locale et l'accompagnement personnalisé font toute la différence.
+              Nous mettons tout en œuvre pour que chaque expérience au Maroc soit unique et mémorable.
             </p>
           </div>
 
@@ -558,13 +557,13 @@ const ColonieVacances = () => {
           <div className="colonie-vacances__header">
             <div className="colonie-vacances__header-badge">
               <Heart className="colonie-vacances__header-badge-icon" />
-              <span>Ils nous font confiance</span>
+              <span>Témoignages</span>
             </div>
             <h2 className="colonie-vacances__title">
-              Témoignages des <span className="colonie-vacances__title-accent">voyageurs</span>
+              Ils nous font <span className="colonie-vacances__title-accent">confiance</span>
             </h2>
             <p className="colonie-vacances__subtitle">
-              Découvrez ce que pensent ceux qui ont déjà vécu l'expérience Mekody.
+              Découvrez les retours de nos clients sur nos différents services.
             </p>
           </div>
 
@@ -612,13 +611,13 @@ const ColonieVacances = () => {
           <div className="colonie-vacances__header">
             <div className="colonie-vacances__header-badge">
               <BookOpen className="colonie-vacances__header-badge-icon" />
-              <span>Informations pratiques</span>
+              <span>Questions</span>
             </div>
             <h2 className="colonie-vacances__title">
               Questions fréquentes
             </h2>
             <p className="colonie-vacances__subtitle">
-              Tout ce que vous devez savoir avant de planifier votre voyage au Maroc.
+              Tout ce que vous devez savoir sur nos services au Maroc.
             </p>
           </div>
 
@@ -649,32 +648,32 @@ const ColonieVacances = () => {
           <div className="colonie-vacances__cta-content">
             <div className="colonie-vacances__cta-badge">
               <Sun className="colonie-vacances__cta-badge-icon" />
-              <span>Votre aventure vous attend</span>
+              <span>Contactez-nous</span>
             </div>
             <h2 className="colonie-vacances__cta-title">
-              Prêt à vivre votre aventure marocaine ?
+              Prêt à créer votre expérience sur mesure au Maroc ?
             </h2>
             <p className="colonie-vacances__cta-description">
-              Contactez-nous dès maintenant pour créer le voyage sur mesure de vos rêves.
+              Contactez-nous pour discuter de votre projet de voyage, d'étude ou pour en savoir plus sur nos services d'assistance.
             </p>
             <div className="colonie-vacances__cta-buttons">
               <Link to="/contact" className="colonie-vacances__cta-button-primary">
-                <span>Demander un devis</span>
+                <span>Discuter de votre projet</span>
                 <div className="colonie-vacances__cta-button-shine"></div>
               </Link>
               <a
-                href="tel:+212524439600"
+                href="tel:+212669712186"
                 className="colonie-vacances__cta-button-secondary"
               >
                 <Phone size={18} className="colonie-vacances__cta-button-icon" />
-                <span>+212 524 439 600</span>
+                <span>+212 669-712186</span>
               </a>
               <a
-                href="https://wa.me/212624567890"
+                href="mailto:mekodysarl@gmail.com"
                 className="colonie-vacances__cta-button-secondary"
               >
                 <MessageCircle size={18} className="colonie-vacances__cta-button-icon" />
-                <span>WhatsApp</span>
+                <span>Email</span>
               </a>
             </div>
           </div>
